@@ -20,7 +20,7 @@ or products provided by Studio SDK please follow the respective company's securi
 
 ### Studio SDK Terms and Policies
 
-Please contact dev-feedback@studio-sdk.com for any questions or concerns regarding security of our services.
+Please contact studiosupport@clearstreet.io for any questions or concerns regarding security of our services.
 
 ---
 
