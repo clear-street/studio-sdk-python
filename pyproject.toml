@@ -5,7 +5,7 @@ description = "The official Python library for the studio-sdk API"
 dynamic = ["readme"]
 license = "Apache-2.0"
 authors = [
-{ name = "Studio SDK", email = "dev-feedback@studio-sdk.com" },
+{ name = "Studio SDK", email = "studiosupport@clearstreet.io" },
 ]
 dependencies = [
     "httpx>=0.23.0, <1",
