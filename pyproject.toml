@@ -1,11 +1,11 @@
 [project]
 name = "studio-sdk"
-version = "0.0.1-alpha.0"
+version = "0.1.0-alpha.1"
 description = "The official Python library for the studio-sdk API"
 dynamic = ["readme"]
 license = "Apache-2.0"
 authors = [
-{ name = "Studio SDK", email = "dev-feedback@studio-sdk.com" },
+{ name = "Studio SDK", email = "studiosupport@clearstreet.io" },
 ]
 dependencies = [
     "httpx>=0.23.0, <1",
@@ -39,8 +39,8 @@ classifiers = [
 
 
 [project.urls]
-Homepage = "https://github.com/sachnk/studio-sdk-python"
-Repository = "https://github.com/sachnk/studio-sdk-python"
+Homepage = "https://github.com/clear-street/studio-sdk-python"
+Repository = "https://github.com/clear-street/studio-sdk-python"
 
 
 
@@ -124,7 +124,7 @@ path = "README.md"
 [[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
 # replace relative links with absolute links
 pattern = '\[(.+?)\]\(((?!https?://)\S+?)\)'
-replacement = '[\1](https://github.com/sachnk/studio-sdk-python/tree/main/\g<2>)'
+replacement = '[\1](https://github.com/clear-street/studio-sdk-python/tree/main/\g<2>)'
 
 [tool.black]
 line-length = 120

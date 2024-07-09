@@ -10,13 +10,13 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 
 ## Documentation
 
-The REST API documentation can be found [on docs.studio-sdk.com](https://docs.studio-sdk.com). The full API of this library can be found in [api.md](api.md).
+The REST API documentation can be found [on docs.clearstreet.io](https://docs.clearstreet.io). The full API of this library can be found in [api.md](api.md).
 
 ## Installation
 
 ```sh
 # install from the production repo
-pip install git+ssh://git@github.com/sachnk/studio-sdk-python.git
+pip install git+ssh://git@github.com/clear-street/studio-sdk-python.git
 ```
 
 > [!NOTE]
@@ -210,9 +210,9 @@ entity = response.parse()  # get the object that `entities.retrieve()` would hav
 print(entity.entity_id)
 ```
 
-These methods return an [`APIResponse`](https://github.com/sachnk/studio-sdk-python/tree/main/src/studio_minus_sdk/_response.py) object.
+These methods return an [`APIResponse`](https://github.com/clear-street/studio-sdk-python/tree/main/src/studio_minus_sdk/_response.py) object.
 
-The async client returns an [`AsyncAPIResponse`](https://github.com/sachnk/studio-sdk-python/tree/main/src/studio_minus_sdk/_response.py) with the same structure, the only difference being `await`able methods for reading the response content.
+The async client returns an [`AsyncAPIResponse`](https://github.com/clear-street/studio-sdk-python/tree/main/src/studio_minus_sdk/_response.py) with the same structure, the only difference being `await`able methods for reading the response content.
 
 #### `.with_streaming_response`
 
@@ -302,7 +302,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/sachnk/studio-sdk-python/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/clear-street/studio-sdk-python/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 
