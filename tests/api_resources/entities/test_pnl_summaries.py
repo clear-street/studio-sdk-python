@@ -14,19 +14,19 @@ from studio_minus_sdk.types import PnlSummary
 base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 
 
-class TestPnlSummary:
+class TestPnlSummaries:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
     @parametrize
     def test_method_retrieve(self, client: StudioSDK) -> None:
-        pnl_summary = client.entities.pnl_summary.retrieve(
+        pnl_summary = client.entities.pnl_summaries.retrieve(
             "x",
         )
         assert_matches_type(PnlSummary, pnl_summary, path=["response"])
 
     @parametrize
     def test_raw_response_retrieve(self, client: StudioSDK) -> None:
-        response = client.entities.pnl_summary.with_raw_response.retrieve(
+        response = client.entities.pnl_summaries.with_raw_response.retrieve(
             "x",
         )
 
@@ -37,7 +37,7 @@ class TestPnlSummary:
 
     @parametrize
     def test_streaming_response_retrieve(self, client: StudioSDK) -> None:
-        with client.entities.pnl_summary.with_streaming_response.retrieve(
+        with client.entities.pnl_summaries.with_streaming_response.retrieve(
             "x",
         ) as response:
             assert not response.is_closed
@@ -51,24 +51,24 @@ class TestPnlSummary:
     @parametrize
     def test_path_params_retrieve(self, client: StudioSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `entity_id` but received ''"):
-            client.entities.pnl_summary.with_raw_response.retrieve(
+            client.entities.pnl_summaries.with_raw_response.retrieve(
                 "",
             )
 
 
-class TestAsyncPnlSummary:
+class TestAsyncPnlSummaries:
     parametrize = pytest.mark.parametrize("async_client", [False, True], indirect=True, ids=["loose", "strict"])
 
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncStudioSDK) -> None:
-        pnl_summary = await async_client.entities.pnl_summary.retrieve(
+        pnl_summary = await async_client.entities.pnl_summaries.retrieve(
             "x",
         )
         assert_matches_type(PnlSummary, pnl_summary, path=["response"])
 
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
-        response = await async_client.entities.pnl_summary.with_raw_response.retrieve(
+        response = await async_client.entities.pnl_summaries.with_raw_response.retrieve(
             "x",
         )
 
@@ -79,7 +79,7 @@ class TestAsyncPnlSummary:
 
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
-        async with async_client.entities.pnl_summary.with_streaming_response.retrieve(
+        async with async_client.entities.pnl_summaries.with_streaming_response.retrieve(
             "x",
         ) as response:
             assert not response.is_closed
@@ -93,6 +93,6 @@ class TestAsyncPnlSummary:
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncStudioSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `entity_id` but received ''"):
-            await async_client.entities.pnl_summary.with_raw_response.retrieve(
+            await async_client.entities.pnl_summaries.with_raw_response.retrieve(
                 "",
             )
