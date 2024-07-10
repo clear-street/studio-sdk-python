@@ -1,6 +1,6 @@
 # Studio SDK Python API library
 
-[![PyPI version](https://img.shields.io/pypi/v/studio-sdk.svg)](https://pypi.org/project/studio-sdk/)
+[![PyPI version](https://img.shields.io/pypi/v/clear-street-studio-sdk.svg)](https://pypi.org/project/clear-street-studio-sdk/)
 
 The Studio SDK Python library provides convenient access to the Studio SDK REST API from any Python 3.7+
 application. The library includes type definitions for all request params and response fields,
@@ -16,7 +16,7 @@ The REST API documentation can be found [on docs.clearstreet.io](https://docs.cl
 
 ```sh
 # install from PyPI
-pip install --pre studio-sdk
+pip install --pre clear-street-studio-sdk
 ```
 
 ## Usage
