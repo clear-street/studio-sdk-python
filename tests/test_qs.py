@@ -4,7 +4,7 @@ from urllib.parse import unquote
 
 import pytest
 
-from studio_minus_sdk._qs import Querystring, stringify
+from studio_minus_sdk_minus_try_minus_to_minus_fix._qs import Querystring, stringify
 
 
 def test_empty() -> None:

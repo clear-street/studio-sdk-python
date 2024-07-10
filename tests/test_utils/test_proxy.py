@@ -2,7 +2,7 @@ import operator
 from typing import Any
 from typing_extensions import override
 
-from studio_minus_sdk._utils import LazyProxy
+from studio_minus_sdk_minus_try_minus_to_minus_fix._utils import LazyProxy
 
 
 class RecursiveLazyProxy(LazyProxy[Any]):

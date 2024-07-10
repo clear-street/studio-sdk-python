@@ -32,7 +32,7 @@ $ pip install -r requirements-dev.lock
 ## Modifying/Adding code
 
 Most of the SDK is generated code, and any modified code will be overridden on the next generation. The
-`src/studio_minus_sdk/lib/` and `examples/` directories are exceptions and will never be overridden.
+`src/studio_minus_sdk_minus_try_minus_to_minus_fix/lib/` and `examples/` directories are exceptions and will never be overridden.
 
 ## Adding and running examples
 

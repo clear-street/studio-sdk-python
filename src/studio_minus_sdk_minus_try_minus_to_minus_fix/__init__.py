@@ -82,12 +82,12 @@ _setup_logging()
 # Update the __module__ attribute for exported symbols so that
 # error messages point to this module instead of the module
 # it was originally defined in, e.g.
-# studio_minus_sdk._exceptions.NotFoundError -> studio_minus_sdk.NotFoundError
+# studio_minus_sdk_minus_try_minus_to_minus_fix._exceptions.NotFoundError -> studio_minus_sdk_minus_try_minus_to_minus_fix.NotFoundError
 __locals = locals()
 for __name in __all__:
     if not __name.startswith("__"):
         try:
-            __locals[__name].__module__ = "studio_minus_sdk"
+            __locals[__name].__module__ = "studio_minus_sdk_minus_try_minus_to_minus_fix"
         except (TypeError, AttributeError):
             # Some of our exported symbols are builtins which we can't set attributes for.
             pass
