@@ -13,33 +13,33 @@ from ..._response import (
     async_to_raw_response_wrapper,
     async_to_streamed_response_wrapper,
 )
-from .pnl_summary import (
-    PnlSummaryResource,
-    AsyncPnlSummaryResource,
-    PnlSummaryResourceWithRawResponse,
-    AsyncPnlSummaryResourceWithRawResponse,
-    PnlSummaryResourceWithStreamingResponse,
-    AsyncPnlSummaryResourceWithStreamingResponse,
+from .regt_margins import (
+    RegtMarginsResource,
+    AsyncRegtMarginsResource,
+    RegtMarginsResourceWithRawResponse,
+    AsyncRegtMarginsResourceWithRawResponse,
+    RegtMarginsResourceWithStreamingResponse,
+    AsyncRegtMarginsResourceWithStreamingResponse,
 )
-from .regt_margin import (
-    RegtMarginResource,
-    AsyncRegtMarginResource,
-    RegtMarginResourceWithRawResponse,
-    AsyncRegtMarginResourceWithRawResponse,
-    RegtMarginResourceWithStreamingResponse,
-    AsyncRegtMarginResourceWithStreamingResponse,
+from .pnl_summaries import (
+    PnlSummariesResource,
+    AsyncPnlSummariesResource,
+    PnlSummariesResourceWithRawResponse,
+    AsyncPnlSummariesResourceWithRawResponse,
+    PnlSummariesResourceWithStreamingResponse,
+    AsyncPnlSummariesResourceWithStreamingResponse,
 )
 from ..._base_client import (
     make_request_options,
 )
 from ...types.entity import Entity
-from .portfolio_margin import (
-    PortfolioMarginResource,
-    AsyncPortfolioMarginResource,
-    PortfolioMarginResourceWithRawResponse,
-    AsyncPortfolioMarginResourceWithRawResponse,
-    PortfolioMarginResourceWithStreamingResponse,
-    AsyncPortfolioMarginResourceWithStreamingResponse,
+from .portfolio_margins import (
+    PortfolioMarginsResource,
+    AsyncPortfolioMarginsResource,
+    PortfolioMarginsResourceWithRawResponse,
+    AsyncPortfolioMarginsResourceWithRawResponse,
+    PortfolioMarginsResourceWithStreamingResponse,
+    AsyncPortfolioMarginsResourceWithStreamingResponse,
 )
 from .regt_margin_simulations import (
     RegtMarginSimulationsResource,
@@ -56,16 +56,16 @@ __all__ = ["EntitiesResource", "AsyncEntitiesResource"]
 
 class EntitiesResource(SyncAPIResource):
     @cached_property
-    def pnl_summary(self) -> PnlSummaryResource:
-        return PnlSummaryResource(self._client)
+    def pnl_summaries(self) -> PnlSummariesResource:
+        return PnlSummariesResource(self._client)
 
     @cached_property
-    def regt_margin(self) -> RegtMarginResource:
-        return RegtMarginResource(self._client)
+    def regt_margins(self) -> RegtMarginsResource:
+        return RegtMarginsResource(self._client)
 
     @cached_property
-    def portfolio_margin(self) -> PortfolioMarginResource:
-        return PortfolioMarginResource(self._client)
+    def portfolio_margins(self) -> PortfolioMarginsResource:
+        return PortfolioMarginsResource(self._client)
 
     @cached_property
     def regt_margin_simulations(self) -> RegtMarginSimulationsResource:
@@ -136,16 +136,16 @@ class EntitiesResource(SyncAPIResource):
 
 class AsyncEntitiesResource(AsyncAPIResource):
     @cached_property
-    def pnl_summary(self) -> AsyncPnlSummaryResource:
-        return AsyncPnlSummaryResource(self._client)
+    def pnl_summaries(self) -> AsyncPnlSummariesResource:
+        return AsyncPnlSummariesResource(self._client)
 
     @cached_property
-    def regt_margin(self) -> AsyncRegtMarginResource:
-        return AsyncRegtMarginResource(self._client)
+    def regt_margins(self) -> AsyncRegtMarginsResource:
+        return AsyncRegtMarginsResource(self._client)
 
     @cached_property
-    def portfolio_margin(self) -> AsyncPortfolioMarginResource:
-        return AsyncPortfolioMarginResource(self._client)
+    def portfolio_margins(self) -> AsyncPortfolioMarginsResource:
+        return AsyncPortfolioMarginsResource(self._client)
 
     @cached_property
     def regt_margin_simulations(self) -> AsyncRegtMarginSimulationsResource:
@@ -226,16 +226,16 @@ class EntitiesResourceWithRawResponse:
         )
 
     @cached_property
-    def pnl_summary(self) -> PnlSummaryResourceWithRawResponse:
-        return PnlSummaryResourceWithRawResponse(self._entities.pnl_summary)
+    def pnl_summaries(self) -> PnlSummariesResourceWithRawResponse:
+        return PnlSummariesResourceWithRawResponse(self._entities.pnl_summaries)
 
     @cached_property
-    def regt_margin(self) -> RegtMarginResourceWithRawResponse:
-        return RegtMarginResourceWithRawResponse(self._entities.regt_margin)
+    def regt_margins(self) -> RegtMarginsResourceWithRawResponse:
+        return RegtMarginsResourceWithRawResponse(self._entities.regt_margins)
 
     @cached_property
-    def portfolio_margin(self) -> PortfolioMarginResourceWithRawResponse:
-        return PortfolioMarginResourceWithRawResponse(self._entities.portfolio_margin)
+    def portfolio_margins(self) -> PortfolioMarginsResourceWithRawResponse:
+        return PortfolioMarginsResourceWithRawResponse(self._entities.portfolio_margins)
 
     @cached_property
     def regt_margin_simulations(self) -> RegtMarginSimulationsResourceWithRawResponse:
@@ -254,16 +254,16 @@ class AsyncEntitiesResourceWithRawResponse:
         )
 
     @cached_property
-    def pnl_summary(self) -> AsyncPnlSummaryResourceWithRawResponse:
-        return AsyncPnlSummaryResourceWithRawResponse(self._entities.pnl_summary)
+    def pnl_summaries(self) -> AsyncPnlSummariesResourceWithRawResponse:
+        return AsyncPnlSummariesResourceWithRawResponse(self._entities.pnl_summaries)
 
     @cached_property
-    def regt_margin(self) -> AsyncRegtMarginResourceWithRawResponse:
-        return AsyncRegtMarginResourceWithRawResponse(self._entities.regt_margin)
+    def regt_margins(self) -> AsyncRegtMarginsResourceWithRawResponse:
+        return AsyncRegtMarginsResourceWithRawResponse(self._entities.regt_margins)
 
     @cached_property
-    def portfolio_margin(self) -> AsyncPortfolioMarginResourceWithRawResponse:
-        return AsyncPortfolioMarginResourceWithRawResponse(self._entities.portfolio_margin)
+    def portfolio_margins(self) -> AsyncPortfolioMarginsResourceWithRawResponse:
+        return AsyncPortfolioMarginsResourceWithRawResponse(self._entities.portfolio_margins)
 
     @cached_property
     def regt_margin_simulations(self) -> AsyncRegtMarginSimulationsResourceWithRawResponse:
@@ -282,16 +282,16 @@ class EntitiesResourceWithStreamingResponse:
         )
 
     @cached_property
-    def pnl_summary(self) -> PnlSummaryResourceWithStreamingResponse:
-        return PnlSummaryResourceWithStreamingResponse(self._entities.pnl_summary)
+    def pnl_summaries(self) -> PnlSummariesResourceWithStreamingResponse:
+        return PnlSummariesResourceWithStreamingResponse(self._entities.pnl_summaries)
 
     @cached_property
-    def regt_margin(self) -> RegtMarginResourceWithStreamingResponse:
-        return RegtMarginResourceWithStreamingResponse(self._entities.regt_margin)
+    def regt_margins(self) -> RegtMarginsResourceWithStreamingResponse:
+        return RegtMarginsResourceWithStreamingResponse(self._entities.regt_margins)
 
     @cached_property
-    def portfolio_margin(self) -> PortfolioMarginResourceWithStreamingResponse:
-        return PortfolioMarginResourceWithStreamingResponse(self._entities.portfolio_margin)
+    def portfolio_margins(self) -> PortfolioMarginsResourceWithStreamingResponse:
+        return PortfolioMarginsResourceWithStreamingResponse(self._entities.portfolio_margins)
 
     @cached_property
     def regt_margin_simulations(self) -> RegtMarginSimulationsResourceWithStreamingResponse:
@@ -310,16 +310,16 @@ class AsyncEntitiesResourceWithStreamingResponse:
         )
 
     @cached_property
-    def pnl_summary(self) -> AsyncPnlSummaryResourceWithStreamingResponse:
-        return AsyncPnlSummaryResourceWithStreamingResponse(self._entities.pnl_summary)
+    def pnl_summaries(self) -> AsyncPnlSummariesResourceWithStreamingResponse:
+        return AsyncPnlSummariesResourceWithStreamingResponse(self._entities.pnl_summaries)
 
     @cached_property
-    def regt_margin(self) -> AsyncRegtMarginResourceWithStreamingResponse:
-        return AsyncRegtMarginResourceWithStreamingResponse(self._entities.regt_margin)
+    def regt_margins(self) -> AsyncRegtMarginsResourceWithStreamingResponse:
+        return AsyncRegtMarginsResourceWithStreamingResponse(self._entities.regt_margins)
 
     @cached_property
-    def portfolio_margin(self) -> AsyncPortfolioMarginResourceWithStreamingResponse:
-        return AsyncPortfolioMarginResourceWithStreamingResponse(self._entities.portfolio_margin)
+    def portfolio_margins(self) -> AsyncPortfolioMarginsResourceWithStreamingResponse:
+        return AsyncPortfolioMarginsResourceWithStreamingResponse(self._entities.portfolio_margins)
 
     @cached_property
     def regt_margin_simulations(self) -> AsyncRegtMarginSimulationsResourceWithStreamingResponse:

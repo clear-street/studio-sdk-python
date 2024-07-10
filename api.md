@@ -30,23 +30,23 @@ Methods:
 - <code title="get /entities/{entity_id}">client.entities.<a href="./src/studio_minus_sdk/resources/entities/entities.py">retrieve</a>(entity_id) -> <a href="./src/studio_minus_sdk/types/entity.py">Entity</a></code>
 - <code title="get /entities">client.entities.<a href="./src/studio_minus_sdk/resources/entities/entities.py">list</a>() -> <a href="./src/studio_minus_sdk/types/entity_list_response.py">EntityListResponse</a></code>
 
-## PnlSummary
+## PnlSummaries
 
 Methods:
 
-- <code title="get /entities/{entity_id}/pnl-summary">client.entities.pnl_summary.<a href="./src/studio_minus_sdk/resources/entities/pnl_summary.py">retrieve</a>(entity_id) -> <a href="./src/studio_minus_sdk/types/pnl_summary.py">PnlSummary</a></code>
+- <code title="get /entities/{entity_id}/pnl-summary">client.entities.pnl_summaries.<a href="./src/studio_minus_sdk/resources/entities/pnl_summaries.py">retrieve</a>(entity_id) -> <a href="./src/studio_minus_sdk/types/pnl_summary.py">PnlSummary</a></code>
 
-## RegtMargin
-
-Methods:
-
-- <code title="get /entities/{entity_id}/regt-margin">client.entities.regt_margin.<a href="./src/studio_minus_sdk/resources/entities/regt_margin.py">retrieve</a>(entity_id) -> <a href="./src/studio_minus_sdk/types/regt_margin.py">RegtMargin</a></code>
-
-## PortfolioMargin
+## RegtMargins
 
 Methods:
 
-- <code title="get /entities/{entity_id}/portfolio-margin">client.entities.portfolio_margin.<a href="./src/studio_minus_sdk/resources/entities/portfolio_margin.py">retrieve</a>(entity_id) -> <a href="./src/studio_minus_sdk/types/portfolio_margin.py">PortfolioMargin</a></code>
+- <code title="get /entities/{entity_id}/regt-margin">client.entities.regt_margins.<a href="./src/studio_minus_sdk/resources/entities/regt_margins.py">retrieve</a>(entity_id) -> <a href="./src/studio_minus_sdk/types/regt_margin.py">RegtMargin</a></code>
+
+## PortfolioMargins
+
+Methods:
+
+- <code title="get /entities/{entity_id}/portfolio-margin">client.entities.portfolio_margins.<a href="./src/studio_minus_sdk/resources/entities/portfolio_margins.py">retrieve</a>(entity_id) -> <a href="./src/studio_minus_sdk/types/portfolio_margin.py">PortfolioMargin</a></code>
 
 ## RegtMarginSimulations
 
