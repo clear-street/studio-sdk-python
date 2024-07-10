@@ -7,10 +7,10 @@ from typing import Any, cast
 
 import pytest
 
+from studio_sdk import StudioSDK, AsyncStudioSDK
 from tests.utils import assert_matches_type
-from studio_minus_sdk import StudioSDK, AsyncStudioSDK
-from studio_minus_sdk.types.shared import RegtMarginSimulation
-from studio_minus_sdk.types.entities import (
+from studio_sdk.types.shared import RegtMarginSimulation
+from studio_sdk.types.entities import (
     RegtMarginSimulationCreateResponse,
 )
 
