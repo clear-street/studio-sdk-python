@@ -7,9 +7,9 @@ from typing import Any, cast
 
 import pytest
 
+from studio_sdk import StudioSDK, AsyncStudioSDK
 from tests.utils import assert_matches_type
-from studio_minus_sdk import StudioSDK, AsyncStudioSDK
-from studio_minus_sdk.types.accounts import (
+from studio_sdk.types.accounts import (
     OrderListResponse,
     OrderCreateResponse,
     OrderDeleteResponse,
