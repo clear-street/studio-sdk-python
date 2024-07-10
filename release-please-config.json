@@ -61,6 +61,6 @@
   ],
   "release-type": "python",
   "extra-files": [
-    "src/studio_minus_sdk/_version.py"
+    "src/studio_minus_sdk_minus_try_minus_to_minus_fix/_version.py"
   ]
 }

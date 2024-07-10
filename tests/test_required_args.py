@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pytest
 
-from studio_minus_sdk._utils import required_args
+from studio_minus_sdk_minus_try_minus_to_minus_fix._utils import required_args
 
 
 def test_too_many_positional_params() -> None:
