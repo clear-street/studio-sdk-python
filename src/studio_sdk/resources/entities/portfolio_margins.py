@@ -18,17 +18,17 @@ from ..._base_client import (
 )
 from ...types.portfolio_margin import PortfolioMargin
 
-__all__ = ["PortfolioMarginResource", "AsyncPortfolioMarginResource"]
+__all__ = ["PortfolioMarginsResource", "AsyncPortfolioMarginsResource"]
 
 
-class PortfolioMarginResource(SyncAPIResource):
+class PortfolioMarginsResource(SyncAPIResource):
     @cached_property
-    def with_raw_response(self) -> PortfolioMarginResourceWithRawResponse:
-        return PortfolioMarginResourceWithRawResponse(self)
+    def with_raw_response(self) -> PortfolioMarginsResourceWithRawResponse:
+        return PortfolioMarginsResourceWithRawResponse(self)
 
     @cached_property
-    def with_streaming_response(self) -> PortfolioMarginResourceWithStreamingResponse:
-        return PortfolioMarginResourceWithStreamingResponse(self)
+    def with_streaming_response(self) -> PortfolioMarginsResourceWithStreamingResponse:
+        return PortfolioMarginsResourceWithStreamingResponse(self)
 
     def retrieve(
         self,
@@ -66,14 +66,14 @@ class PortfolioMarginResource(SyncAPIResource):
         )
 
 
-class AsyncPortfolioMarginResource(AsyncAPIResource):
+class AsyncPortfolioMarginsResource(AsyncAPIResource):
     @cached_property
-    def with_raw_response(self) -> AsyncPortfolioMarginResourceWithRawResponse:
-        return AsyncPortfolioMarginResourceWithRawResponse(self)
+    def with_raw_response(self) -> AsyncPortfolioMarginsResourceWithRawResponse:
+        return AsyncPortfolioMarginsResourceWithRawResponse(self)
 
     @cached_property
-    def with_streaming_response(self) -> AsyncPortfolioMarginResourceWithStreamingResponse:
-        return AsyncPortfolioMarginResourceWithStreamingResponse(self)
+    def with_streaming_response(self) -> AsyncPortfolioMarginsResourceWithStreamingResponse:
+        return AsyncPortfolioMarginsResourceWithStreamingResponse(self)
 
     async def retrieve(
         self,
@@ -111,37 +111,37 @@ class AsyncPortfolioMarginResource(AsyncAPIResource):
         )
 
 
-class PortfolioMarginResourceWithRawResponse:
-    def __init__(self, portfolio_margin: PortfolioMarginResource) -> None:
-        self._portfolio_margin = portfolio_margin
+class PortfolioMarginsResourceWithRawResponse:
+    def __init__(self, portfolio_margins: PortfolioMarginsResource) -> None:
+        self._portfolio_margins = portfolio_margins
 
         self.retrieve = to_raw_response_wrapper(
-            portfolio_margin.retrieve,
+            portfolio_margins.retrieve,
         )
 
 
-class AsyncPortfolioMarginResourceWithRawResponse:
-    def __init__(self, portfolio_margin: AsyncPortfolioMarginResource) -> None:
-        self._portfolio_margin = portfolio_margin
+class AsyncPortfolioMarginsResourceWithRawResponse:
+    def __init__(self, portfolio_margins: AsyncPortfolioMarginsResource) -> None:
+        self._portfolio_margins = portfolio_margins
 
         self.retrieve = async_to_raw_response_wrapper(
-            portfolio_margin.retrieve,
+            portfolio_margins.retrieve,
         )
 
 
-class PortfolioMarginResourceWithStreamingResponse:
-    def __init__(self, portfolio_margin: PortfolioMarginResource) -> None:
-        self._portfolio_margin = portfolio_margin
+class PortfolioMarginsResourceWithStreamingResponse:
+    def __init__(self, portfolio_margins: PortfolioMarginsResource) -> None:
+        self._portfolio_margins = portfolio_margins
 
         self.retrieve = to_streamed_response_wrapper(
-            portfolio_margin.retrieve,
+            portfolio_margins.retrieve,
         )
 
 
-class AsyncPortfolioMarginResourceWithStreamingResponse:
-    def __init__(self, portfolio_margin: AsyncPortfolioMarginResource) -> None:
-        self._portfolio_margin = portfolio_margin
+class AsyncPortfolioMarginsResourceWithStreamingResponse:
+    def __init__(self, portfolio_margins: AsyncPortfolioMarginsResource) -> None:
+        self._portfolio_margins = portfolio_margins
 
         self.retrieve = async_to_streamed_response_wrapper(
-            portfolio_margin.retrieve,
+            portfolio_margins.retrieve,
         )

@@ -18,17 +18,17 @@ from ..._base_client import (
 )
 from ...types.regt_margin import RegtMargin
 
-__all__ = ["RegtMarginResource", "AsyncRegtMarginResource"]
+__all__ = ["RegtMarginsResource", "AsyncRegtMarginsResource"]
 
 
-class RegtMarginResource(SyncAPIResource):
+class RegtMarginsResource(SyncAPIResource):
     @cached_property
-    def with_raw_response(self) -> RegtMarginResourceWithRawResponse:
-        return RegtMarginResourceWithRawResponse(self)
+    def with_raw_response(self) -> RegtMarginsResourceWithRawResponse:
+        return RegtMarginsResourceWithRawResponse(self)
 
     @cached_property
-    def with_streaming_response(self) -> RegtMarginResourceWithStreamingResponse:
-        return RegtMarginResourceWithStreamingResponse(self)
+    def with_streaming_response(self) -> RegtMarginsResourceWithStreamingResponse:
+        return RegtMarginsResourceWithStreamingResponse(self)
 
     def retrieve(
         self,
@@ -66,14 +66,14 @@ class RegtMarginResource(SyncAPIResource):
         )
 
 
-class AsyncRegtMarginResource(AsyncAPIResource):
+class AsyncRegtMarginsResource(AsyncAPIResource):
     @cached_property
-    def with_raw_response(self) -> AsyncRegtMarginResourceWithRawResponse:
-        return AsyncRegtMarginResourceWithRawResponse(self)
+    def with_raw_response(self) -> AsyncRegtMarginsResourceWithRawResponse:
+        return AsyncRegtMarginsResourceWithRawResponse(self)
 
     @cached_property
-    def with_streaming_response(self) -> AsyncRegtMarginResourceWithStreamingResponse:
-        return AsyncRegtMarginResourceWithStreamingResponse(self)
+    def with_streaming_response(self) -> AsyncRegtMarginsResourceWithStreamingResponse:
+        return AsyncRegtMarginsResourceWithStreamingResponse(self)
 
     async def retrieve(
         self,
@@ -111,37 +111,37 @@ class AsyncRegtMarginResource(AsyncAPIResource):
         )
 
 
-class RegtMarginResourceWithRawResponse:
-    def __init__(self, regt_margin: RegtMarginResource) -> None:
-        self._regt_margin = regt_margin
+class RegtMarginsResourceWithRawResponse:
+    def __init__(self, regt_margins: RegtMarginsResource) -> None:
+        self._regt_margins = regt_margins
 
         self.retrieve = to_raw_response_wrapper(
-            regt_margin.retrieve,
+            regt_margins.retrieve,
         )
 
 
-class AsyncRegtMarginResourceWithRawResponse:
-    def __init__(self, regt_margin: AsyncRegtMarginResource) -> None:
-        self._regt_margin = regt_margin
+class AsyncRegtMarginsResourceWithRawResponse:
+    def __init__(self, regt_margins: AsyncRegtMarginsResource) -> None:
+        self._regt_margins = regt_margins
 
         self.retrieve = async_to_raw_response_wrapper(
-            regt_margin.retrieve,
+            regt_margins.retrieve,
         )
 
 
-class RegtMarginResourceWithStreamingResponse:
-    def __init__(self, regt_margin: RegtMarginResource) -> None:
-        self._regt_margin = regt_margin
+class RegtMarginsResourceWithStreamingResponse:
+    def __init__(self, regt_margins: RegtMarginsResource) -> None:
+        self._regt_margins = regt_margins
 
         self.retrieve = to_streamed_response_wrapper(
-            regt_margin.retrieve,
+            regt_margins.retrieve,
         )
 
 
-class AsyncRegtMarginResourceWithStreamingResponse:
-    def __init__(self, regt_margin: AsyncRegtMarginResource) -> None:
-        self._regt_margin = regt_margin
+class AsyncRegtMarginsResourceWithStreamingResponse:
+    def __init__(self, regt_margins: AsyncRegtMarginsResource) -> None:
+        self._regt_margins = regt_margins
 
         self.retrieve = async_to_streamed_response_wrapper(
-            regt_margin.retrieve,
+            regt_margins.retrieve,
         )

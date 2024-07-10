@@ -7,14 +7,14 @@ from typing import TYPE_CHECKING, Iterator, AsyncIterator
 
 import pytest
 
-from studio_minus_sdk import StudioSDK, AsyncStudioSDK
+from studio_sdk import StudioSDK, AsyncStudioSDK
 
 if TYPE_CHECKING:
     from _pytest.fixtures import FixtureRequest
 
 pytest.register_assert_rewrite("tests.utils")
 
-logging.getLogger("studio_minus_sdk").setLevel(logging.DEBUG)
+logging.getLogger("studio_sdk").setLevel(logging.DEBUG)
 
 
 @pytest.fixture(scope="session")

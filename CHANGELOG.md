@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.0-alpha.3 (2024-07-10)
+
+Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)
+
+### Features
+
+* **api:** update via SDK Studio ([#10](https://github.com/clear-street/studio-sdk-python/issues/10)) ([284ea5b](https://github.com/clear-street/studio-sdk-python/commit/284ea5b1cae0af30bcd78cdc0048d3ec655312f7))
+* **api:** update via SDK Studio ([#11](https://github.com/clear-street/studio-sdk-python/issues/11)) ([796f671](https://github.com/clear-street/studio-sdk-python/commit/796f671499be4027923046db555c1119a4fa1b30))
+* **api:** update via SDK Studio ([#12](https://github.com/clear-street/studio-sdk-python/issues/12)) ([4f42bdc](https://github.com/clear-street/studio-sdk-python/commit/4f42bdc10992f6158c865781a0bdc70ae79b58e4))
+* **api:** update via SDK Studio ([#13](https://github.com/clear-street/studio-sdk-python/issues/13)) ([6a92603](https://github.com/clear-street/studio-sdk-python/commit/6a926036a955e0d5ce12a3b1ee7a01ca88698a20))
+* **api:** update via SDK Studio ([#14](https://github.com/clear-street/studio-sdk-python/issues/14)) ([181db49](https://github.com/clear-street/studio-sdk-python/commit/181db499eb8ba91afbf899bd2900d9893c4a941e))
+* **api:** update via SDK Studio ([#15](https://github.com/clear-street/studio-sdk-python/issues/15)) ([db742cc](https://github.com/clear-street/studio-sdk-python/commit/db742cc51159f5c9838c4695c84ed38d8f9df665))
+* **api:** update via SDK Studio ([#16](https://github.com/clear-street/studio-sdk-python/issues/16)) ([ca129f2](https://github.com/clear-street/studio-sdk-python/commit/ca129f2406b8e307a0f9c866d3433f901252bdfd))
+* **api:** update via SDK Studio ([#7](https://github.com/clear-street/studio-sdk-python/issues/7)) ([540756e](https://github.com/clear-street/studio-sdk-python/commit/540756eb7ce95eb3404ae9873ccfc310b1f52cac))
+* **api:** update via SDK Studio ([#9](https://github.com/clear-street/studio-sdk-python/issues/9)) ([5f6f844](https://github.com/clear-street/studio-sdk-python/commit/5f6f844097eeb52a6dad6a8e22676a4f84848c02))
+
 ## 0.1.0-alpha.2 (2024-07-09)
 
 Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
