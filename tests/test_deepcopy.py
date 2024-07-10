@@ -1,4 +1,4 @@
-from studio_minus_sdk_minus_try_minus_to_minus_fix._utils import deepcopy_minimal
+from studio_minus_sdk._utils import deepcopy_minimal
 
 
 def assert_different_identities(obj1: object, obj2: object) -> None:

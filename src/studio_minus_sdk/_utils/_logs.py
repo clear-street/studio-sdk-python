@@ -1,12 +1,12 @@
 import os
 import logging
 
-logger: logging.Logger = logging.getLogger("studio_minus_sdk_minus_try_minus_to_minus_fix")
+logger: logging.Logger = logging.getLogger("studio_minus_sdk")
 httpx_logger: logging.Logger = logging.getLogger("httpx")
 
 
 def _basic_config() -> None:
-    # e.g. [2023-10-05 14:12:26 - studio_minus_sdk_minus_try_minus_to_minus_fix._base_client:818 - DEBUG] HTTP Request: POST http://127.0.0.1:4010/foo/bar "200 OK"
+    # e.g. [2023-10-05 14:12:26 - studio_minus_sdk._base_client:818 - DEBUG] HTTP Request: POST http://127.0.0.1:4010/foo/bar "200 OK"
     logging.basicConfig(
         format="[%(asctime)s - %(name)s:%(lineno)d - %(levelname)s] %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
