@@ -5,8 +5,8 @@ from typing import Iterator, AsyncIterator
 import httpx
 import pytest
 
-from studio_minus_sdk_minus_try_minus_to_minus_fix import StudioSDK, AsyncStudioSDK
-from studio_minus_sdk_minus_try_minus_to_minus_fix._streaming import Stream, AsyncStream, ServerSentEvent
+from studio_minus_sdk import StudioSDK, AsyncStudioSDK
+from studio_minus_sdk._streaming import Stream, AsyncStream, ServerSentEvent
 
 
 @pytest.mark.asyncio

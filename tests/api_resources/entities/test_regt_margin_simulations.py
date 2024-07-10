@@ -8,9 +8,9 @@ from typing import Any, cast
 import pytest
 
 from tests.utils import assert_matches_type
-from studio_minus_sdk_minus_try_minus_to_minus_fix import StudioSDK, AsyncStudioSDK
-from studio_minus_sdk_minus_try_minus_to_minus_fix.types.shared import RegtMarginSimulation
-from studio_minus_sdk_minus_try_minus_to_minus_fix.types.entities import (
+from studio_minus_sdk import StudioSDK, AsyncStudioSDK
+from studio_minus_sdk.types.shared import RegtMarginSimulation
+from studio_minus_sdk.types.entities import (
     RegtMarginSimulationCreateResponse,
 )
 

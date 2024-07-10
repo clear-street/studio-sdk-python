@@ -4,8 +4,8 @@ from typing import Sequence
 
 import pytest
 
-from studio_minus_sdk_minus_try_minus_to_minus_fix._types import FileTypes
-from studio_minus_sdk_minus_try_minus_to_minus_fix._utils import extract_files
+from studio_minus_sdk._types import FileTypes
+from studio_minus_sdk._utils import extract_files
 
 
 def test_removes_files_from_input() -> None:
