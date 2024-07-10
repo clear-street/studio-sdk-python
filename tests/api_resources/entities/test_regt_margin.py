@@ -8,8 +8,8 @@ from typing import Any, cast
 import pytest
 
 from tests.utils import assert_matches_type
-from studio_minus_sdk_minus_try_minus_to_minus_fix import StudioSDK, AsyncStudioSDK
-from studio_minus_sdk_minus_try_minus_to_minus_fix.types import RegtMargin
+from studio_minus_sdk import StudioSDK, AsyncStudioSDK
+from studio_minus_sdk.types import RegtMargin
 
 base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 

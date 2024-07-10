@@ -24,7 +24,7 @@ pip install --pre studio-sdk
 The full API of this library can be found in [api.md](api.md).
 
 ```python
-from studio_minus_sdk_minus_try_minus_to_minus_fix import StudioSDK
+from studio_minus_sdk import StudioSDK
 
 client = StudioSDK()
 
@@ -45,7 +45,7 @@ Simply import `AsyncStudioSDK` instead of `StudioSDK` and use `await` with each 
 
 ```python
 import asyncio
-from studio_minus_sdk_minus_try_minus_to_minus_fix import AsyncStudioSDK
+from studio_minus_sdk import AsyncStudioSDK
 
 client = AsyncStudioSDK()
 
@@ -73,16 +73,16 @@ Typed requests and responses provide autocomplete and documentation within your 
 
 ## Handling errors
 
-When the library is unable to connect to the API (for example, due to network connection problems or a timeout), a subclass of `studio_minus_sdk_minus_try_minus_to_minus_fix.APIConnectionError` is raised.
+When the library is unable to connect to the API (for example, due to network connection problems or a timeout), a subclass of `studio_minus_sdk.APIConnectionError` is raised.
 
 When the API returns a non-success status code (that is, 4xx or 5xx
-response), a subclass of `studio_minus_sdk_minus_try_minus_to_minus_fix.APIStatusError` is raised, containing `status_code` and `response` properties.
+response), a subclass of `studio_minus_sdk.APIStatusError` is raised, containing `status_code` and `response` properties.
 
-All errors inherit from `studio_minus_sdk_minus_try_minus_to_minus_fix.APIError`.
+All errors inherit from `studio_minus_sdk.APIError`.
 
 ```python
-import studio_minus_sdk_minus_try_minus_to_minus_fix
-from studio_minus_sdk_minus_try_minus_to_minus_fix import StudioSDK
+import studio_minus_sdk
+from studio_minus_sdk import StudioSDK
 
 client = StudioSDK()
 
@@ -90,12 +90,12 @@ try:
     client.entities.retrieve(
         "REPLACE_ME",
     )
-except studio_minus_sdk_minus_try_minus_to_minus_fix.APIConnectionError as e:
+except studio_minus_sdk.APIConnectionError as e:
     print("The server could not be reached")
     print(e.__cause__)  # an underlying Exception, likely raised within httpx.
-except studio_minus_sdk_minus_try_minus_to_minus_fix.RateLimitError as e:
+except studio_minus_sdk.RateLimitError as e:
     print("A 429 status code was received; we should back off a bit.")
-except studio_minus_sdk_minus_try_minus_to_minus_fix.APIStatusError as e:
+except studio_minus_sdk.APIStatusError as e:
     print("Another non-200-range status code was received")
     print(e.status_code)
     print(e.response)
@@ -123,7 +123,7 @@ Connection errors (for example, due to a network connectivity problem), 408 Requ
 You can use the `max_retries` option to configure or disable retry settings:
 
 ```python
-from studio_minus_sdk_minus_try_minus_to_minus_fix import StudioSDK
+from studio_minus_sdk import StudioSDK
 
 # Configure the default for all requests:
 client = StudioSDK(
@@ -143,7 +143,7 @@ By default requests time out after 1 minute. You can configure this with a `time
 which accepts a float or an [`httpx.Timeout`](https://www.python-httpx.org/advanced/#fine-tuning-the-configuration) object:
 
 ```python
-from studio_minus_sdk_minus_try_minus_to_minus_fix import StudioSDK
+from studio_minus_sdk import StudioSDK
 
 # Configure the default for all requests:
 client = StudioSDK(
@@ -195,7 +195,7 @@ if response.my_field is None:
 The "raw" Response object can be accessed by prefixing `.with_raw_response.` to any HTTP method call, e.g.,
 
 ```py
-from studio_minus_sdk_minus_try_minus_to_minus_fix import StudioSDK
+from studio_minus_sdk import StudioSDK
 
 client = StudioSDK()
 response = client.entities.with_raw_response.retrieve(
@@ -207,9 +207,9 @@ entity = response.parse()  # get the object that `entities.retrieve()` would hav
 print(entity.entity_id)
 ```
 
-These methods return an [`APIResponse`](https://github.com/clear-street/studio-sdk-python/tree/main/src/studio_minus_sdk_minus_try_minus_to_minus_fix/_response.py) object.
+These methods return an [`APIResponse`](https://github.com/clear-street/studio-sdk-python/tree/main/src/studio_minus_sdk/_response.py) object.
 
-The async client returns an [`AsyncAPIResponse`](https://github.com/clear-street/studio-sdk-python/tree/main/src/studio_minus_sdk_minus_try_minus_to_minus_fix/_response.py) with the same structure, the only difference being `await`able methods for reading the response content.
+The async client returns an [`AsyncAPIResponse`](https://github.com/clear-street/studio-sdk-python/tree/main/src/studio_minus_sdk/_response.py) with the same structure, the only difference being `await`able methods for reading the response content.
 
 #### `.with_streaming_response`
 
@@ -273,7 +273,7 @@ You can directly override the [httpx client](https://www.python-httpx.org/api/#c
 - Additional [advanced](https://www.python-httpx.org/advanced/clients/) functionality
 
 ```python
-from studio_minus_sdk_minus_try_minus_to_minus_fix import StudioSDK, DefaultHttpxClient
+from studio_minus_sdk import StudioSDK, DefaultHttpxClient
 
 client = StudioSDK(
     # Or use the `STUDIO_SDK_BASE_URL` env var

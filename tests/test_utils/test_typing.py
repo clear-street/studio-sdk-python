@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Generic, TypeVar, cast
 
-from studio_minus_sdk_minus_try_minus_to_minus_fix._utils import extract_type_var_from_base
+from studio_minus_sdk._utils import extract_type_var_from_base
 
 _T = TypeVar("_T")
 _T2 = TypeVar("_T2")

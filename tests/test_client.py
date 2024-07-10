@@ -16,15 +16,11 @@ import pytest
 from respx import MockRouter
 from pydantic import ValidationError
 
-from studio_minus_sdk_minus_try_minus_to_minus_fix import StudioSDK, AsyncStudioSDK, APIResponseValidationError
-from studio_minus_sdk_minus_try_minus_to_minus_fix._models import BaseModel, FinalRequestOptions
-from studio_minus_sdk_minus_try_minus_to_minus_fix._constants import RAW_RESPONSE_HEADER
-from studio_minus_sdk_minus_try_minus_to_minus_fix._exceptions import (
-    APIStatusError,
-    APITimeoutError,
-    APIResponseValidationError,
-)
-from studio_minus_sdk_minus_try_minus_to_minus_fix._base_client import (
+from studio_minus_sdk import StudioSDK, AsyncStudioSDK, APIResponseValidationError
+from studio_minus_sdk._models import BaseModel, FinalRequestOptions
+from studio_minus_sdk._constants import RAW_RESPONSE_HEADER
+from studio_minus_sdk._exceptions import APIStatusError, APITimeoutError, APIResponseValidationError
+from studio_minus_sdk._base_client import (
     DEFAULT_TIMEOUT,
     HTTPX_DEFAULT_TIMEOUT,
     BaseClient,
@@ -231,10 +227,10 @@ class TestStudioSDK:
                         # to_raw_response_wrapper leaks through the @functools.wraps() decorator.
                         #
                         # removing the decorator fixes the leak for reasons we don't understand.
-                        "studio_minus_sdk_minus_try_minus_to_minus_fix/_legacy_response.py",
-                        "studio_minus_sdk_minus_try_minus_to_minus_fix/_response.py",
+                        "studio_minus_sdk/_legacy_response.py",
+                        "studio_minus_sdk/_response.py",
                         # pydantic.BaseModel.model_dump || pydantic.BaseModel.dict leak memory for some reason.
-                        "studio_minus_sdk_minus_try_minus_to_minus_fix/_compat.py",
+                        "studio_minus_sdk/_compat.py",
                         # Standard library leaks we don't care about.
                         "/logging/__init__.py",
                     ]
@@ -724,10 +720,7 @@ class TestStudioSDK:
         calculated = client._calculate_retry_timeout(remaining_retries, options, headers)
         assert calculated == pytest.approx(timeout, 0.5 * 0.875)  # pyright: ignore[reportUnknownMemberType]
 
-    @mock.patch(
-        "studio_minus_sdk_minus_try_minus_to_minus_fix._base_client.BaseClient._calculate_retry_timeout",
-        _low_retry_timeout,
-    )
+    @mock.patch("studio_minus_sdk._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
     def test_retrying_timeout_errors_doesnt_leak(self, respx_mock: MockRouter) -> None:
         respx_mock.get("/entities/x").mock(side_effect=httpx.TimeoutException("Test timeout error"))
@@ -737,10 +730,7 @@ class TestStudioSDK:
 
         assert _get_open_connections(self.client) == 0
 
-    @mock.patch(
-        "studio_minus_sdk_minus_try_minus_to_minus_fix._base_client.BaseClient._calculate_retry_timeout",
-        _low_retry_timeout,
-    )
+    @mock.patch("studio_minus_sdk._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
     def test_retrying_status_errors_doesnt_leak(self, respx_mock: MockRouter) -> None:
         respx_mock.get("/entities/x").mock(return_value=httpx.Response(500))
@@ -929,10 +919,10 @@ class TestAsyncStudioSDK:
                         # to_raw_response_wrapper leaks through the @functools.wraps() decorator.
                         #
                         # removing the decorator fixes the leak for reasons we don't understand.
-                        "studio_minus_sdk_minus_try_minus_to_minus_fix/_legacy_response.py",
-                        "studio_minus_sdk_minus_try_minus_to_minus_fix/_response.py",
+                        "studio_minus_sdk/_legacy_response.py",
+                        "studio_minus_sdk/_response.py",
                         # pydantic.BaseModel.model_dump || pydantic.BaseModel.dict leak memory for some reason.
-                        "studio_minus_sdk_minus_try_minus_to_minus_fix/_compat.py",
+                        "studio_minus_sdk/_compat.py",
                         # Standard library leaks we don't care about.
                         "/logging/__init__.py",
                     ]
@@ -1426,10 +1416,7 @@ class TestAsyncStudioSDK:
         calculated = client._calculate_retry_timeout(remaining_retries, options, headers)
         assert calculated == pytest.approx(timeout, 0.5 * 0.875)  # pyright: ignore[reportUnknownMemberType]
 
-    @mock.patch(
-        "studio_minus_sdk_minus_try_minus_to_minus_fix._base_client.BaseClient._calculate_retry_timeout",
-        _low_retry_timeout,
-    )
+    @mock.patch("studio_minus_sdk._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
     async def test_retrying_timeout_errors_doesnt_leak(self, respx_mock: MockRouter) -> None:
         respx_mock.get("/entities/x").mock(side_effect=httpx.TimeoutException("Test timeout error"))
@@ -1441,10 +1428,7 @@ class TestAsyncStudioSDK:
 
         assert _get_open_connections(self.client) == 0
 
-    @mock.patch(
-        "studio_minus_sdk_minus_try_minus_to_minus_fix._base_client.BaseClient._calculate_retry_timeout",
-        _low_retry_timeout,
-    )
+    @mock.patch("studio_minus_sdk._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
     async def test_retrying_status_errors_doesnt_leak(self, respx_mock: MockRouter) -> None:
         respx_mock.get("/entities/x").mock(return_value=httpx.Response(500))

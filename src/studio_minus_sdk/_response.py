@@ -204,7 +204,7 @@ class BaseAPIResponse(Generic[R]):
 
         if inspect.isclass(origin) and not issubclass(origin, BaseModel) and issubclass(origin, pydantic.BaseModel):
             raise TypeError(
-                "Pydantic models must subclass our base model type, e.g. `from studio_minus_sdk_minus_try_minus_to_minus_fix import BaseModel`"
+                "Pydantic models must subclass our base model type, e.g. `from studio_minus_sdk import BaseModel`"
             )
 
         if (
@@ -273,7 +273,7 @@ class APIResponse(BaseAPIResponse[R]):
         the `to` argument, e.g.
 
         ```py
-        from studio_minus_sdk_minus_try_minus_to_minus_fix import BaseModel
+        from studio_minus_sdk import BaseModel
 
 
         class MyModel(BaseModel):
@@ -377,7 +377,7 @@ class AsyncAPIResponse(BaseAPIResponse[R]):
         the `to` argument, e.g.
 
         ```py
-        from studio_minus_sdk_minus_try_minus_to_minus_fix import BaseModel
+        from studio_minus_sdk import BaseModel
 
 
         class MyModel(BaseModel):
@@ -548,7 +548,7 @@ class AsyncStreamedBinaryAPIResponse(AsyncAPIResponse[bytes]):
 class MissingStreamClassError(TypeError):
     def __init__(self) -> None:
         super().__init__(
-            "The `stream` argument was set to `True` but the `stream_cls` argument was not given. See `studio_minus_sdk_minus_try_minus_to_minus_fix._streaming` for reference",
+            "The `stream` argument was set to `True` but the `stream_cls` argument was not given. See `studio_minus_sdk._streaming` for reference",
         )
 
 
