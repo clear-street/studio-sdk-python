@@ -4,7 +4,7 @@ import anyio
 import pytest
 from dirty_equals import IsDict, IsList, IsBytes, IsTuple
 
-from studio_minus_sdk._files import to_httpx_files, async_to_httpx_files
+from studio_minus_sdk_minus_try_minus_to_minus_fix._files import to_httpx_files, async_to_httpx_files
 
 readme_path = Path(__file__).parent.parent.joinpath("README.md")
 

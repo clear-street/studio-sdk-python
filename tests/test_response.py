@@ -6,8 +6,8 @@ import httpx
 import pytest
 import pydantic
 
-from studio_minus_sdk import BaseModel, StudioSDK, AsyncStudioSDK
-from studio_minus_sdk._response import (
+from studio_minus_sdk_minus_try_minus_to_minus_fix import BaseModel, StudioSDK, AsyncStudioSDK
+from studio_minus_sdk_minus_try_minus_to_minus_fix._response import (
     APIResponse,
     BaseAPIResponse,
     AsyncAPIResponse,
@@ -15,8 +15,8 @@ from studio_minus_sdk._response import (
     AsyncBinaryAPIResponse,
     extract_response_type,
 )
-from studio_minus_sdk._streaming import Stream
-from studio_minus_sdk._base_client import FinalRequestOptions
+from studio_minus_sdk_minus_try_minus_to_minus_fix._streaming import Stream
+from studio_minus_sdk_minus_try_minus_to_minus_fix._base_client import FinalRequestOptions
 
 
 class ConcreteBaseAPIResponse(APIResponse[bytes]):
@@ -40,7 +40,7 @@ def test_extract_response_type_direct_classes() -> None:
 def test_extract_response_type_direct_class_missing_type_arg() -> None:
     with pytest.raises(
         RuntimeError,
-        match="Expected type <class 'studio_minus_sdk._response.AsyncAPIResponse'> to have a type argument at index 0 but it did not",
+        match="Expected type <class 'studio_minus_sdk_minus_try_minus_to_minus_fix._response.AsyncAPIResponse'> to have a type argument at index 0 but it did not",
     ):
         extract_response_type(AsyncAPIResponse)
 
@@ -72,7 +72,7 @@ def test_response_parse_mismatched_basemodel(client: StudioSDK) -> None:
 
     with pytest.raises(
         TypeError,
-        match="Pydantic models must subclass our base model type, e.g. `from studio_minus_sdk import BaseModel`",
+        match="Pydantic models must subclass our base model type, e.g. `from studio_minus_sdk_minus_try_minus_to_minus_fix import BaseModel`",
     ):
         response.parse(to=PydanticModel)
 
@@ -90,7 +90,7 @@ async def test_async_response_parse_mismatched_basemodel(async_client: AsyncStud
 
     with pytest.raises(
         TypeError,
-        match="Pydantic models must subclass our base model type, e.g. `from studio_minus_sdk import BaseModel`",
+        match="Pydantic models must subclass our base model type, e.g. `from studio_minus_sdk_minus_try_minus_to_minus_fix import BaseModel`",
     ):
         await response.parse(to=PydanticModel)
 
