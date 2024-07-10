@@ -32,7 +32,7 @@ from studio_sdk import StudioSDK
 client = StudioSDK()
 
 entity = client.entities.retrieve(
-    "REPLACE_ME",
+    "<your-entity-id>",
 )
 print(entity.entity_id)
 ```
@@ -55,7 +55,7 @@ client = AsyncStudioSDK()
 
 async def main() -> None:
     entity = await client.entities.retrieve(
-        "REPLACE_ME",
+        "<your-entity-id>",
     )
     print(entity.entity_id)
 
@@ -91,7 +91,7 @@ client = StudioSDK()
 
 try:
     client.entities.retrieve(
-        "REPLACE_ME",
+        "<your-entity-id>",
     )
 except studio_sdk.APIConnectionError as e:
     print("The server could not be reached")
@@ -136,7 +136,7 @@ client = StudioSDK(
 
 # Or, configure per-request:
 client.with_options(max_retries=5).entities.retrieve(
-    "REPLACE_ME",
+    "<your-entity-id>",
 )
 ```
 
@@ -161,7 +161,7 @@ client = StudioSDK(
 
 # Override per-request:
 client.with_options(timeout=5.0).entities.retrieve(
-    "REPLACE_ME",
+    "<your-entity-id>",
 )
 ```
 
@@ -202,7 +202,7 @@ from studio_sdk import StudioSDK
 
 client = StudioSDK()
 response = client.entities.with_raw_response.retrieve(
-    "REPLACE_ME",
+    "<your-entity-id>",
 )
 print(response.headers.get('X-My-Header'))
 
@@ -222,7 +222,7 @@ To stream the response body, use `.with_streaming_response` instead, which requi
 
 ```python
 with client.entities.with_streaming_response.retrieve(
-    "REPLACE_ME",
+    "<your-entity-id>",
 ) as response:
     print(response.headers.get("X-My-Header"))
 
