@@ -8,15 +8,15 @@ from typing_extensions import Required, Annotated, TypedDict
 
 import pytest
 
-from studio_minus_sdk._types import Base64FileInput
-from studio_minus_sdk._utils import (
+from studio_sdk._types import Base64FileInput
+from studio_sdk._utils import (
     PropertyInfo,
     transform as _transform,
     parse_datetime,
     async_transform as _async_transform,
 )
-from studio_minus_sdk._compat import PYDANTIC_V2
-from studio_minus_sdk._models import BaseModel
+from studio_sdk._compat import PYDANTIC_V2
+from studio_sdk._models import BaseModel
 
 _T = TypeVar("_T")
 

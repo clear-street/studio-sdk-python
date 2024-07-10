@@ -7,9 +7,9 @@ from typing import Any, cast
 
 import pytest
 
+from studio_sdk import StudioSDK, AsyncStudioSDK
 from tests.utils import assert_matches_type
-from studio_minus_sdk import StudioSDK, AsyncStudioSDK
-from studio_minus_sdk.types.shared import PnlSummaryForAccount
+from studio_sdk.types.shared import PnlSummaryForAccount
 
 base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 

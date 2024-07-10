@@ -8,8 +8,8 @@ from typing import Any, TypeVar, Iterator, cast
 from datetime import date, datetime
 from typing_extensions import Literal, get_args, get_origin, assert_type
 
-from studio_minus_sdk._types import NoneType
-from studio_minus_sdk._utils import (
+from studio_sdk._types import NoneType
+from studio_sdk._utils import (
     is_dict,
     is_list,
     is_list_type,
@@ -17,8 +17,8 @@ from studio_minus_sdk._utils import (
     extract_type_arg,
     is_annotated_type,
 )
-from studio_minus_sdk._compat import PYDANTIC_V2, field_outer_type, get_model_fields
-from studio_minus_sdk._models import BaseModel
+from studio_sdk._compat import PYDANTIC_V2, field_outer_type, get_model_fields
+from studio_sdk._models import BaseModel
 
 BaseModelT = TypeVar("BaseModelT", bound=BaseModel)
 
