@@ -18,17 +18,17 @@ from ..._base_client import (
 )
 from ...types.pnl_summary import PnlSummary
 
-__all__ = ["PnlSummaryResource", "AsyncPnlSummaryResource"]
+__all__ = ["PnlSummariesResource", "AsyncPnlSummariesResource"]
 
 
-class PnlSummaryResource(SyncAPIResource):
+class PnlSummariesResource(SyncAPIResource):
     @cached_property
-    def with_raw_response(self) -> PnlSummaryResourceWithRawResponse:
-        return PnlSummaryResourceWithRawResponse(self)
+    def with_raw_response(self) -> PnlSummariesResourceWithRawResponse:
+        return PnlSummariesResourceWithRawResponse(self)
 
     @cached_property
-    def with_streaming_response(self) -> PnlSummaryResourceWithStreamingResponse:
-        return PnlSummaryResourceWithStreamingResponse(self)
+    def with_streaming_response(self) -> PnlSummariesResourceWithStreamingResponse:
+        return PnlSummariesResourceWithStreamingResponse(self)
 
     def retrieve(
         self,
@@ -66,14 +66,14 @@ class PnlSummaryResource(SyncAPIResource):
         )
 
 
-class AsyncPnlSummaryResource(AsyncAPIResource):
+class AsyncPnlSummariesResource(AsyncAPIResource):
     @cached_property
-    def with_raw_response(self) -> AsyncPnlSummaryResourceWithRawResponse:
-        return AsyncPnlSummaryResourceWithRawResponse(self)
+    def with_raw_response(self) -> AsyncPnlSummariesResourceWithRawResponse:
+        return AsyncPnlSummariesResourceWithRawResponse(self)
 
     @cached_property
-    def with_streaming_response(self) -> AsyncPnlSummaryResourceWithStreamingResponse:
-        return AsyncPnlSummaryResourceWithStreamingResponse(self)
+    def with_streaming_response(self) -> AsyncPnlSummariesResourceWithStreamingResponse:
+        return AsyncPnlSummariesResourceWithStreamingResponse(self)
 
     async def retrieve(
         self,
@@ -111,37 +111,37 @@ class AsyncPnlSummaryResource(AsyncAPIResource):
         )
 
 
-class PnlSummaryResourceWithRawResponse:
-    def __init__(self, pnl_summary: PnlSummaryResource) -> None:
-        self._pnl_summary = pnl_summary
+class PnlSummariesResourceWithRawResponse:
+    def __init__(self, pnl_summaries: PnlSummariesResource) -> None:
+        self._pnl_summaries = pnl_summaries
 
         self.retrieve = to_raw_response_wrapper(
-            pnl_summary.retrieve,
+            pnl_summaries.retrieve,
         )
 
 
-class AsyncPnlSummaryResourceWithRawResponse:
-    def __init__(self, pnl_summary: AsyncPnlSummaryResource) -> None:
-        self._pnl_summary = pnl_summary
+class AsyncPnlSummariesResourceWithRawResponse:
+    def __init__(self, pnl_summaries: AsyncPnlSummariesResource) -> None:
+        self._pnl_summaries = pnl_summaries
 
         self.retrieve = async_to_raw_response_wrapper(
-            pnl_summary.retrieve,
+            pnl_summaries.retrieve,
         )
 
 
-class PnlSummaryResourceWithStreamingResponse:
-    def __init__(self, pnl_summary: PnlSummaryResource) -> None:
-        self._pnl_summary = pnl_summary
+class PnlSummariesResourceWithStreamingResponse:
+    def __init__(self, pnl_summaries: PnlSummariesResource) -> None:
+        self._pnl_summaries = pnl_summaries
 
         self.retrieve = to_streamed_response_wrapper(
-            pnl_summary.retrieve,
+            pnl_summaries.retrieve,
         )
 
 
-class AsyncPnlSummaryResourceWithStreamingResponse:
-    def __init__(self, pnl_summary: AsyncPnlSummaryResource) -> None:
-        self._pnl_summary = pnl_summary
+class AsyncPnlSummariesResourceWithStreamingResponse:
+    def __init__(self, pnl_summaries: AsyncPnlSummariesResource) -> None:
+        self._pnl_summaries = pnl_summaries
 
         self.retrieve = async_to_streamed_response_wrapper(
-            pnl_summary.retrieve,
+            pnl_summaries.retrieve,
         )
