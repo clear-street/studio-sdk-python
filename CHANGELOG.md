@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.6 (2024-07-15)
+
+Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
+
+### Features
+
+* **api:** update via SDK Studio ([#24](https://github.com/clear-street/studio-sdk-python/issues/24)) ([8fa6704](https://github.com/clear-street/studio-sdk-python/commit/8fa670458778503f137ef47a7671f39458a1e703))
+
 ## 0.1.0-alpha.5 (2024-07-10)
 
 Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
