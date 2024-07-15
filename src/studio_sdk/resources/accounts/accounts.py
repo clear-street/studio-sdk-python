@@ -77,9 +77,7 @@ from .locate_orders import (
     LocateOrdersResourceWithStreamingResponse,
     AsyncLocateOrdersResourceWithStreamingResponse,
 )
-from ..._base_client import (
-    make_request_options,
-)
+from ..._base_client import make_request_options
 from ...types.account import Account
 from ...types.account_list_response import AccountListResponse
 

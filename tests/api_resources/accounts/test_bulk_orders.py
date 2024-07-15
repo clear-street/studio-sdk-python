@@ -20,7 +20,7 @@ class TestBulkOrders:
     @parametrize
     def test_method_create(self, client: StudioSDK) -> None:
         bulk_order = client.accounts.bulk_orders.create(
-            "x",
+            account_id="x",
             orders=[
                 {
                     "order_type": "limit",
@@ -37,7 +37,7 @@ class TestBulkOrders:
     @parametrize
     def test_raw_response_create(self, client: StudioSDK) -> None:
         response = client.accounts.bulk_orders.with_raw_response.create(
-            "x",
+            account_id="x",
             orders=[
                 {
                     "order_type": "limit",
@@ -58,7 +58,7 @@ class TestBulkOrders:
     @parametrize
     def test_streaming_response_create(self, client: StudioSDK) -> None:
         with client.accounts.bulk_orders.with_streaming_response.create(
-            "x",
+            account_id="x",
             orders=[
                 {
                     "order_type": "limit",
@@ -82,7 +82,7 @@ class TestBulkOrders:
     def test_path_params_create(self, client: StudioSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `account_id` but received ''"):
             client.accounts.bulk_orders.with_raw_response.create(
-                "",
+                account_id="",
                 orders=[
                     {
                         "order_type": "limit",
@@ -102,7 +102,7 @@ class TestAsyncBulkOrders:
     @parametrize
     async def test_method_create(self, async_client: AsyncStudioSDK) -> None:
         bulk_order = await async_client.accounts.bulk_orders.create(
-            "x",
+            account_id="x",
             orders=[
                 {
                     "order_type": "limit",
@@ -119,7 +119,7 @@ class TestAsyncBulkOrders:
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.bulk_orders.with_raw_response.create(
-            "x",
+            account_id="x",
             orders=[
                 {
                     "order_type": "limit",
@@ -140,7 +140,7 @@ class TestAsyncBulkOrders:
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.bulk_orders.with_streaming_response.create(
-            "x",
+            account_id="x",
             orders=[
                 {
                     "order_type": "limit",
@@ -164,7 +164,7 @@ class TestAsyncBulkOrders:
     async def test_path_params_create(self, async_client: AsyncStudioSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `account_id` but received ''"):
             await async_client.accounts.bulk_orders.with_raw_response.create(
-                "",
+                account_id="",
                 orders=[
                     {
                         "order_type": "limit",

@@ -29,9 +29,7 @@ from .pnl_summaries import (
     PnlSummariesResourceWithStreamingResponse,
     AsyncPnlSummariesResourceWithStreamingResponse,
 )
-from ..._base_client import (
-    make_request_options,
-)
+from ..._base_client import make_request_options
 from ...types.entity import Entity
 from .portfolio_margins import (
     PortfolioMarginsResource,

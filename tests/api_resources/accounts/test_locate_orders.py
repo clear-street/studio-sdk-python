@@ -21,7 +21,7 @@ class TestLocateOrders:
     @parametrize
     def test_method_create(self, client: StudioSDK) -> None:
         locate_order = client.accounts.locate_orders.create(
-            "x",
+            account_id="x",
             mpid="x",
             quantity="x",
             reference_id="my-order-id-123",
@@ -32,19 +32,19 @@ class TestLocateOrders:
     @parametrize
     def test_method_create_with_all_params(self, client: StudioSDK) -> None:
         locate_order = client.accounts.locate_orders.create(
-            "x",
+            account_id="x",
             mpid="x",
             quantity="x",
             reference_id="my-order-id-123",
             symbol="AAPL",
-            comments="string",
+            comments="comments",
         )
         assert_matches_type(LocateOrder, locate_order, path=["response"])
 
     @parametrize
     def test_raw_response_create(self, client: StudioSDK) -> None:
         response = client.accounts.locate_orders.with_raw_response.create(
-            "x",
+            account_id="x",
             mpid="x",
             quantity="x",
             reference_id="my-order-id-123",
@@ -59,7 +59,7 @@ class TestLocateOrders:
     @parametrize
     def test_streaming_response_create(self, client: StudioSDK) -> None:
         with client.accounts.locate_orders.with_streaming_response.create(
-            "x",
+            account_id="x",
             mpid="x",
             quantity="x",
             reference_id="my-order-id-123",
@@ -77,7 +77,7 @@ class TestLocateOrders:
     def test_path_params_create(self, client: StudioSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `account_id` but received ''"):
             client.accounts.locate_orders.with_raw_response.create(
-                "",
+                account_id="",
                 mpid="x",
                 quantity="x",
                 reference_id="my-order-id-123",
@@ -87,7 +87,7 @@ class TestLocateOrders:
     @parametrize
     def test_method_retrieve(self, client: StudioSDK) -> None:
         locate_order = client.accounts.locate_orders.retrieve(
-            "x",
+            locate_order_id="x",
             account_id="x",
         )
         assert_matches_type(LocateOrder, locate_order, path=["response"])
@@ -95,7 +95,7 @@ class TestLocateOrders:
     @parametrize
     def test_raw_response_retrieve(self, client: StudioSDK) -> None:
         response = client.accounts.locate_orders.with_raw_response.retrieve(
-            "x",
+            locate_order_id="x",
             account_id="x",
         )
 
@@ -107,7 +107,7 @@ class TestLocateOrders:
     @parametrize
     def test_streaming_response_retrieve(self, client: StudioSDK) -> None:
         with client.accounts.locate_orders.with_streaming_response.retrieve(
-            "x",
+            locate_order_id="x",
             account_id="x",
         ) as response:
             assert not response.is_closed
@@ -122,20 +122,20 @@ class TestLocateOrders:
     def test_path_params_retrieve(self, client: StudioSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `account_id` but received ''"):
             client.accounts.locate_orders.with_raw_response.retrieve(
-                "x",
+                locate_order_id="x",
                 account_id="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `locate_order_id` but received ''"):
             client.accounts.locate_orders.with_raw_response.retrieve(
-                "",
+                locate_order_id="",
                 account_id="x",
             )
 
     @parametrize
     def test_method_update(self, client: StudioSDK) -> None:
         locate_order = client.accounts.locate_orders.update(
-            "x",
+            locate_order_id="x",
             account_id="x",
             accept=True,
         )
@@ -144,7 +144,7 @@ class TestLocateOrders:
     @parametrize
     def test_raw_response_update(self, client: StudioSDK) -> None:
         response = client.accounts.locate_orders.with_raw_response.update(
-            "x",
+            locate_order_id="x",
             account_id="x",
             accept=True,
         )
@@ -157,7 +157,7 @@ class TestLocateOrders:
     @parametrize
     def test_streaming_response_update(self, client: StudioSDK) -> None:
         with client.accounts.locate_orders.with_streaming_response.update(
-            "x",
+            locate_order_id="x",
             account_id="x",
             accept=True,
         ) as response:
@@ -173,14 +173,14 @@ class TestLocateOrders:
     def test_path_params_update(self, client: StudioSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `account_id` but received ''"):
             client.accounts.locate_orders.with_raw_response.update(
-                "x",
+                locate_order_id="x",
                 account_id="",
                 accept=True,
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `locate_order_id` but received ''"):
             client.accounts.locate_orders.with_raw_response.update(
-                "",
+                locate_order_id="",
                 account_id="x",
                 accept=True,
             )
@@ -230,7 +230,7 @@ class TestAsyncLocateOrders:
     @parametrize
     async def test_method_create(self, async_client: AsyncStudioSDK) -> None:
         locate_order = await async_client.accounts.locate_orders.create(
-            "x",
+            account_id="x",
             mpid="x",
             quantity="x",
             reference_id="my-order-id-123",
@@ -241,19 +241,19 @@ class TestAsyncLocateOrders:
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncStudioSDK) -> None:
         locate_order = await async_client.accounts.locate_orders.create(
-            "x",
+            account_id="x",
             mpid="x",
             quantity="x",
             reference_id="my-order-id-123",
             symbol="AAPL",
-            comments="string",
+            comments="comments",
         )
         assert_matches_type(LocateOrder, locate_order, path=["response"])
 
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.locate_orders.with_raw_response.create(
-            "x",
+            account_id="x",
             mpid="x",
             quantity="x",
             reference_id="my-order-id-123",
@@ -268,7 +268,7 @@ class TestAsyncLocateOrders:
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.locate_orders.with_streaming_response.create(
-            "x",
+            account_id="x",
             mpid="x",
             quantity="x",
             reference_id="my-order-id-123",
@@ -286,7 +286,7 @@ class TestAsyncLocateOrders:
     async def test_path_params_create(self, async_client: AsyncStudioSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `account_id` but received ''"):
             await async_client.accounts.locate_orders.with_raw_response.create(
-                "",
+                account_id="",
                 mpid="x",
                 quantity="x",
                 reference_id="my-order-id-123",
@@ -296,7 +296,7 @@ class TestAsyncLocateOrders:
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncStudioSDK) -> None:
         locate_order = await async_client.accounts.locate_orders.retrieve(
-            "x",
+            locate_order_id="x",
             account_id="x",
         )
         assert_matches_type(LocateOrder, locate_order, path=["response"])
@@ -304,7 +304,7 @@ class TestAsyncLocateOrders:
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.locate_orders.with_raw_response.retrieve(
-            "x",
+            locate_order_id="x",
             account_id="x",
         )
 
@@ -316,7 +316,7 @@ class TestAsyncLocateOrders:
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.locate_orders.with_streaming_response.retrieve(
-            "x",
+            locate_order_id="x",
             account_id="x",
         ) as response:
             assert not response.is_closed
@@ -331,20 +331,20 @@ class TestAsyncLocateOrders:
     async def test_path_params_retrieve(self, async_client: AsyncStudioSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `account_id` but received ''"):
             await async_client.accounts.locate_orders.with_raw_response.retrieve(
-                "x",
+                locate_order_id="x",
                 account_id="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `locate_order_id` but received ''"):
             await async_client.accounts.locate_orders.with_raw_response.retrieve(
-                "",
+                locate_order_id="",
                 account_id="x",
             )
 
     @parametrize
     async def test_method_update(self, async_client: AsyncStudioSDK) -> None:
         locate_order = await async_client.accounts.locate_orders.update(
-            "x",
+            locate_order_id="x",
             account_id="x",
             accept=True,
         )
@@ -353,7 +353,7 @@ class TestAsyncLocateOrders:
     @parametrize
     async def test_raw_response_update(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.locate_orders.with_raw_response.update(
-            "x",
+            locate_order_id="x",
             account_id="x",
             accept=True,
         )
@@ -366,7 +366,7 @@ class TestAsyncLocateOrders:
     @parametrize
     async def test_streaming_response_update(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.locate_orders.with_streaming_response.update(
-            "x",
+            locate_order_id="x",
             account_id="x",
             accept=True,
         ) as response:
@@ -382,14 +382,14 @@ class TestAsyncLocateOrders:
     async def test_path_params_update(self, async_client: AsyncStudioSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `account_id` but received ''"):
             await async_client.accounts.locate_orders.with_raw_response.update(
-                "x",
+                locate_order_id="x",
                 account_id="",
                 accept=True,
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `locate_order_id` but received ''"):
             await async_client.accounts.locate_orders.with_raw_response.update(
-                "",
+                locate_order_id="",
                 account_id="x",
                 accept=True,
             )
