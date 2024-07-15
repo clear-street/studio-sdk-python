@@ -19,9 +19,7 @@ from ..._response import (
     async_to_raw_response_wrapper,
     async_to_streamed_response_wrapper,
 )
-from ..._base_client import (
-    make_request_options,
-)
+from ..._base_client import make_request_options
 from ...types.entities import SimulationID, regt_margin_simulation_create_params
 from ...types.entities.simulation_id import SimulationID
 from ...types.shared.regt_margin_simulation import RegtMarginSimulation
