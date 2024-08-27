@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from typing import Union, Iterable
-from typing_extensions import Literal, Required, TypedDict
+from typing_extensions import Literal, Required, TypeAlias, TypedDict
 
 __all__ = ["BulkOrderCreateParams", "Order", "OrderStrategy", "OrderStrategyBaseStrategy"]
 
@@ -97,7 +97,7 @@ class OrderStrategyBaseStrategy(TypedDict, total=False):
     """The urgency associated with the execution strategy."""
 
 
-OrderStrategy = Union[
+OrderStrategy: TypeAlias = Union[
     OrderStrategyBaseStrategy,
     OrderStrategyBaseStrategy,
     OrderStrategyBaseStrategy,
