@@ -42,15 +42,16 @@ class OrdersResource(SyncAPIResource):
         self,
         account_id: str,
         *,
-        order_type: Literal["limit", "market"],
+        order_type: Literal["limit", "market", "stop"],
         quantity: str,
         side: Literal["buy", "sell", "sell-short"],
-        strategy_type: Literal["sor", "dark", "ap", "pov", "twap", "vwap"],
         symbol: str,
         time_in_force: Literal["day", "ioc", "day-plus", "at-open", "at-close"],
         locate_broker: str | NotGiven = NOT_GIVEN,
         price: str | NotGiven = NOT_GIVEN,
         reference_id: str | NotGiven = NOT_GIVEN,
+        stop_price: str | NotGiven = NOT_GIVEN,
+        strategy: order_create_params.Strategy | NotGiven = NOT_GIVEN,
         symbol_format: Literal["cms", "osi"] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -75,24 +76,12 @@ class OrdersResource(SyncAPIResource):
               - `limit`: A limit order will execute at-or-better than the limit price you
                 specify
               - `market`: An order that will execute at the prevailing market prices
+              - `stop`: A stop order will result in a market order when the market price
+                reaches the specified stop price
 
           quantity: The maximum quantity to be executed.
 
           side: Buy, sell, sell-short indicator.
-
-          strategy_type: Strategy type used for execution, can be one of below. Note, we use sensible
-              defaults for strategy parameters at the moment. In future, we will provide a way
-              to provide specify these parameters.
-
-              - `sor`: Smart order router
-              - `dark`: Dark pool
-              - `ap`: Arrival price
-              - `pov`: Percentage of volume
-              - `twap`: Time weighted average price
-              - `vwap`: Volume weighted average price
-
-              For more information on these strategies, please refer to our
-              [documentation](https://docs.clearstreet.io/studio/docs/execution-strategies).
 
           symbol: The symbol this order is for. See `symbol_format` for supported symbol formats.
 
@@ -107,13 +96,17 @@ class OrdersResource(SyncAPIResource):
               - `at-close`: The order will exist only for the closing auction of the current
                 session
 
-          locate_broker: Name of the broker that provided you inventory for a short-sale. Required if
-              `side` is `sell-short`. If you procured inventory through us, you can use
-              `CLST`.
+          locate_broker: If you're short-selling and using an away broker for a locate, provide the
+              broker name here.
 
-          price: The price to execute at-or-better.
+          price: The price to execute at-or-better for limit orders.
 
           reference_id: An ID that you provide.
+
+          stop_price: The price at which stop orders become marketable.
+
+          strategy: The execution strategy to use for this order. If not provided, our smart
+              order-router will handle execution for your order.
 
           symbol_format: Denotes the format of the provided `symbol` field.
 
@@ -134,12 +127,13 @@ class OrdersResource(SyncAPIResource):
                     "order_type": order_type,
                     "quantity": quantity,
                     "side": side,
-                    "strategy_type": strategy_type,
                     "symbol": symbol,
                     "time_in_force": time_in_force,
                     "locate_broker": locate_broker,
                     "price": price,
                     "reference_id": reference_id,
+                    "stop_price": stop_price,
+                    "strategy": strategy,
                     "symbol_format": symbol_format,
                 },
                 order_create_params.OrderCreateParams,
@@ -365,15 +359,16 @@ class AsyncOrdersResource(AsyncAPIResource):
         self,
         account_id: str,
         *,
-        order_type: Literal["limit", "market"],
+        order_type: Literal["limit", "market", "stop"],
         quantity: str,
         side: Literal["buy", "sell", "sell-short"],
-        strategy_type: Literal["sor", "dark", "ap", "pov", "twap", "vwap"],
         symbol: str,
         time_in_force: Literal["day", "ioc", "day-plus", "at-open", "at-close"],
         locate_broker: str | NotGiven = NOT_GIVEN,
         price: str | NotGiven = NOT_GIVEN,
         reference_id: str | NotGiven = NOT_GIVEN,
+        stop_price: str | NotGiven = NOT_GIVEN,
+        strategy: order_create_params.Strategy | NotGiven = NOT_GIVEN,
         symbol_format: Literal["cms", "osi"] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -398,24 +393,12 @@ class AsyncOrdersResource(AsyncAPIResource):
               - `limit`: A limit order will execute at-or-better than the limit price you
                 specify
               - `market`: An order that will execute at the prevailing market prices
+              - `stop`: A stop order will result in a market order when the market price
+                reaches the specified stop price
 
           quantity: The maximum quantity to be executed.
 
           side: Buy, sell, sell-short indicator.
-
-          strategy_type: Strategy type used for execution, can be one of below. Note, we use sensible
-              defaults for strategy parameters at the moment. In future, we will provide a way
-              to provide specify these parameters.
-
-              - `sor`: Smart order router
-              - `dark`: Dark pool
-              - `ap`: Arrival price
-              - `pov`: Percentage of volume
-              - `twap`: Time weighted average price
-              - `vwap`: Volume weighted average price
-
-              For more information on these strategies, please refer to our
-              [documentation](https://docs.clearstreet.io/studio/docs/execution-strategies).
 
           symbol: The symbol this order is for. See `symbol_format` for supported symbol formats.
 
@@ -430,13 +413,17 @@ class AsyncOrdersResource(AsyncAPIResource):
               - `at-close`: The order will exist only for the closing auction of the current
                 session
 
-          locate_broker: Name of the broker that provided you inventory for a short-sale. Required if
-              `side` is `sell-short`. If you procured inventory through us, you can use
-              `CLST`.
+          locate_broker: If you're short-selling and using an away broker for a locate, provide the
+              broker name here.
 
-          price: The price to execute at-or-better.
+          price: The price to execute at-or-better for limit orders.
 
           reference_id: An ID that you provide.
+
+          stop_price: The price at which stop orders become marketable.
+
+          strategy: The execution strategy to use for this order. If not provided, our smart
+              order-router will handle execution for your order.
 
           symbol_format: Denotes the format of the provided `symbol` field.
 
@@ -457,12 +444,13 @@ class AsyncOrdersResource(AsyncAPIResource):
                     "order_type": order_type,
                     "quantity": quantity,
                     "side": side,
-                    "strategy_type": strategy_type,
                     "symbol": symbol,
                     "time_in_force": time_in_force,
                     "locate_broker": locate_broker,
                     "price": price,
                     "reference_id": reference_id,
+                    "stop_price": stop_price,
+                    "strategy": strategy,
                     "symbol_format": symbol_format,
                 },
                 order_create_params.OrderCreateParams,

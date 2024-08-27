@@ -9,7 +9,7 @@ import pytest
 
 from studio_sdk import StudioSDK, AsyncStudioSDK
 from tests.utils import assert_matches_type
-from studio_sdk.types.shared import PnlSummaryForAccount
+from studio_sdk.types import PnlSummary
 
 base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 
@@ -22,7 +22,7 @@ class TestPnlSummary:
         pnl_summary = client.accounts.pnl_summary.retrieve(
             "x",
         )
-        assert_matches_type(PnlSummaryForAccount, pnl_summary, path=["response"])
+        assert_matches_type(PnlSummary, pnl_summary, path=["response"])
 
     @parametrize
     def test_raw_response_retrieve(self, client: StudioSDK) -> None:
@@ -33,7 +33,7 @@ class TestPnlSummary:
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         pnl_summary = response.parse()
-        assert_matches_type(PnlSummaryForAccount, pnl_summary, path=["response"])
+        assert_matches_type(PnlSummary, pnl_summary, path=["response"])
 
     @parametrize
     def test_streaming_response_retrieve(self, client: StudioSDK) -> None:
@@ -44,7 +44,7 @@ class TestPnlSummary:
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             pnl_summary = response.parse()
-            assert_matches_type(PnlSummaryForAccount, pnl_summary, path=["response"])
+            assert_matches_type(PnlSummary, pnl_summary, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -64,7 +64,7 @@ class TestAsyncPnlSummary:
         pnl_summary = await async_client.accounts.pnl_summary.retrieve(
             "x",
         )
-        assert_matches_type(PnlSummaryForAccount, pnl_summary, path=["response"])
+        assert_matches_type(PnlSummary, pnl_summary, path=["response"])
 
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
@@ -75,7 +75,7 @@ class TestAsyncPnlSummary:
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         pnl_summary = await response.parse()
-        assert_matches_type(PnlSummaryForAccount, pnl_summary, path=["response"])
+        assert_matches_type(PnlSummary, pnl_summary, path=["response"])
 
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
@@ -86,7 +86,7 @@ class TestAsyncPnlSummary:
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             pnl_summary = await response.parse()
-            assert_matches_type(PnlSummaryForAccount, pnl_summary, path=["response"])
+            assert_matches_type(PnlSummary, pnl_summary, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
