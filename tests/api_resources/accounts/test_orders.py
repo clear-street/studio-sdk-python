@@ -49,8 +49,8 @@ class TestOrders:
             stop_price="x",
             strategy={
                 "type": "sor",
-                "start_at": 1710613560668,
                 "end_at": 1710613560668,
+                "start_at": 1710613560668,
                 "urgency": "super-passive",
             },
             symbol_format="cms",
@@ -326,8 +326,8 @@ class TestAsyncOrders:
             stop_price="x",
             strategy={
                 "type": "sor",
-                "start_at": 1710613560668,
                 "end_at": 1710613560668,
+                "start_at": 1710613560668,
                 "urgency": "super-passive",
             },
             symbol_format="cms",

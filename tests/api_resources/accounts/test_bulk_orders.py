@@ -24,10 +24,10 @@ class TestBulkOrders:
             orders=[
                 {
                     "order_type": "limit",
-                    "side": "buy",
                     "quantity": "x",
-                    "time_in_force": "day",
+                    "side": "buy",
                     "symbol": "AAPL",
+                    "time_in_force": "day",
                 }
             ],
         )
@@ -40,10 +40,10 @@ class TestBulkOrders:
             orders=[
                 {
                     "order_type": "limit",
-                    "side": "buy",
                     "quantity": "x",
-                    "time_in_force": "day",
+                    "side": "buy",
                     "symbol": "AAPL",
+                    "time_in_force": "day",
                 }
             ],
         )
@@ -60,10 +60,10 @@ class TestBulkOrders:
             orders=[
                 {
                     "order_type": "limit",
-                    "side": "buy",
                     "quantity": "x",
-                    "time_in_force": "day",
+                    "side": "buy",
                     "symbol": "AAPL",
+                    "time_in_force": "day",
                 }
             ],
         ) as response:
@@ -83,10 +83,10 @@ class TestBulkOrders:
                 orders=[
                     {
                         "order_type": "limit",
-                        "side": "buy",
                         "quantity": "x",
-                        "time_in_force": "day",
+                        "side": "buy",
                         "symbol": "AAPL",
+                        "time_in_force": "day",
                     }
                 ],
             )
@@ -102,10 +102,10 @@ class TestAsyncBulkOrders:
             orders=[
                 {
                     "order_type": "limit",
-                    "side": "buy",
                     "quantity": "x",
-                    "time_in_force": "day",
+                    "side": "buy",
                     "symbol": "AAPL",
+                    "time_in_force": "day",
                 }
             ],
         )
@@ -118,10 +118,10 @@ class TestAsyncBulkOrders:
             orders=[
                 {
                     "order_type": "limit",
-                    "side": "buy",
                     "quantity": "x",
-                    "time_in_force": "day",
+                    "side": "buy",
                     "symbol": "AAPL",
+                    "time_in_force": "day",
                 }
             ],
         )
@@ -138,10 +138,10 @@ class TestAsyncBulkOrders:
             orders=[
                 {
                     "order_type": "limit",
-                    "side": "buy",
                     "quantity": "x",
-                    "time_in_force": "day",
+                    "side": "buy",
                     "symbol": "AAPL",
+                    "time_in_force": "day",
                 }
             ],
         ) as response:
@@ -161,10 +161,10 @@ class TestAsyncBulkOrders:
                 orders=[
                     {
                         "order_type": "limit",
-                        "side": "buy",
                         "quantity": "x",
-                        "time_in_force": "day",
+                        "side": "buy",
                         "symbol": "AAPL",
+                        "time_in_force": "day",
                     }
                 ],
             )
