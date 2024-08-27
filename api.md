@@ -158,7 +158,7 @@ Methods:
 
 Methods:
 
-- <code title="get /accounts/{account_id}/pnl-summary">client.accounts.pnl_summary.<a href="./src/studio_sdk/resources/accounts/pnl_summary.py">retrieve</a>(account_id) -> <a href="./src/studio_sdk/types/shared/pnl_summary_for_account.py">PnlSummaryForAccount</a></code>
+- <code title="get /accounts/{account_id}/pnl-summary">client.accounts.pnl_summary.<a href="./src/studio_sdk/resources/accounts/pnl_summary.py">retrieve</a>(account_id) -> <a href="./src/studio_sdk/types/pnl_summary.py">PnlSummary</a></code>
 
 ## PnlDetails
 

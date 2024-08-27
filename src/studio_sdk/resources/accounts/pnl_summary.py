@@ -14,7 +14,7 @@ from ..._response import (
     async_to_streamed_response_wrapper,
 )
 from ..._base_client import make_request_options
-from ...types.shared.pnl_summary_for_account import PnlSummaryForAccount
+from ...types.pnl_summary import PnlSummary
 
 __all__ = ["PnlSummaryResource", "AsyncPnlSummaryResource"]
 
@@ -38,7 +38,7 @@ class PnlSummaryResource(SyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> PnlSummaryForAccount:
+    ) -> PnlSummary:
         """
         Get PNL summary for a given account.
 
@@ -60,7 +60,7 @@ class PnlSummaryResource(SyncAPIResource):
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=PnlSummaryForAccount,
+            cast_to=PnlSummary,
         )
 
 
@@ -83,7 +83,7 @@ class AsyncPnlSummaryResource(AsyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> PnlSummaryForAccount:
+    ) -> PnlSummary:
         """
         Get PNL summary for a given account.
 
@@ -105,7 +105,7 @@ class AsyncPnlSummaryResource(AsyncAPIResource):
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=PnlSummaryForAccount,
+            cast_to=PnlSummary,
         )
 
 
