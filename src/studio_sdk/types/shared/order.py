@@ -1,11 +1,35 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import Optional
+from typing import Union, Optional
 from typing_extensions import Literal
 
 from ..._models import BaseModel
 
-__all__ = ["Order"]
+__all__ = ["Order", "Strategy", "StrategyBaseStrategy"]
+
+
+class StrategyBaseStrategy(BaseModel):
+    type: Literal["sor", "dark", "ap", "pov", "twap", "vwap"]
+    """The type of strategy. This must be set to the respective strategy type."""
+
+    end_at: Optional[int] = None
+    """The timestamp to stop routing, defaults to market close."""
+
+    start_at: Optional[int] = None
+    """The timestamp to start routing, defaults to now."""
+
+    urgency: Optional[Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]] = None
+    """The urgency associated with the execution strategy."""
+
+
+Strategy = Union[
+    StrategyBaseStrategy,
+    StrategyBaseStrategy,
+    StrategyBaseStrategy,
+    StrategyBaseStrategy,
+    StrategyBaseStrategy,
+    StrategyBaseStrategy,
+]
 
 
 class Order(BaseModel):
@@ -21,12 +45,14 @@ class Order(BaseModel):
     order_id: str
     """An internally generated unique ID for this order."""
 
-    order_type: Literal["limit", "market"]
+    order_type: Literal["limit", "market", "stop"]
     """The type of order, can be one of the following:
 
     - `limit`: A limit order will execute at-or-better than the limit price you
       specify
     - `market`: An order that will execute at the prevailing market prices
+    - `stop`: A stop order will result in a market order when the market price
+      reaches the specified stop price
     """
 
     quantity: str
@@ -68,23 +94,6 @@ class Order(BaseModel):
     [standard values come FIX tag 39](https://www.fixtrading.org/online-specification/order-state-changes).
     """
 
-    strategy_type: Literal["sor", "dark", "ap", "pov", "twap", "vwap"]
-    """Strategy type used for execution, can be one of below.
-
-    Note, we use sensible defaults for strategy parameters at the moment. In future,
-    we will provide a way to provide specify these parameters.
-
-    - `sor`: Smart order router
-    - `dark`: Dark pool
-    - `ap`: Arrival price
-    - `pov`: Percentage of volume
-    - `twap`: Time weighted average price
-    - `vwap`: Volume weighted average price
-
-    For more information on these strategies, please refer to our
-    [documentation](https://docs.clearstreet.io/studio/docs/execution-strategies).
-    """
-
     symbol: str
 
     time_in_force: Literal["day", "ioc", "day-plus", "at-open", "at-close"]
@@ -116,10 +125,16 @@ class Order(BaseModel):
     """The last reason why this order was updated"""
 
     price: Optional[str] = None
-    """The requsted limit price on this order."""
+    """The requested limit price on this order."""
 
     reference_id: Optional[str] = None
     """The ID you provided when creating this order."""
+
+    stop_price: Optional[str] = None
+    """The requested stop price on this order."""
+
+    strategy: Optional[Strategy] = None
+    """The execution strategy used for this order."""
 
     text: Optional[str] = None
     """Free form text typically contains reasons for a reject."""

@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from typing import Iterable
+from typing import Union, Iterable
 from typing_extensions import Literal, Required, TypedDict
 
-__all__ = ["BulkOrderCreateParams", "Order"]
+__all__ = ["BulkOrderCreateParams", "Order", "OrderStrategy", "OrderStrategyBaseStrategy"]
 
 
 class BulkOrderCreateParams(TypedDict, total=False):
@@ -13,13 +13,109 @@ class BulkOrderCreateParams(TypedDict, total=False):
     """An array of orders to create."""
 
 
+class OrderStrategyBaseStrategy(TypedDict, total=False):
+    type: Required[Literal["sor", "dark", "ap", "pov", "twap", "vwap"]]
+    """The type of strategy. This must be set to the respective strategy type."""
+
+    end_at: int
+    """The timestamp to stop routing, defaults to market close."""
+
+    start_at: int
+    """The timestamp to start routing, defaults to now."""
+
+    urgency: Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]
+    """The urgency associated with the execution strategy."""
+
+
+class OrderStrategyBaseStrategy(TypedDict, total=False):
+    type: Required[Literal["sor", "dark", "ap", "pov", "twap", "vwap"]]
+    """The type of strategy. This must be set to the respective strategy type."""
+
+    end_at: int
+    """The timestamp to stop routing, defaults to market close."""
+
+    start_at: int
+    """The timestamp to start routing, defaults to now."""
+
+    urgency: Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]
+    """The urgency associated with the execution strategy."""
+
+
+class OrderStrategyBaseStrategy(TypedDict, total=False):
+    type: Required[Literal["sor", "dark", "ap", "pov", "twap", "vwap"]]
+    """The type of strategy. This must be set to the respective strategy type."""
+
+    end_at: int
+    """The timestamp to stop routing, defaults to market close."""
+
+    start_at: int
+    """The timestamp to start routing, defaults to now."""
+
+    urgency: Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]
+    """The urgency associated with the execution strategy."""
+
+
+class OrderStrategyBaseStrategy(TypedDict, total=False):
+    type: Required[Literal["sor", "dark", "ap", "pov", "twap", "vwap"]]
+    """The type of strategy. This must be set to the respective strategy type."""
+
+    end_at: int
+    """The timestamp to stop routing, defaults to market close."""
+
+    start_at: int
+    """The timestamp to start routing, defaults to now."""
+
+    urgency: Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]
+    """The urgency associated with the execution strategy."""
+
+
+class OrderStrategyBaseStrategy(TypedDict, total=False):
+    type: Required[Literal["sor", "dark", "ap", "pov", "twap", "vwap"]]
+    """The type of strategy. This must be set to the respective strategy type."""
+
+    end_at: int
+    """The timestamp to stop routing, defaults to market close."""
+
+    start_at: int
+    """The timestamp to start routing, defaults to now."""
+
+    urgency: Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]
+    """The urgency associated with the execution strategy."""
+
+
+class OrderStrategyBaseStrategy(TypedDict, total=False):
+    type: Required[Literal["sor", "dark", "ap", "pov", "twap", "vwap"]]
+    """The type of strategy. This must be set to the respective strategy type."""
+
+    end_at: int
+    """The timestamp to stop routing, defaults to market close."""
+
+    start_at: int
+    """The timestamp to start routing, defaults to now."""
+
+    urgency: Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]
+    """The urgency associated with the execution strategy."""
+
+
+OrderStrategy = Union[
+    OrderStrategyBaseStrategy,
+    OrderStrategyBaseStrategy,
+    OrderStrategyBaseStrategy,
+    OrderStrategyBaseStrategy,
+    OrderStrategyBaseStrategy,
+    OrderStrategyBaseStrategy,
+]
+
+
 class Order(TypedDict, total=False):
-    order_type: Required[Literal["limit", "market"]]
+    order_type: Required[Literal["limit", "market", "stop"]]
     """The type of order, can be one of the following:
 
     - `limit`: A limit order will execute at-or-better than the limit price you
       specify
     - `market`: An order that will execute at the prevailing market prices
+    - `stop`: A stop order will result in a market order when the market price
+      reaches the specified stop price
     """
 
     quantity: Required[str]
@@ -27,23 +123,6 @@ class Order(TypedDict, total=False):
 
     side: Required[Literal["buy", "sell", "sell-short"]]
     """Buy, sell, sell-short indicator."""
-
-    strategy_type: Required[Literal["sor", "dark", "ap", "pov", "twap", "vwap"]]
-    """Strategy type used for execution, can be one of below.
-
-    Note, we use sensible defaults for strategy parameters at the moment. In future,
-    we will provide a way to provide specify these parameters.
-
-    - `sor`: Smart order router
-    - `dark`: Dark pool
-    - `ap`: Arrival price
-    - `pov`: Percentage of volume
-    - `twap`: Time weighted average price
-    - `vwap`: Volume weighted average price
-
-    For more information on these strategies, please refer to our
-    [documentation](https://docs.clearstreet.io/studio/docs/execution-strategies).
-    """
 
     symbol: Required[str]
     """The symbol this order is for. See `symbol_format` for supported symbol formats."""
@@ -62,17 +141,25 @@ class Order(TypedDict, total=False):
     """
 
     locate_broker: str
-    """Name of the broker that provided you inventory for a short-sale.
-
-    Required if `side` is `sell-short`. If you procured inventory through us, you
-    can use `CLST`.
+    """
+    If you're short-selling and using an away broker for a locate, provide the
+    broker name here.
     """
 
     price: str
-    """The price to execute at-or-better."""
+    """The price to execute at-or-better for limit orders."""
 
     reference_id: str
     """An ID that you provide."""
+
+    stop_price: str
+    """The price at which stop orders become marketable."""
+
+    strategy: OrderStrategy
+    """The execution strategy to use for this order.
+
+    If not provided, our smart order-router will handle execution for your order.
+    """
 
     symbol_format: Literal["cms", "osi"]
     """Denotes the format of the provided `symbol` field."""
