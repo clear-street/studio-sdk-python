@@ -29,7 +29,6 @@ class TestOrders:
             order_type="limit",
             quantity="x",
             side="buy",
-            strategy_type="sor",
             symbol="AAPL",
             time_in_force="day",
         )
@@ -42,12 +41,18 @@ class TestOrders:
             order_type="limit",
             quantity="x",
             side="buy",
-            strategy_type="sor",
             symbol="AAPL",
             time_in_force="day",
             locate_broker="x",
             price="x",
             reference_id="my-order-id-123",
+            stop_price="x",
+            strategy={
+                "type": "sor",
+                "start_at": 1710613560668,
+                "end_at": 1710613560668,
+                "urgency": "super-passive",
+            },
             symbol_format="cms",
         )
         assert_matches_type(OrderCreateResponse, order, path=["response"])
@@ -59,7 +64,6 @@ class TestOrders:
             order_type="limit",
             quantity="x",
             side="buy",
-            strategy_type="sor",
             symbol="AAPL",
             time_in_force="day",
         )
@@ -76,7 +80,6 @@ class TestOrders:
             order_type="limit",
             quantity="x",
             side="buy",
-            strategy_type="sor",
             symbol="AAPL",
             time_in_force="day",
         ) as response:
@@ -96,7 +99,6 @@ class TestOrders:
                 order_type="limit",
                 quantity="x",
                 side="buy",
-                strategy_type="sor",
                 symbol="AAPL",
                 time_in_force="day",
             )
@@ -304,7 +306,6 @@ class TestAsyncOrders:
             order_type="limit",
             quantity="x",
             side="buy",
-            strategy_type="sor",
             symbol="AAPL",
             time_in_force="day",
         )
@@ -317,12 +318,18 @@ class TestAsyncOrders:
             order_type="limit",
             quantity="x",
             side="buy",
-            strategy_type="sor",
             symbol="AAPL",
             time_in_force="day",
             locate_broker="x",
             price="x",
             reference_id="my-order-id-123",
+            stop_price="x",
+            strategy={
+                "type": "sor",
+                "start_at": 1710613560668,
+                "end_at": 1710613560668,
+                "urgency": "super-passive",
+            },
             symbol_format="cms",
         )
         assert_matches_type(OrderCreateResponse, order, path=["response"])
@@ -334,7 +341,6 @@ class TestAsyncOrders:
             order_type="limit",
             quantity="x",
             side="buy",
-            strategy_type="sor",
             symbol="AAPL",
             time_in_force="day",
         )
@@ -351,7 +357,6 @@ class TestAsyncOrders:
             order_type="limit",
             quantity="x",
             side="buy",
-            strategy_type="sor",
             symbol="AAPL",
             time_in_force="day",
         ) as response:
@@ -371,7 +376,6 @@ class TestAsyncOrders:
                 order_type="limit",
                 quantity="x",
                 side="buy",
-                strategy_type="sor",
                 symbol="AAPL",
                 time_in_force="day",
             )

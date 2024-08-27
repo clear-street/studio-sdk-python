@@ -27,7 +27,6 @@ class TestBulkOrders:
                     "side": "buy",
                     "quantity": "x",
                     "time_in_force": "day",
-                    "strategy_type": "sor",
                     "symbol": "AAPL",
                 }
             ],
@@ -44,7 +43,6 @@ class TestBulkOrders:
                     "side": "buy",
                     "quantity": "x",
                     "time_in_force": "day",
-                    "strategy_type": "sor",
                     "symbol": "AAPL",
                 }
             ],
@@ -65,7 +63,6 @@ class TestBulkOrders:
                     "side": "buy",
                     "quantity": "x",
                     "time_in_force": "day",
-                    "strategy_type": "sor",
                     "symbol": "AAPL",
                 }
             ],
@@ -89,7 +86,6 @@ class TestBulkOrders:
                         "side": "buy",
                         "quantity": "x",
                         "time_in_force": "day",
-                        "strategy_type": "sor",
                         "symbol": "AAPL",
                     }
                 ],
@@ -109,7 +105,6 @@ class TestAsyncBulkOrders:
                     "side": "buy",
                     "quantity": "x",
                     "time_in_force": "day",
-                    "strategy_type": "sor",
                     "symbol": "AAPL",
                 }
             ],
@@ -126,7 +121,6 @@ class TestAsyncBulkOrders:
                     "side": "buy",
                     "quantity": "x",
                     "time_in_force": "day",
-                    "strategy_type": "sor",
                     "symbol": "AAPL",
                 }
             ],
@@ -147,7 +141,6 @@ class TestAsyncBulkOrders:
                     "side": "buy",
                     "quantity": "x",
                     "time_in_force": "day",
-                    "strategy_type": "sor",
                     "symbol": "AAPL",
                 }
             ],
@@ -171,7 +164,6 @@ class TestAsyncBulkOrders:
                         "side": "buy",
                         "quantity": "x",
                         "time_in_force": "day",
-                        "strategy_type": "sor",
                         "symbol": "AAPL",
                     }
                 ],
