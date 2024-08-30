@@ -1,35 +1,12 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import Union, Optional
-from typing_extensions import Literal, TypeAlias
+from typing import Optional
+from typing_extensions import Literal
 
+from .strategy import Strategy
 from ..._models import BaseModel
 
-__all__ = ["Order", "Strategy", "StrategyBaseStrategy"]
-
-
-class StrategyBaseStrategy(BaseModel):
-    type: Literal["sor", "dark", "ap", "pov", "twap", "vwap"]
-    """The type of strategy. This must be set to the respective strategy type."""
-
-    end_at: Optional[int] = None
-    """The timestamp to stop routing, defaults to market close."""
-
-    start_at: Optional[int] = None
-    """The timestamp to start routing, defaults to now."""
-
-    urgency: Optional[Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]] = None
-    """The urgency associated with the execution strategy."""
-
-
-Strategy: TypeAlias = Union[
-    StrategyBaseStrategy,
-    StrategyBaseStrategy,
-    StrategyBaseStrategy,
-    StrategyBaseStrategy,
-    StrategyBaseStrategy,
-    StrategyBaseStrategy,
-]
+__all__ = ["Order"]
 
 
 class Order(BaseModel):

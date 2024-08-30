@@ -21,6 +21,7 @@ from ..._response import (
 )
 from ..._base_client import make_request_options
 from ...types.accounts import order_list_params, order_create_params, order_delete_params
+from ...types.shared_params.strategy import Strategy
 from ...types.accounts.order_list_response import OrderListResponse
 from ...types.accounts.order_create_response import OrderCreateResponse
 from ...types.accounts.order_delete_response import OrderDeleteResponse
@@ -51,7 +52,7 @@ class OrdersResource(SyncAPIResource):
         price: str | NotGiven = NOT_GIVEN,
         reference_id: str | NotGiven = NOT_GIVEN,
         stop_price: str | NotGiven = NOT_GIVEN,
-        strategy: order_create_params.Strategy | NotGiven = NOT_GIVEN,
+        strategy: Strategy | NotGiven = NOT_GIVEN,
         symbol_format: Literal["cms", "osi"] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -368,7 +369,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         price: str | NotGiven = NOT_GIVEN,
         reference_id: str | NotGiven = NOT_GIVEN,
         stop_price: str | NotGiven = NOT_GIVEN,
-        strategy: order_create_params.Strategy | NotGiven = NOT_GIVEN,
+        strategy: Strategy | NotGiven = NOT_GIVEN,
         symbol_format: Literal["cms", "osi"] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
