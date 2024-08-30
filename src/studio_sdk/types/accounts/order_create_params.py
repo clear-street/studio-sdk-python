@@ -2,10 +2,11 @@
 
 from __future__ import annotations
 
-from typing import Union
-from typing_extensions import Literal, Required, TypeAlias, TypedDict
+from typing_extensions import Literal, Required, TypedDict
 
-__all__ = ["OrderCreateParams", "Strategy", "StrategyBaseStrategy"]
+from ..shared_params.strategy import Strategy
+
+__all__ = ["OrderCreateParams"]
 
 
 class OrderCreateParams(TypedDict, total=False):
@@ -64,97 +65,3 @@ class OrderCreateParams(TypedDict, total=False):
 
     symbol_format: Literal["cms", "osi"]
     """Denotes the format of the provided `symbol` field."""
-
-
-class StrategyBaseStrategy(TypedDict, total=False):
-    type: Required[Literal["sor", "dark", "ap", "pov", "twap", "vwap"]]
-    """The type of strategy. This must be set to the respective strategy type."""
-
-    end_at: int
-    """The timestamp to stop routing, defaults to market close."""
-
-    start_at: int
-    """The timestamp to start routing, defaults to now."""
-
-    urgency: Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]
-    """The urgency associated with the execution strategy."""
-
-
-class StrategyBaseStrategy(TypedDict, total=False):
-    type: Required[Literal["sor", "dark", "ap", "pov", "twap", "vwap"]]
-    """The type of strategy. This must be set to the respective strategy type."""
-
-    end_at: int
-    """The timestamp to stop routing, defaults to market close."""
-
-    start_at: int
-    """The timestamp to start routing, defaults to now."""
-
-    urgency: Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]
-    """The urgency associated with the execution strategy."""
-
-
-class StrategyBaseStrategy(TypedDict, total=False):
-    type: Required[Literal["sor", "dark", "ap", "pov", "twap", "vwap"]]
-    """The type of strategy. This must be set to the respective strategy type."""
-
-    end_at: int
-    """The timestamp to stop routing, defaults to market close."""
-
-    start_at: int
-    """The timestamp to start routing, defaults to now."""
-
-    urgency: Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]
-    """The urgency associated with the execution strategy."""
-
-
-class StrategyBaseStrategy(TypedDict, total=False):
-    type: Required[Literal["sor", "dark", "ap", "pov", "twap", "vwap"]]
-    """The type of strategy. This must be set to the respective strategy type."""
-
-    end_at: int
-    """The timestamp to stop routing, defaults to market close."""
-
-    start_at: int
-    """The timestamp to start routing, defaults to now."""
-
-    urgency: Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]
-    """The urgency associated with the execution strategy."""
-
-
-class StrategyBaseStrategy(TypedDict, total=False):
-    type: Required[Literal["sor", "dark", "ap", "pov", "twap", "vwap"]]
-    """The type of strategy. This must be set to the respective strategy type."""
-
-    end_at: int
-    """The timestamp to stop routing, defaults to market close."""
-
-    start_at: int
-    """The timestamp to start routing, defaults to now."""
-
-    urgency: Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]
-    """The urgency associated with the execution strategy."""
-
-
-class StrategyBaseStrategy(TypedDict, total=False):
-    type: Required[Literal["sor", "dark", "ap", "pov", "twap", "vwap"]]
-    """The type of strategy. This must be set to the respective strategy type."""
-
-    end_at: int
-    """The timestamp to stop routing, defaults to market close."""
-
-    start_at: int
-    """The timestamp to start routing, defaults to now."""
-
-    urgency: Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]
-    """The urgency associated with the execution strategy."""
-
-
-Strategy: TypeAlias = Union[
-    StrategyBaseStrategy,
-    StrategyBaseStrategy,
-    StrategyBaseStrategy,
-    StrategyBaseStrategy,
-    StrategyBaseStrategy,
-    StrategyBaseStrategy,
-]

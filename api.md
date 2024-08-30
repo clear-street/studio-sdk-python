@@ -2,11 +2,12 @@
 
 ```python
 from studio_sdk.types import (
+    BaseStrategy,
     LocateOrder,
     Order,
-    PnlSummaryForAccount,
     Position,
     RegtMarginSimulation,
+    Strategy,
     Trade,
 )
 ```

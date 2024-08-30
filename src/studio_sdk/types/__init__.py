@@ -7,8 +7,9 @@ from .shared import (
     Order as Order,
     Trade as Trade,
     Position as Position,
+    Strategy as Strategy,
     LocateOrder as LocateOrder,
-    PnlSummaryForAccount as PnlSummaryForAccount,
+    BaseStrategy as BaseStrategy,
     RegtMarginSimulation as RegtMarginSimulation,
 )
 from .account import Account as Account
