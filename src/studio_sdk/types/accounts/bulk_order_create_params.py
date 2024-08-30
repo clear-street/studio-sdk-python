@@ -2,109 +2,17 @@
 
 from __future__ import annotations
 
-from typing import Union, Iterable
-from typing_extensions import Literal, Required, TypeAlias, TypedDict
+from typing import Iterable
+from typing_extensions import Literal, Required, TypedDict
 
-__all__ = ["BulkOrderCreateParams", "Order", "OrderStrategy", "OrderStrategyBaseStrategy"]
+from ..shared_params.strategy import Strategy
+
+__all__ = ["BulkOrderCreateParams", "Order"]
 
 
 class BulkOrderCreateParams(TypedDict, total=False):
     orders: Required[Iterable[Order]]
     """An array of orders to create."""
-
-
-class OrderStrategyBaseStrategy(TypedDict, total=False):
-    type: Required[Literal["sor", "dark", "ap", "pov", "twap", "vwap"]]
-    """The type of strategy. This must be set to the respective strategy type."""
-
-    end_at: int
-    """The timestamp to stop routing, defaults to market close."""
-
-    start_at: int
-    """The timestamp to start routing, defaults to now."""
-
-    urgency: Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]
-    """The urgency associated with the execution strategy."""
-
-
-class OrderStrategyBaseStrategy(TypedDict, total=False):
-    type: Required[Literal["sor", "dark", "ap", "pov", "twap", "vwap"]]
-    """The type of strategy. This must be set to the respective strategy type."""
-
-    end_at: int
-    """The timestamp to stop routing, defaults to market close."""
-
-    start_at: int
-    """The timestamp to start routing, defaults to now."""
-
-    urgency: Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]
-    """The urgency associated with the execution strategy."""
-
-
-class OrderStrategyBaseStrategy(TypedDict, total=False):
-    type: Required[Literal["sor", "dark", "ap", "pov", "twap", "vwap"]]
-    """The type of strategy. This must be set to the respective strategy type."""
-
-    end_at: int
-    """The timestamp to stop routing, defaults to market close."""
-
-    start_at: int
-    """The timestamp to start routing, defaults to now."""
-
-    urgency: Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]
-    """The urgency associated with the execution strategy."""
-
-
-class OrderStrategyBaseStrategy(TypedDict, total=False):
-    type: Required[Literal["sor", "dark", "ap", "pov", "twap", "vwap"]]
-    """The type of strategy. This must be set to the respective strategy type."""
-
-    end_at: int
-    """The timestamp to stop routing, defaults to market close."""
-
-    start_at: int
-    """The timestamp to start routing, defaults to now."""
-
-    urgency: Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]
-    """The urgency associated with the execution strategy."""
-
-
-class OrderStrategyBaseStrategy(TypedDict, total=False):
-    type: Required[Literal["sor", "dark", "ap", "pov", "twap", "vwap"]]
-    """The type of strategy. This must be set to the respective strategy type."""
-
-    end_at: int
-    """The timestamp to stop routing, defaults to market close."""
-
-    start_at: int
-    """The timestamp to start routing, defaults to now."""
-
-    urgency: Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]
-    """The urgency associated with the execution strategy."""
-
-
-class OrderStrategyBaseStrategy(TypedDict, total=False):
-    type: Required[Literal["sor", "dark", "ap", "pov", "twap", "vwap"]]
-    """The type of strategy. This must be set to the respective strategy type."""
-
-    end_at: int
-    """The timestamp to stop routing, defaults to market close."""
-
-    start_at: int
-    """The timestamp to start routing, defaults to now."""
-
-    urgency: Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]
-    """The urgency associated with the execution strategy."""
-
-
-OrderStrategy: TypeAlias = Union[
-    OrderStrategyBaseStrategy,
-    OrderStrategyBaseStrategy,
-    OrderStrategyBaseStrategy,
-    OrderStrategyBaseStrategy,
-    OrderStrategyBaseStrategy,
-    OrderStrategyBaseStrategy,
-]
 
 
 class Order(TypedDict, total=False):
@@ -155,7 +63,7 @@ class Order(TypedDict, total=False):
     stop_price: str
     """The price at which stop orders become marketable."""
 
-    strategy: OrderStrategy
+    strategy: Strategy
     """The execution strategy to use for this order.
 
     If not provided, our smart order-router will handle execution for your order.
