@@ -24,9 +24,13 @@ pip install --pre clear-street-studio-sdk
 The full API of this library can be found in [api.md](api.md).
 
 ```python
+import os
 from studio_sdk import StudioSDK
 
-client = StudioSDK()
+client = StudioSDK(
+    # This is the default and can be omitted
+    bearer_token=os.environ.get("STUDIO_SDK_BEARER_TOKEN"),
+)
 
 entity = client.entities.retrieve(
     "<your_entity_id>",
@@ -44,10 +48,14 @@ so that your Bearer Token is not stored in source control.
 Simply import `AsyncStudioSDK` instead of `StudioSDK` and use `await` with each API call:
 
 ```python
+import os
 import asyncio
 from studio_sdk import AsyncStudioSDK
 
-client = AsyncStudioSDK()
+client = AsyncStudioSDK(
+    # This is the default and can be omitted
+    bearer_token=os.environ.get("STUDIO_SDK_BEARER_TOKEN"),
+)
 
 
 async def main() -> None:
