@@ -30,6 +30,8 @@ from studio_sdk import StudioSDK
 client = StudioSDK(
     # This is the default and can be omitted
     bearer_token=os.environ.get("STUDIO_SDK_BEARER_TOKEN"),
+    # defaults to "production".
+    environment="sandbox",
 )
 
 entity = client.entities.retrieve(
@@ -55,6 +57,8 @@ from studio_sdk import AsyncStudioSDK
 client = AsyncStudioSDK(
     # This is the default and can be omitted
     bearer_token=os.environ.get("STUDIO_SDK_BEARER_TOKEN"),
+    # defaults to "production".
+    environment="sandbox",
 )
 
 
