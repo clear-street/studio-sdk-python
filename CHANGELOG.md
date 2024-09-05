@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.9 (2024-09-05)
+
+Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
+
+### Features
+
+* **api:** add sandbox url ([#36](https://github.com/clear-street/studio-sdk-python/issues/36)) ([8a98682](https://github.com/clear-street/studio-sdk-python/commit/8a98682938297f756a7560f3fa76daf083b4cbe8))
+
+
+### Chores
+
+* pyproject.toml formatting changes ([#37](https://github.com/clear-street/studio-sdk-python/issues/37)) ([927355c](https://github.com/clear-street/studio-sdk-python/commit/927355cf8e5dc6f62a515e1a91b1cf5604d17002))
+
 ## 0.1.0-alpha.8 (2024-08-30)
 
 Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)
