@@ -22,10 +22,21 @@ __all__ = ["PnlDetailsResource", "AsyncPnlDetailsResource"]
 class PnlDetailsResource(SyncAPIResource):
     @cached_property
     def with_raw_response(self) -> PnlDetailsResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#accessing-raw-response-data-eg-headers
+        """
         return PnlDetailsResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> PnlDetailsResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#with_streaming_response
+        """
         return PnlDetailsResourceWithStreamingResponse(self)
 
     def list(
@@ -67,10 +78,21 @@ class PnlDetailsResource(SyncAPIResource):
 class AsyncPnlDetailsResource(AsyncAPIResource):
     @cached_property
     def with_raw_response(self) -> AsyncPnlDetailsResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#accessing-raw-response-data-eg-headers
+        """
         return AsyncPnlDetailsResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> AsyncPnlDetailsResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#with_streaming_response
+        """
         return AsyncPnlDetailsResourceWithStreamingResponse(self)
 
     async def list(

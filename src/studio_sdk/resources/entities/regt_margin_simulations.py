@@ -31,10 +31,21 @@ __all__ = ["RegtMarginSimulationsResource", "AsyncRegtMarginSimulationsResource"
 class RegtMarginSimulationsResource(SyncAPIResource):
     @cached_property
     def with_raw_response(self) -> RegtMarginSimulationsResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#accessing-raw-response-data-eg-headers
+        """
         return RegtMarginSimulationsResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> RegtMarginSimulationsResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#with_streaming_response
+        """
         return RegtMarginSimulationsResourceWithStreamingResponse(self)
 
     def create(
@@ -149,10 +160,21 @@ class RegtMarginSimulationsResource(SyncAPIResource):
 class AsyncRegtMarginSimulationsResource(AsyncAPIResource):
     @cached_property
     def with_raw_response(self) -> AsyncRegtMarginSimulationsResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#accessing-raw-response-data-eg-headers
+        """
         return AsyncRegtMarginSimulationsResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> AsyncRegtMarginSimulationsResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#with_streaming_response
+        """
         return AsyncRegtMarginSimulationsResourceWithStreamingResponse(self)
 
     async def create(
