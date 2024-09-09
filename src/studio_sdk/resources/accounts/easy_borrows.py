@@ -22,10 +22,21 @@ __all__ = ["EasyBorrowsResource", "AsyncEasyBorrowsResource"]
 class EasyBorrowsResource(SyncAPIResource):
     @cached_property
     def with_raw_response(self) -> EasyBorrowsResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#accessing-raw-response-data-eg-headers
+        """
         return EasyBorrowsResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> EasyBorrowsResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#with_streaming_response
+        """
         return EasyBorrowsResourceWithStreamingResponse(self)
 
     def list(
@@ -69,10 +80,21 @@ class EasyBorrowsResource(SyncAPIResource):
 class AsyncEasyBorrowsResource(AsyncAPIResource):
     @cached_property
     def with_raw_response(self) -> AsyncEasyBorrowsResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#accessing-raw-response-data-eg-headers
+        """
         return AsyncEasyBorrowsResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> AsyncEasyBorrowsResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#with_streaming_response
+        """
         return AsyncEasyBorrowsResourceWithStreamingResponse(self)
 
     async def list(

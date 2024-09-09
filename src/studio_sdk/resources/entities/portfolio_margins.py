@@ -22,10 +22,21 @@ __all__ = ["PortfolioMarginsResource", "AsyncPortfolioMarginsResource"]
 class PortfolioMarginsResource(SyncAPIResource):
     @cached_property
     def with_raw_response(self) -> PortfolioMarginsResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#accessing-raw-response-data-eg-headers
+        """
         return PortfolioMarginsResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> PortfolioMarginsResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#with_streaming_response
+        """
         return PortfolioMarginsResourceWithStreamingResponse(self)
 
     def retrieve(
@@ -67,10 +78,21 @@ class PortfolioMarginsResource(SyncAPIResource):
 class AsyncPortfolioMarginsResource(AsyncAPIResource):
     @cached_property
     def with_raw_response(self) -> AsyncPortfolioMarginsResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#accessing-raw-response-data-eg-headers
+        """
         return AsyncPortfolioMarginsResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> AsyncPortfolioMarginsResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#with_streaming_response
+        """
         return AsyncPortfolioMarginsResourceWithStreamingResponse(self)
 
     async def retrieve(
