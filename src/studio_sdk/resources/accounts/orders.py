@@ -33,10 +33,21 @@ __all__ = ["OrdersResource", "AsyncOrdersResource"]
 class OrdersResource(SyncAPIResource):
     @cached_property
     def with_raw_response(self) -> OrdersResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#accessing-raw-response-data-eg-headers
+        """
         return OrdersResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> OrdersResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#with_streaming_response
+        """
         return OrdersResourceWithStreamingResponse(self)
 
     def create(
@@ -350,10 +361,21 @@ class OrdersResource(SyncAPIResource):
 class AsyncOrdersResource(AsyncAPIResource):
     @cached_property
     def with_raw_response(self) -> AsyncOrdersResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#accessing-raw-response-data-eg-headers
+        """
         return AsyncOrdersResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> AsyncOrdersResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#with_streaming_response
+        """
         return AsyncOrdersResourceWithStreamingResponse(self)
 
     async def create(

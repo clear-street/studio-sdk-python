@@ -28,10 +28,21 @@ __all__ = ["TradesResource", "AsyncTradesResource"]
 class TradesResource(SyncAPIResource):
     @cached_property
     def with_raw_response(self) -> TradesResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#accessing-raw-response-data-eg-headers
+        """
         return TradesResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> TradesResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#with_streaming_response
+        """
         return TradesResourceWithStreamingResponse(self)
 
     def retrieve(
@@ -129,10 +140,21 @@ class TradesResource(SyncAPIResource):
 class AsyncTradesResource(AsyncAPIResource):
     @cached_property
     def with_raw_response(self) -> AsyncTradesResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#accessing-raw-response-data-eg-headers
+        """
         return AsyncTradesResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> AsyncTradesResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#with_streaming_response
+        """
         return AsyncTradesResourceWithStreamingResponse(self)
 
     async def retrieve(
