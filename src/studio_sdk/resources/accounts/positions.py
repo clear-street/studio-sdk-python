@@ -28,10 +28,21 @@ __all__ = ["PositionsResource", "AsyncPositionsResource"]
 class PositionsResource(SyncAPIResource):
     @cached_property
     def with_raw_response(self) -> PositionsResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#accessing-raw-response-data-eg-headers
+        """
         return PositionsResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> PositionsResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#with_streaming_response
+        """
         return PositionsResourceWithStreamingResponse(self)
 
     def retrieve(
@@ -129,10 +140,21 @@ class PositionsResource(SyncAPIResource):
 class AsyncPositionsResource(AsyncAPIResource):
     @cached_property
     def with_raw_response(self) -> AsyncPositionsResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#accessing-raw-response-data-eg-headers
+        """
         return AsyncPositionsResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> AsyncPositionsResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#with_streaming_response
+        """
         return AsyncPositionsResourceWithStreamingResponse(self)
 
     async def retrieve(

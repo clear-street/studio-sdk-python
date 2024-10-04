@@ -22,10 +22,21 @@ __all__ = ["RegtMarginsResource", "AsyncRegtMarginsResource"]
 class RegtMarginsResource(SyncAPIResource):
     @cached_property
     def with_raw_response(self) -> RegtMarginsResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#accessing-raw-response-data-eg-headers
+        """
         return RegtMarginsResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> RegtMarginsResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#with_streaming_response
+        """
         return RegtMarginsResourceWithStreamingResponse(self)
 
     def retrieve(
@@ -67,10 +78,21 @@ class RegtMarginsResource(SyncAPIResource):
 class AsyncRegtMarginsResource(AsyncAPIResource):
     @cached_property
     def with_raw_response(self) -> AsyncRegtMarginsResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#accessing-raw-response-data-eg-headers
+        """
         return AsyncRegtMarginsResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> AsyncRegtMarginsResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#with_streaming_response
+        """
         return AsyncRegtMarginsResourceWithStreamingResponse(self)
 
     async def retrieve(

@@ -33,17 +33,28 @@ __all__ = ["OrdersResource", "AsyncOrdersResource"]
 class OrdersResource(SyncAPIResource):
     @cached_property
     def with_raw_response(self) -> OrdersResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#accessing-raw-response-data-eg-headers
+        """
         return OrdersResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> OrdersResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#with_streaming_response
+        """
         return OrdersResourceWithStreamingResponse(self)
 
     def create(
         self,
         account_id: str,
         *,
-        order_type: Literal["limit", "market", "stop"],
+        order_type: Literal["limit", "market", "stop", "stop-limit"],
         quantity: str,
         side: Literal["buy", "sell", "sell-short"],
         symbol: str,
@@ -79,6 +90,8 @@ class OrdersResource(SyncAPIResource):
               - `market`: An order that will execute at the prevailing market prices
               - `stop`: A stop order will result in a market order when the market price
                 reaches the specified stop price
+              - `stop-limit`: A stop limit order will result in a limit order when the market
+                price reaches the specified stop price
 
           quantity: The maximum quantity to be executed.
 
@@ -350,17 +363,28 @@ class OrdersResource(SyncAPIResource):
 class AsyncOrdersResource(AsyncAPIResource):
     @cached_property
     def with_raw_response(self) -> AsyncOrdersResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#accessing-raw-response-data-eg-headers
+        """
         return AsyncOrdersResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> AsyncOrdersResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/clear-street/studio-sdk-python#with_streaming_response
+        """
         return AsyncOrdersResourceWithStreamingResponse(self)
 
     async def create(
         self,
         account_id: str,
         *,
-        order_type: Literal["limit", "market", "stop"],
+        order_type: Literal["limit", "market", "stop", "stop-limit"],
         quantity: str,
         side: Literal["buy", "sell", "sell-short"],
         symbol: str,
@@ -396,6 +420,8 @@ class AsyncOrdersResource(AsyncAPIResource):
               - `market`: An order that will execute at the prevailing market prices
               - `stop`: A stop order will result in a market order when the market price
                 reaches the specified stop price
+              - `stop-limit`: A stop limit order will result in a limit order when the market
+                price reaches the specified stop price
 
           quantity: The maximum quantity to be executed.
 
