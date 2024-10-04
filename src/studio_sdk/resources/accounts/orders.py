@@ -54,7 +54,7 @@ class OrdersResource(SyncAPIResource):
         self,
         account_id: str,
         *,
-        order_type: Literal["limit", "market", "stop"],
+        order_type: Literal["limit", "market", "stop", "stop-limit"],
         quantity: str,
         side: Literal["buy", "sell", "sell-short"],
         symbol: str,
@@ -90,6 +90,8 @@ class OrdersResource(SyncAPIResource):
               - `market`: An order that will execute at the prevailing market prices
               - `stop`: A stop order will result in a market order when the market price
                 reaches the specified stop price
+              - `stop-limit`: A stop limit order will result in a limit order when the market
+                price reaches the specified stop price
 
           quantity: The maximum quantity to be executed.
 
@@ -382,7 +384,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         self,
         account_id: str,
         *,
-        order_type: Literal["limit", "market", "stop"],
+        order_type: Literal["limit", "market", "stop", "stop-limit"],
         quantity: str,
         side: Literal["buy", "sell", "sell-short"],
         symbol: str,
@@ -418,6 +420,8 @@ class AsyncOrdersResource(AsyncAPIResource):
               - `market`: An order that will execute at the prevailing market prices
               - `stop`: A stop order will result in a market order when the market price
                 reaches the specified stop price
+              - `stop-limit`: A stop limit order will result in a limit order when the market
+                price reaches the specified stop price
 
           quantity: The maximum quantity to be executed.
 

@@ -16,7 +16,7 @@ class BulkOrderCreateParams(TypedDict, total=False):
 
 
 class Order(TypedDict, total=False):
-    order_type: Required[Literal["limit", "market", "stop"]]
+    order_type: Required[Literal["limit", "market", "stop", "stop-limit"]]
     """The type of order, can be one of the following:
 
     - `limit`: A limit order will execute at-or-better than the limit price you
@@ -24,6 +24,8 @@ class Order(TypedDict, total=False):
     - `market`: An order that will execute at the prevailing market prices
     - `stop`: A stop order will result in a market order when the market price
       reaches the specified stop price
+    - `stop-limit`: A stop limit order will result in a limit order when the market
+      price reaches the specified stop price
     """
 
     quantity: Required[str]

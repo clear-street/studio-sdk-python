@@ -9,7 +9,7 @@ __all__ = ["BaseStrategy"]
 
 
 class BaseStrategy(BaseModel):
-    type: Literal["sor", "dark", "ap", "pov", "twap", "vwap"]
+    type: Literal["sor", "dark", "ap", "pov", "twap", "vwap", "dma"]
     """The type of strategy. This must be set to the respective strategy type."""
 
     end_at: Optional[int] = None
