@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.1.0-alpha.10 (2024-10-04)
+
+Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)
+
+### Features
+
+* **api:** Add DMA and Stop Limit order support ([#45](https://github.com/clear-street/studio-sdk-python/issues/45)) ([1d8b0f5](https://github.com/clear-street/studio-sdk-python/commit/1d8b0f543dab7d35d6908583edbfb026e51d34ea))
+
+
+### Chores
+
+* add docstrings to raw response properties ([#42](https://github.com/clear-street/studio-sdk-python/issues/42)) ([f3c5945](https://github.com/clear-street/studio-sdk-python/commit/f3c594585a75c230018666923cab99c6570ad76d))
+* **internal:** add support for parsing bool response content ([#49](https://github.com/clear-street/studio-sdk-python/issues/49)) ([fd1db20](https://github.com/clear-street/studio-sdk-python/commit/fd1db2031cdec661134ec10b0094c93e9489ede9))
+* **internal:** codegen related update ([#46](https://github.com/clear-street/studio-sdk-python/issues/46)) ([094f3bf](https://github.com/clear-street/studio-sdk-python/commit/094f3bf0f68e2ac0143cc677222da2f289eecd33))
+* **internal:** codegen related update ([#47](https://github.com/clear-street/studio-sdk-python/issues/47)) ([e01fdcf](https://github.com/clear-street/studio-sdk-python/commit/e01fdcfa63265e92171fc1502f5c298e8d2b07ac))
+* **internal:** codegen related update ([#48](https://github.com/clear-street/studio-sdk-python/issues/48)) ([025b0ba](https://github.com/clear-street/studio-sdk-python/commit/025b0bace9e15f2faea93f960408a202ca500861))
+
+
+### Documentation
+
+* **readme:** add section on determining installed version ([#44](https://github.com/clear-street/studio-sdk-python/issues/44)) ([cb5137b](https://github.com/clear-street/studio-sdk-python/commit/cb5137bb1c742b9a5143d5e094328e114807d967))
+
 ## 0.1.0-alpha.9 (2024-09-05)
 
 Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
