@@ -11,22 +11,7 @@ __all__ = ["Strategy", "DmaStrategy"]
 
 class DmaStrategy(BaseModel):
     destination: Literal[
-        "arcx",
-        "bats",
-        "baty",
-        "edga",
-        "edgx",
-        "eprl",
-        "gotc",
-        "iexg",
-        "memx",
-        "xase",
-        "xbos",
-        "xcis",
-        "xchi",
-        "xnms",
-        "xnys",
-        "xphl",
+        "arcx", "bats", "baty", "edga", "edgx", "eprl", "iexg", "memx", "xase", "xbos", "xcis", "xnms", "xnys"
     ]
     """Order Destination.
 
@@ -61,10 +46,6 @@ class DmaStrategy(BaseModel):
     <td>MIAX Pearl Equities</td>
     </tr>
     <tr>
-    <td>GOTC</td>
-    <td>ARCA Global OTC</td>
-    </tr>
-    <tr>
     <td>IEXG</td>
     <td>Investors' Exchange</td>
     </tr>
@@ -85,20 +66,12 @@ class DmaStrategy(BaseModel):
     <td>NYSE National</td>
     </tr>
     <tr>
-    <td>XCHI</td>
-    <td>Chicago Stock Exchange</td>
-    </tr>
-    <tr>
     <td>XNMS</td>
     <td>NASDAQ/NMS (Global Market)</td>
     </tr>
     <tr>
     <td>XNYS</td>
     <td>New York Stock Exchange</td>
-    </tr>
-    <tr>
-    <td>XPHL</td>
-    <td>NASDAQ PHLX Exchange</td>
     </tr>
     </tbody></table>
     """

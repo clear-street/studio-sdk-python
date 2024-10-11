@@ -24,6 +24,22 @@ from .accounts import (
     AccountsResourceWithStreamingResponse,
     AsyncAccountsResourceWithStreamingResponse,
 )
+from .holdings import (
+    HoldingsResource,
+    AsyncHoldingsResource,
+    HoldingsResourceWithRawResponse,
+    AsyncHoldingsResourceWithRawResponse,
+    HoldingsResourceWithStreamingResponse,
+    AsyncHoldingsResourceWithStreamingResponse,
+)
+from .pnl_sums import (
+    PnlSumsResource,
+    AsyncPnlSumsResource,
+    PnlSumsResourceWithRawResponse,
+    AsyncPnlSumsResourceWithRawResponse,
+    PnlSumsResourceWithStreamingResponse,
+    AsyncPnlSumsResourceWithStreamingResponse,
+)
 from .positions import (
     PositionsResource,
     AsyncPositionsResource,
@@ -122,6 +138,18 @@ __all__ = [
     "AsyncPnlDetailsResourceWithRawResponse",
     "PnlDetailsResourceWithStreamingResponse",
     "AsyncPnlDetailsResourceWithStreamingResponse",
+    "PnlSumsResource",
+    "AsyncPnlSumsResource",
+    "PnlSumsResourceWithRawResponse",
+    "AsyncPnlSumsResourceWithRawResponse",
+    "PnlSumsResourceWithStreamingResponse",
+    "AsyncPnlSumsResourceWithStreamingResponse",
+    "HoldingsResource",
+    "AsyncHoldingsResource",
+    "HoldingsResourceWithRawResponse",
+    "AsyncHoldingsResourceWithRawResponse",
+    "HoldingsResourceWithStreamingResponse",
+    "AsyncHoldingsResourceWithStreamingResponse",
     "AccountsResource",
     "AsyncAccountsResource",
     "AccountsResourceWithRawResponse",
