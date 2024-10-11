@@ -12,7 +12,7 @@ class Data(BaseModel):
     account_id: str
     """Account ID for the account."""
 
-    asset_class: Literal["other", "equity", "option", "debt"]
+    asset_class: Literal["other", "currency", "equity", "option", "debt", "fund"]
     """The asset class of the symbol."""
 
     bought_quantity: str

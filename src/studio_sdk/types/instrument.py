@@ -16,7 +16,7 @@ class Symbol(BaseModel):
 
 
 class Instrument(BaseModel):
-    asset_class: Literal["other", "equity", "option", "debt"]
+    asset_class: Literal["other", "currency", "equity", "option", "debt", "fund"]
     """The asset class of the symbol."""
 
     description: str

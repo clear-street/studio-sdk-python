@@ -173,6 +173,30 @@ Methods:
 
 - <code title="get /accounts/{account_id}/pnl-details">client.accounts.pnl_details.<a href="./src/studio_sdk/resources/accounts/pnl_details.py">list</a>(account_id) -> <a href="./src/studio_sdk/types/accounts/pnl_detail_list_response.py">PnlDetailListResponse</a></code>
 
+## PnlSums
+
+Types:
+
+```python
+from studio_sdk.types.accounts import PnlSumListResponse
+```
+
+Methods:
+
+- <code title="get /accounts/{account_id}/pnl-sums">client.accounts.pnl_sums.<a href="./src/studio_sdk/resources/accounts/pnl_sums.py">list</a>(account_id, \*\*<a href="src/studio_sdk/types/accounts/pnl_sum_list_params.py">params</a>) -> <a href="./src/studio_sdk/types/accounts/pnl_sum_list_response.py">PnlSumListResponse</a></code>
+
+## Holdings
+
+Types:
+
+```python
+from studio_sdk.types.accounts import HoldingListResponse
+```
+
+Methods:
+
+- <code title="get /accounts/{account_id}/holdings">client.accounts.holdings.<a href="./src/studio_sdk/resources/accounts/holdings.py">list</a>(account_id, \*\*<a href="src/studio_sdk/types/accounts/holding_list_params.py">params</a>) -> <a href="./src/studio_sdk/types/accounts/holding_list_response.py">HoldingListResponse</a></code>
+
 # Instruments
 
 Types:
