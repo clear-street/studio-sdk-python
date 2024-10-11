@@ -9,7 +9,7 @@ __all__ = ["RegtMargin", "Group", "GroupMember"]
 
 
 class GroupMember(BaseModel):
-    asset_class: Literal["other", "equity", "option", "debt"]
+    asset_class: Literal["other", "currency", "equity", "option", "debt", "fund"]
     """The asset class of the symbol."""
 
     market_value: float

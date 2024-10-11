@@ -9,7 +9,7 @@ __all__ = ["PortfolioMargin", "Group", "GroupMember"]
 
 
 class GroupMember(BaseModel):
-    asset_class: Optional[Literal["other", "equity", "option", "debt"]] = None
+    asset_class: Optional[Literal["other", "currency", "equity", "option", "debt", "fund"]] = None
     """The asset class of the symbol."""
 
     market_value: Optional[float] = None

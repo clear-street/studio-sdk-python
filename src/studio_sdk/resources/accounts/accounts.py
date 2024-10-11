@@ -21,6 +21,22 @@ from .trades import (
     AsyncTradesResourceWithStreamingResponse,
 )
 from ..._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from .holdings import (
+    HoldingsResource,
+    AsyncHoldingsResource,
+    HoldingsResourceWithRawResponse,
+    AsyncHoldingsResourceWithRawResponse,
+    HoldingsResourceWithStreamingResponse,
+    AsyncHoldingsResourceWithStreamingResponse,
+)
+from .pnl_sums import (
+    PnlSumsResource,
+    AsyncPnlSumsResource,
+    PnlSumsResourceWithRawResponse,
+    AsyncPnlSumsResourceWithRawResponse,
+    PnlSumsResourceWithStreamingResponse,
+    AsyncPnlSumsResourceWithStreamingResponse,
+)
 from ..._compat import cached_property
 from .positions import (
     PositionsResource,
@@ -116,6 +132,14 @@ class AccountsResource(SyncAPIResource):
     @cached_property
     def pnl_details(self) -> PnlDetailsResource:
         return PnlDetailsResource(self._client)
+
+    @cached_property
+    def pnl_sums(self) -> PnlSumsResource:
+        return PnlSumsResource(self._client)
+
+    @cached_property
+    def holdings(self) -> HoldingsResource:
+        return HoldingsResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> AccountsResourceWithRawResponse:
@@ -223,6 +247,14 @@ class AsyncAccountsResource(AsyncAPIResource):
     @cached_property
     def pnl_details(self) -> AsyncPnlDetailsResource:
         return AsyncPnlDetailsResource(self._client)
+
+    @cached_property
+    def pnl_sums(self) -> AsyncPnlSumsResource:
+        return AsyncPnlSumsResource(self._client)
+
+    @cached_property
+    def holdings(self) -> AsyncHoldingsResource:
+        return AsyncHoldingsResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> AsyncAccountsResourceWithRawResponse:
@@ -341,6 +373,14 @@ class AccountsResourceWithRawResponse:
     def pnl_details(self) -> PnlDetailsResourceWithRawResponse:
         return PnlDetailsResourceWithRawResponse(self._accounts.pnl_details)
 
+    @cached_property
+    def pnl_sums(self) -> PnlSumsResourceWithRawResponse:
+        return PnlSumsResourceWithRawResponse(self._accounts.pnl_sums)
+
+    @cached_property
+    def holdings(self) -> HoldingsResourceWithRawResponse:
+        return HoldingsResourceWithRawResponse(self._accounts.holdings)
+
 
 class AsyncAccountsResourceWithRawResponse:
     def __init__(self, accounts: AsyncAccountsResource) -> None:
@@ -384,6 +424,14 @@ class AsyncAccountsResourceWithRawResponse:
     @cached_property
     def pnl_details(self) -> AsyncPnlDetailsResourceWithRawResponse:
         return AsyncPnlDetailsResourceWithRawResponse(self._accounts.pnl_details)
+
+    @cached_property
+    def pnl_sums(self) -> AsyncPnlSumsResourceWithRawResponse:
+        return AsyncPnlSumsResourceWithRawResponse(self._accounts.pnl_sums)
+
+    @cached_property
+    def holdings(self) -> AsyncHoldingsResourceWithRawResponse:
+        return AsyncHoldingsResourceWithRawResponse(self._accounts.holdings)
 
 
 class AccountsResourceWithStreamingResponse:
@@ -429,6 +477,14 @@ class AccountsResourceWithStreamingResponse:
     def pnl_details(self) -> PnlDetailsResourceWithStreamingResponse:
         return PnlDetailsResourceWithStreamingResponse(self._accounts.pnl_details)
 
+    @cached_property
+    def pnl_sums(self) -> PnlSumsResourceWithStreamingResponse:
+        return PnlSumsResourceWithStreamingResponse(self._accounts.pnl_sums)
+
+    @cached_property
+    def holdings(self) -> HoldingsResourceWithStreamingResponse:
+        return HoldingsResourceWithStreamingResponse(self._accounts.holdings)
+
 
 class AsyncAccountsResourceWithStreamingResponse:
     def __init__(self, accounts: AsyncAccountsResource) -> None:
@@ -472,3 +528,11 @@ class AsyncAccountsResourceWithStreamingResponse:
     @cached_property
     def pnl_details(self) -> AsyncPnlDetailsResourceWithStreamingResponse:
         return AsyncPnlDetailsResourceWithStreamingResponse(self._accounts.pnl_details)
+
+    @cached_property
+    def pnl_sums(self) -> AsyncPnlSumsResourceWithStreamingResponse:
+        return AsyncPnlSumsResourceWithStreamingResponse(self._accounts.pnl_sums)
+
+    @cached_property
+    def holdings(self) -> AsyncHoldingsResourceWithStreamingResponse:
+        return AsyncHoldingsResourceWithStreamingResponse(self._accounts.holdings)
