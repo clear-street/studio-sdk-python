@@ -61,6 +61,14 @@ from .bulk_orders import (
     BulkOrdersResourceWithStreamingResponse,
     AsyncBulkOrdersResourceWithStreamingResponse,
 )
+from .inventories import (
+    InventoriesResource,
+    AsyncInventoriesResource,
+    InventoriesResourceWithRawResponse,
+    AsyncInventoriesResourceWithRawResponse,
+    InventoriesResourceWithStreamingResponse,
+    AsyncInventoriesResourceWithStreamingResponse,
+)
 from .pnl_details import (
     PnlDetailsResource,
     AsyncPnlDetailsResource,
@@ -140,6 +148,10 @@ class AccountsResource(SyncAPIResource):
     @cached_property
     def holdings(self) -> HoldingsResource:
         return HoldingsResource(self._client)
+
+    @cached_property
+    def inventories(self) -> InventoriesResource:
+        return InventoriesResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> AccountsResourceWithRawResponse:
@@ -255,6 +267,10 @@ class AsyncAccountsResource(AsyncAPIResource):
     @cached_property
     def holdings(self) -> AsyncHoldingsResource:
         return AsyncHoldingsResource(self._client)
+
+    @cached_property
+    def inventories(self) -> AsyncInventoriesResource:
+        return AsyncInventoriesResource(self._client)
 
     @cached_property
     def with_raw_response(self) -> AsyncAccountsResourceWithRawResponse:
@@ -381,6 +397,10 @@ class AccountsResourceWithRawResponse:
     def holdings(self) -> HoldingsResourceWithRawResponse:
         return HoldingsResourceWithRawResponse(self._accounts.holdings)
 
+    @cached_property
+    def inventories(self) -> InventoriesResourceWithRawResponse:
+        return InventoriesResourceWithRawResponse(self._accounts.inventories)
+
 
 class AsyncAccountsResourceWithRawResponse:
     def __init__(self, accounts: AsyncAccountsResource) -> None:
@@ -432,6 +452,10 @@ class AsyncAccountsResourceWithRawResponse:
     @cached_property
     def holdings(self) -> AsyncHoldingsResourceWithRawResponse:
         return AsyncHoldingsResourceWithRawResponse(self._accounts.holdings)
+
+    @cached_property
+    def inventories(self) -> AsyncInventoriesResourceWithRawResponse:
+        return AsyncInventoriesResourceWithRawResponse(self._accounts.inventories)
 
 
 class AccountsResourceWithStreamingResponse:
@@ -485,6 +509,10 @@ class AccountsResourceWithStreamingResponse:
     def holdings(self) -> HoldingsResourceWithStreamingResponse:
         return HoldingsResourceWithStreamingResponse(self._accounts.holdings)
 
+    @cached_property
+    def inventories(self) -> InventoriesResourceWithStreamingResponse:
+        return InventoriesResourceWithStreamingResponse(self._accounts.inventories)
+
 
 class AsyncAccountsResourceWithStreamingResponse:
     def __init__(self, accounts: AsyncAccountsResource) -> None:
@@ -536,3 +564,7 @@ class AsyncAccountsResourceWithStreamingResponse:
     @cached_property
     def holdings(self) -> AsyncHoldingsResourceWithStreamingResponse:
         return AsyncHoldingsResourceWithStreamingResponse(self._accounts.holdings)
+
+    @cached_property
+    def inventories(self) -> AsyncInventoriesResourceWithStreamingResponse:
+        return AsyncInventoriesResourceWithStreamingResponse(self._accounts.inventories)
