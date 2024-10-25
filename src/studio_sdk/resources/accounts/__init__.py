@@ -56,6 +56,14 @@ from .bulk_orders import (
     BulkOrdersResourceWithStreamingResponse,
     AsyncBulkOrdersResourceWithStreamingResponse,
 )
+from .inventories import (
+    InventoriesResource,
+    AsyncInventoriesResource,
+    InventoriesResourceWithRawResponse,
+    AsyncInventoriesResourceWithRawResponse,
+    InventoriesResourceWithStreamingResponse,
+    AsyncInventoriesResourceWithStreamingResponse,
+)
 from .pnl_details import (
     PnlDetailsResource,
     AsyncPnlDetailsResource,
@@ -150,6 +158,12 @@ __all__ = [
     "AsyncHoldingsResourceWithRawResponse",
     "HoldingsResourceWithStreamingResponse",
     "AsyncHoldingsResourceWithStreamingResponse",
+    "InventoriesResource",
+    "AsyncInventoriesResource",
+    "InventoriesResourceWithRawResponse",
+    "AsyncInventoriesResourceWithRawResponse",
+    "InventoriesResourceWithStreamingResponse",
+    "AsyncInventoriesResourceWithStreamingResponse",
     "AccountsResource",
     "AsyncAccountsResource",
     "AccountsResourceWithRawResponse",
