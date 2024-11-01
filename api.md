@@ -197,6 +197,18 @@ Methods:
 
 - <code title="get /accounts/{account_id}/holdings">client.accounts.holdings.<a href="./src/studio_sdk/resources/accounts/holdings.py">list</a>(account_id, \*\*<a href="src/studio_sdk/types/accounts/holding_list_params.py">params</a>) -> <a href="./src/studio_sdk/types/accounts/holding_list_response.py">HoldingListResponse</a></code>
 
+## Inventories
+
+Types:
+
+```python
+from studio_sdk.types.accounts import InventoryRetrieveResponse
+```
+
+Methods:
+
+- <code title="get /accounts/{account_id}/inventories/{symbol}">client.accounts.inventories.<a href="./src/studio_sdk/resources/accounts/inventories.py">retrieve</a>(symbol, \*, account_id) -> <a href="./src/studio_sdk/types/accounts/inventory_retrieve_response.py">InventoryRetrieveResponse</a></code>
+
 # Instruments
 
 Types:

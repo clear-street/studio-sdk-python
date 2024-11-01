@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.12 (2024-10-25)
+
+Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
+
+### Features
+
+* **api:** enable inventories endpoint ([#54](https://github.com/clear-street/studio-sdk-python/issues/54)) ([8fc74d6](https://github.com/clear-street/studio-sdk-python/commit/8fc74d66d9b93ab77093788b9f29c56fcfff1478))
+
 ## 0.1.0-alpha.11 (2024-10-11)
 
 Full Changelog: [v0.1.0-alpha.10...v0.1.0-alpha.11](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.10...v0.1.0-alpha.11)
