@@ -28,8 +28,9 @@ import os
 from studio_sdk import StudioSDK
 
 client = StudioSDK(
-    # This is the default and can be omitted
-    bearer_token=os.environ.get("STUDIO_SDK_BEARER_TOKEN"),
+    bearer_token=os.environ.get(
+        "STUDIO_SDK_BEARER_TOKEN"
+    ),  # This is the default and can be omitted
     # defaults to "production".
     environment="sandbox",
 )
@@ -55,8 +56,9 @@ import asyncio
 from studio_sdk import AsyncStudioSDK
 
 client = AsyncStudioSDK(
-    # This is the default and can be omitted
-    bearer_token=os.environ.get("STUDIO_SDK_BEARER_TOKEN"),
+    bearer_token=os.environ.get(
+        "STUDIO_SDK_BEARER_TOKEN"
+    ),  # This is the default and can be omitted
     # defaults to "production".
     environment="sandbox",
 )
