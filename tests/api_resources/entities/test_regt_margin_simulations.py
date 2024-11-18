@@ -39,17 +39,7 @@ class TestRegtMarginSimulations:
                     "price": "x",
                     "symbol": "AAPL",
                     "symbol_format": "cms",
-                },
-                {
-                    "price": "x",
-                    "symbol": "AAPL",
-                    "symbol_format": "cms",
-                },
-                {
-                    "price": "x",
-                    "symbol": "AAPL",
-                    "symbol_format": "cms",
-                },
+                }
             ],
             trades=[
                 {
@@ -58,21 +48,7 @@ class TestRegtMarginSimulations:
                     "side": "buy",
                     "symbol": "AAPL",
                     "symbol_format": "cms",
-                },
-                {
-                    "price": "x",
-                    "quantity": "x",
-                    "side": "buy",
-                    "symbol": "AAPL",
-                    "symbol_format": "cms",
-                },
-                {
-                    "price": "x",
-                    "quantity": "x",
-                    "side": "buy",
-                    "symbol": "AAPL",
-                    "symbol_format": "cms",
-                },
+                }
             ],
         )
         assert_matches_type(RegtMarginSimulationCreateResponse, regt_margin_simulation, path=["response"])
@@ -182,17 +158,7 @@ class TestAsyncRegtMarginSimulations:
                     "price": "x",
                     "symbol": "AAPL",
                     "symbol_format": "cms",
-                },
-                {
-                    "price": "x",
-                    "symbol": "AAPL",
-                    "symbol_format": "cms",
-                },
-                {
-                    "price": "x",
-                    "symbol": "AAPL",
-                    "symbol_format": "cms",
-                },
+                }
             ],
             trades=[
                 {
@@ -201,21 +167,7 @@ class TestAsyncRegtMarginSimulations:
                     "side": "buy",
                     "symbol": "AAPL",
                     "symbol_format": "cms",
-                },
-                {
-                    "price": "x",
-                    "quantity": "x",
-                    "side": "buy",
-                    "symbol": "AAPL",
-                    "symbol_format": "cms",
-                },
-                {
-                    "price": "x",
-                    "quantity": "x",
-                    "side": "buy",
-                    "symbol": "AAPL",
-                    "symbol_format": "cms",
-                },
+                }
             ],
         )
         assert_matches_type(RegtMarginSimulationCreateResponse, regt_margin_simulation, path=["response"])
