@@ -21,6 +21,9 @@ class Trade(BaseModel):
     quantity: str
     """The amount that was traded."""
 
+    running_position: str
+    """The position quantity at the time of this trade."""
+
     side: Literal["buy", "sell", "sell-short"]
     """The side this trade occurred on."""
 

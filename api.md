@@ -101,6 +101,7 @@ Methods:
 - <code title="get /accounts/{account_id}/orders">client.accounts.orders.<a href="./src/studio_sdk/resources/accounts/orders.py">list</a>(account_id, \*\*<a href="src/studio_sdk/types/accounts/order_list_params.py">params</a>) -> <a href="./src/studio_sdk/types/accounts/order_list_response.py">OrderListResponse</a></code>
 - <code title="delete /accounts/{account_id}/orders">client.accounts.orders.<a href="./src/studio_sdk/resources/accounts/orders.py">delete</a>(account_id, \*\*<a href="src/studio_sdk/types/accounts/order_delete_params.py">params</a>) -> <a href="./src/studio_sdk/types/accounts/order_delete_response.py">OrderDeleteResponse</a></code>
 - <code title="delete /accounts/{account_id}/orders/{order_id}">client.accounts.orders.<a href="./src/studio_sdk/resources/accounts/orders.py">cancel</a>(order_id, \*, account_id) -> None</code>
+- <code title="patch /accounts/{account_id}/orders/{order_id}">client.accounts.orders.<a href="./src/studio_sdk/resources/accounts/orders.py">patch</a>(order_id, \*, account_id, \*\*<a href="src/studio_sdk/types/accounts/order_patch_params.py">params</a>) -> None</code>
 
 ## Trades
 
