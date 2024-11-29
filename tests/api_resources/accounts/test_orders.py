@@ -295,6 +295,70 @@ class TestOrders:
                 account_id="x",
             )
 
+    @parametrize
+    def test_method_patch(self, client: StudioSDK) -> None:
+        order = client.accounts.orders.patch(
+            order_id="x",
+            account_id="x",
+            quantity="x",
+        )
+        assert order is None
+
+    @parametrize
+    def test_method_patch_with_all_params(self, client: StudioSDK) -> None:
+        order = client.accounts.orders.patch(
+            order_id="x",
+            account_id="x",
+            quantity="x",
+            price="x",
+            stop_price="x",
+        )
+        assert order is None
+
+    @parametrize
+    def test_raw_response_patch(self, client: StudioSDK) -> None:
+        response = client.accounts.orders.with_raw_response.patch(
+            order_id="x",
+            account_id="x",
+            quantity="x",
+        )
+
+        assert response.is_closed is True
+        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+        order = response.parse()
+        assert order is None
+
+    @parametrize
+    def test_streaming_response_patch(self, client: StudioSDK) -> None:
+        with client.accounts.orders.with_streaming_response.patch(
+            order_id="x",
+            account_id="x",
+            quantity="x",
+        ) as response:
+            assert not response.is_closed
+            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+
+            order = response.parse()
+            assert order is None
+
+        assert cast(Any, response.is_closed) is True
+
+    @parametrize
+    def test_path_params_patch(self, client: StudioSDK) -> None:
+        with pytest.raises(ValueError, match=r"Expected a non-empty value for `account_id` but received ''"):
+            client.accounts.orders.with_raw_response.patch(
+                order_id="x",
+                account_id="",
+                quantity="x",
+            )
+
+        with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
+            client.accounts.orders.with_raw_response.patch(
+                order_id="",
+                account_id="x",
+                quantity="x",
+            )
+
 
 class TestAsyncOrders:
     parametrize = pytest.mark.parametrize("async_client", [False, True], indirect=True, ids=["loose", "strict"])
@@ -570,4 +634,68 @@ class TestAsyncOrders:
             await async_client.accounts.orders.with_raw_response.cancel(
                 order_id="",
                 account_id="x",
+            )
+
+    @parametrize
+    async def test_method_patch(self, async_client: AsyncStudioSDK) -> None:
+        order = await async_client.accounts.orders.patch(
+            order_id="x",
+            account_id="x",
+            quantity="x",
+        )
+        assert order is None
+
+    @parametrize
+    async def test_method_patch_with_all_params(self, async_client: AsyncStudioSDK) -> None:
+        order = await async_client.accounts.orders.patch(
+            order_id="x",
+            account_id="x",
+            quantity="x",
+            price="x",
+            stop_price="x",
+        )
+        assert order is None
+
+    @parametrize
+    async def test_raw_response_patch(self, async_client: AsyncStudioSDK) -> None:
+        response = await async_client.accounts.orders.with_raw_response.patch(
+            order_id="x",
+            account_id="x",
+            quantity="x",
+        )
+
+        assert response.is_closed is True
+        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+        order = await response.parse()
+        assert order is None
+
+    @parametrize
+    async def test_streaming_response_patch(self, async_client: AsyncStudioSDK) -> None:
+        async with async_client.accounts.orders.with_streaming_response.patch(
+            order_id="x",
+            account_id="x",
+            quantity="x",
+        ) as response:
+            assert not response.is_closed
+            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+
+            order = await response.parse()
+            assert order is None
+
+        assert cast(Any, response.is_closed) is True
+
+    @parametrize
+    async def test_path_params_patch(self, async_client: AsyncStudioSDK) -> None:
+        with pytest.raises(ValueError, match=r"Expected a non-empty value for `account_id` but received ''"):
+            await async_client.accounts.orders.with_raw_response.patch(
+                order_id="x",
+                account_id="",
+                quantity="x",
+            )
+
+        with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
+            await async_client.accounts.orders.with_raw_response.patch(
+                order_id="",
+                account_id="x",
+                quantity="x",
             )
