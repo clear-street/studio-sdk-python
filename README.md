@@ -2,7 +2,7 @@
 
 [![PyPI version](https://img.shields.io/pypi/v/clear-street-studio-sdk.svg)](https://pypi.org/project/clear-street-studio-sdk/)
 
-The Studio SDK Python library provides convenient access to the Studio SDK REST API from any Python 3.7+
+The Studio SDK Python library provides convenient access to the Studio SDK REST API from any Python 3.8+
 application. The library includes type definitions for all request params and response fields,
 and offers both synchronous and asynchronous clients powered by [httpx](https://github.com/encode/httpx).
 
@@ -28,8 +28,9 @@ import os
 from studio_sdk import StudioSDK
 
 client = StudioSDK(
-    # This is the default and can be omitted
-    bearer_token=os.environ.get("STUDIO_SDK_BEARER_TOKEN"),
+    bearer_token=os.environ.get(
+        "STUDIO_SDK_BEARER_TOKEN"
+    ),  # This is the default and can be omitted
     # defaults to "production".
     environment="sandbox",
 )
@@ -55,8 +56,9 @@ import asyncio
 from studio_sdk import AsyncStudioSDK
 
 client = AsyncStudioSDK(
-    # This is the default and can be omitted
-    bearer_token=os.environ.get("STUDIO_SDK_BEARER_TOKEN"),
+    bearer_token=os.environ.get(
+        "STUDIO_SDK_BEARER_TOKEN"
+    ),  # This is the default and can be omitted
     # defaults to "production".
     environment="sandbox",
 )
@@ -184,11 +186,13 @@ Note that requests that time out are [retried twice by default](#retries).
 
 We use the standard library [`logging`](https://docs.python.org/3/library/logging.html) module.
 
-You can enable logging by setting the environment variable `STUDIO_SDK_LOG` to `debug`.
+You can enable logging by setting the environment variable `STUDIO_SDK_LOG` to `info`.
 
 ```shell
-$ export STUDIO_SDK_LOG=debug
+$ export STUDIO_SDK_LOG=info
 ```
+
+Or to `debug` for more verbose logging.
 
 ### How to tell whether `None` means `null` or missing
 
@@ -332,7 +336,7 @@ print(studio_sdk.__version__)
 
 ## Requirements
 
-Python 3.7 or higher.
+Python 3.8 or higher.
 
 ## Contributing
 

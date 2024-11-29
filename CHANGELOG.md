@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.1.0-alpha.13 (2024-11-28)
+
+Full Changelog: [v0.1.0-alpha.12...v0.1.0-alpha.13](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.12...v0.1.0-alpha.13)
+
+### Bug Fixes
+
+* **client:** compat with new httpx 0.28.0 release ([#66](https://github.com/clear-street/studio-sdk-python/issues/66)) ([0586398](https://github.com/clear-street/studio-sdk-python/commit/0586398d10ecc772be8d75283162bb22fea4a073))
+
+
+### Chores
+
+* **internal:** codegen related update ([#64](https://github.com/clear-street/studio-sdk-python/issues/64)) ([02d56d8](https://github.com/clear-street/studio-sdk-python/commit/02d56d8e51138b0233039763ef0a48980dbb17c3))
+* **internal:** codegen related update ([#65](https://github.com/clear-street/studio-sdk-python/issues/65)) ([f23970d](https://github.com/clear-street/studio-sdk-python/commit/f23970d3be640a2f75909c5709c8048617e874e9))
+* **internal:** fix compat model_dump method when warnings are passed ([#63](https://github.com/clear-street/studio-sdk-python/issues/63)) ([e5874f8](https://github.com/clear-street/studio-sdk-python/commit/e5874f89c9b06e01288f03c35421c751dee5ec0f))
+* **internal:** version bump ([#56](https://github.com/clear-street/studio-sdk-python/issues/56)) ([87913d2](https://github.com/clear-street/studio-sdk-python/commit/87913d2c81c926ab7e9e051b0a26c9e91cf32932))
+* rebuild project due to codegen change ([#58](https://github.com/clear-street/studio-sdk-python/issues/58)) ([0dcf41f](https://github.com/clear-street/studio-sdk-python/commit/0dcf41f9015287afd18a8718c83403573a685201))
+* rebuild project due to codegen change ([#59](https://github.com/clear-street/studio-sdk-python/issues/59)) ([569c4cd](https://github.com/clear-street/studio-sdk-python/commit/569c4cd8025b04e6dad8fbfacdca7bb71bbaf4d3))
+* rebuild project due to codegen change ([#60](https://github.com/clear-street/studio-sdk-python/issues/60)) ([904d865](https://github.com/clear-street/studio-sdk-python/commit/904d8650ff6aa09e031901901d91f546469a8bc6))
+* rebuild project due to codegen change ([#61](https://github.com/clear-street/studio-sdk-python/issues/61)) ([e4fa147](https://github.com/clear-street/studio-sdk-python/commit/e4fa14758305145cdb11ae802d486e54cfa574c5))
+* rebuild project due to codegen change ([#62](https://github.com/clear-street/studio-sdk-python/issues/62)) ([de76347](https://github.com/clear-street/studio-sdk-python/commit/de76347c8e121c6c6df789287663e2c43661332e))
+
 ## 0.1.0-alpha.12 (2024-10-25)
 
 Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
