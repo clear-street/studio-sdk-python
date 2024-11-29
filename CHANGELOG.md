@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.14 (2024-11-29)
+
+Full Changelog: [v0.1.0-alpha.13...v0.1.0-alpha.14](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.13...v0.1.0-alpha.14)
+
+### Features
+
+* **api:** add modify orders endpoint ([#68](https://github.com/clear-street/studio-sdk-python/issues/68)) ([f02195a](https://github.com/clear-street/studio-sdk-python/commit/f02195a6256c88d28b4cd967d3a5b411ac86654a))
+
 ## 0.1.0-alpha.13 (2024-11-28)
 
 Full Changelog: [v0.1.0-alpha.12...v0.1.0-alpha.13](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.12...v0.1.0-alpha.13)
