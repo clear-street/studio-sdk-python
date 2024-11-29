@@ -37,6 +37,9 @@ class Order(BaseModel):
     quantity: str
     """The requested quantity on this order."""
 
+    running_position: str
+    """The position quantity at the time of this order."""
+
     side: Literal["buy", "sell", "sell-short"]
     """Buy, sell, sell-short indicator."""
 
