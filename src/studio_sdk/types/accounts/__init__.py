@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from .order_list_params import OrderListParams as OrderListParams
 from .trade_list_params import TradeListParams as TradeListParams
+from .order_patch_params import OrderPatchParams as OrderPatchParams
 from .holding_list_params import HoldingListParams as HoldingListParams
 from .order_create_params import OrderCreateParams as OrderCreateParams
 from .order_delete_params import OrderDeleteParams as OrderDeleteParams

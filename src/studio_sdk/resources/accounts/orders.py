@@ -20,7 +20,7 @@ from ..._response import (
     async_to_streamed_response_wrapper,
 )
 from ..._base_client import make_request_options
-from ...types.accounts import order_list_params, order_create_params, order_delete_params
+from ...types.accounts import order_list_params, order_patch_params, order_create_params, order_delete_params
 from ...types.shared_params.strategy import Strategy
 from ...types.accounts.order_list_response import OrderListResponse
 from ...types.accounts.order_create_response import OrderCreateResponse
@@ -359,6 +359,66 @@ class OrdersResource(SyncAPIResource):
             cast_to=NoneType,
         )
 
+    def patch(
+        self,
+        order_id: str,
+        *,
+        account_id: str,
+        quantity: str,
+        price: str | NotGiven = NOT_GIVEN,
+        stop_price: str | NotGiven = NOT_GIVEN,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+    ) -> None:
+        """Attempts to update an existing order.
+
+        This can be used to update a subset of an
+        order's attributes, for example price and quantity.
+
+        Args:
+          account_id: Account ID for the account.
+
+          order_id: Unique order ID assigned by us.
+
+          quantity: The maximum quantity to be executed.
+
+          price: The price to execute at-or-better for limit orders.
+
+          stop_price: The price at which stop orders become marketable.
+
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        if not account_id:
+            raise ValueError(f"Expected a non-empty value for `account_id` but received {account_id!r}")
+        if not order_id:
+            raise ValueError(f"Expected a non-empty value for `order_id` but received {order_id!r}")
+        extra_headers = {"Accept": "*/*", **(extra_headers or {})}
+        return self._patch(
+            f"/accounts/{account_id}/orders/{order_id}",
+            body=maybe_transform(
+                {
+                    "quantity": quantity,
+                    "price": price,
+                    "stop_price": stop_price,
+                },
+                order_patch_params.OrderPatchParams,
+            ),
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=NoneType,
+        )
+
 
 class AsyncOrdersResource(AsyncAPIResource):
     @cached_property
@@ -689,6 +749,66 @@ class AsyncOrdersResource(AsyncAPIResource):
             cast_to=NoneType,
         )
 
+    async def patch(
+        self,
+        order_id: str,
+        *,
+        account_id: str,
+        quantity: str,
+        price: str | NotGiven = NOT_GIVEN,
+        stop_price: str | NotGiven = NOT_GIVEN,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+    ) -> None:
+        """Attempts to update an existing order.
+
+        This can be used to update a subset of an
+        order's attributes, for example price and quantity.
+
+        Args:
+          account_id: Account ID for the account.
+
+          order_id: Unique order ID assigned by us.
+
+          quantity: The maximum quantity to be executed.
+
+          price: The price to execute at-or-better for limit orders.
+
+          stop_price: The price at which stop orders become marketable.
+
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        if not account_id:
+            raise ValueError(f"Expected a non-empty value for `account_id` but received {account_id!r}")
+        if not order_id:
+            raise ValueError(f"Expected a non-empty value for `order_id` but received {order_id!r}")
+        extra_headers = {"Accept": "*/*", **(extra_headers or {})}
+        return await self._patch(
+            f"/accounts/{account_id}/orders/{order_id}",
+            body=await async_maybe_transform(
+                {
+                    "quantity": quantity,
+                    "price": price,
+                    "stop_price": stop_price,
+                },
+                order_patch_params.OrderPatchParams,
+            ),
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=NoneType,
+        )
+
 
 class OrdersResourceWithRawResponse:
     def __init__(self, orders: OrdersResource) -> None:
@@ -708,6 +828,9 @@ class OrdersResourceWithRawResponse:
         )
         self.cancel = to_raw_response_wrapper(
             orders.cancel,
+        )
+        self.patch = to_raw_response_wrapper(
+            orders.patch,
         )
 
 
@@ -730,6 +853,9 @@ class AsyncOrdersResourceWithRawResponse:
         self.cancel = async_to_raw_response_wrapper(
             orders.cancel,
         )
+        self.patch = async_to_raw_response_wrapper(
+            orders.patch,
+        )
 
 
 class OrdersResourceWithStreamingResponse:
@@ -751,6 +877,9 @@ class OrdersResourceWithStreamingResponse:
         self.cancel = to_streamed_response_wrapper(
             orders.cancel,
         )
+        self.patch = to_streamed_response_wrapper(
+            orders.patch,
+        )
 
 
 class AsyncOrdersResourceWithStreamingResponse:
@@ -771,4 +900,7 @@ class AsyncOrdersResourceWithStreamingResponse:
         )
         self.cancel = async_to_streamed_response_wrapper(
             orders.cancel,
+        )
+        self.patch = async_to_streamed_response_wrapper(
+            orders.patch,
         )
