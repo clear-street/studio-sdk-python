@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.15 (2024-12-03)
+
+Full Changelog: [v0.1.0-alpha.14...v0.1.0-alpha.15](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.14...v0.1.0-alpha.15)
+
+### Chores
+
+* **internal:** bump pyright ([#71](https://github.com/clear-street/studio-sdk-python/issues/71)) ([75e4f25](https://github.com/clear-street/studio-sdk-python/commit/75e4f25fcca33bae792841c978ea66c29b8db61a))
+
 ## 0.1.0-alpha.14 (2024-11-29)
 
 Full Changelog: [v0.1.0-alpha.13...v0.1.0-alpha.14](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.13...v0.1.0-alpha.14)
