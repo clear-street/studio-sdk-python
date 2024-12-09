@@ -13,6 +13,9 @@ class Order(BaseModel):
     account_id: str
     """Account ID for the account."""
 
+    account_number: str
+    """Account number for the account."""
+
     created_at: int
     """When the order was created in milliseconds since epoch."""
 

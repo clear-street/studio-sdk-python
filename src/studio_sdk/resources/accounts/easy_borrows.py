@@ -56,7 +56,7 @@ class EasyBorrowsResource(SyncAPIResource):
         daily.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to list easy borrows for.
 
           extra_headers: Send extra headers
 
@@ -114,7 +114,7 @@ class AsyncEasyBorrowsResource(AsyncAPIResource):
         daily.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to list easy borrows for.
 
           extra_headers: Send extra headers
 

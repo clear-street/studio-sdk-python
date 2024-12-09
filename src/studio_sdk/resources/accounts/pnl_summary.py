@@ -54,7 +54,7 @@ class PnlSummaryResource(SyncAPIResource):
         Get PNL summary for a given account.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to get a PNL summary for.
 
           extra_headers: Send extra headers
 
@@ -110,7 +110,7 @@ class AsyncPnlSummaryResource(AsyncAPIResource):
         Get PNL summary for a given account.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to get a PNL summary for.
 
           extra_headers: Send extra headers
 
