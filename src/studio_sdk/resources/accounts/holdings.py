@@ -66,7 +66,7 @@ class HoldingsResource(SyncAPIResource):
         regardless of where trades occur.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to list holdings for.
 
           date: The historical date to get holdings for. If omitted, current real-time holdings
               will be returned.
@@ -136,7 +136,7 @@ class AsyncHoldingsResource(AsyncAPIResource):
         regardless of where trades occur.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to list holdings for.
 
           date: The historical date to get holdings for. If omitted, current real-time holdings
               will be returned.

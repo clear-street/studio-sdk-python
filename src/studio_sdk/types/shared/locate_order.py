@@ -12,6 +12,9 @@ class LocateOrder(BaseModel):
     account_id: str
     """Account ID for the account."""
 
+    account_number: str
+    """Account number for the account."""
+
     locate_order_id: str
     """Unique locate ID assigned by us."""
 

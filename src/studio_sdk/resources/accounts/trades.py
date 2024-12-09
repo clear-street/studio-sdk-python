@@ -61,7 +61,7 @@ class TradesResource(SyncAPIResource):
         Get trade a trade by its unique trade ID.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to get the trade for.
 
           trade_id: Unique trade ID assigned by us.
 
@@ -102,7 +102,7 @@ class TradesResource(SyncAPIResource):
         List trades for a given account for the current trading day.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to list trades for.
 
           page_size: Number of trades to return per page.
 
@@ -173,7 +173,7 @@ class AsyncTradesResource(AsyncAPIResource):
         Get trade a trade by its unique trade ID.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to get the trade for.
 
           trade_id: Unique trade ID assigned by us.
 
@@ -214,7 +214,7 @@ class AsyncTradesResource(AsyncAPIResource):
         List trades for a given account for the current trading day.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to list trades for.
 
           page_size: Number of trades to return per page.
 
