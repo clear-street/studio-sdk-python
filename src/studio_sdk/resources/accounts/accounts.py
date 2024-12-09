@@ -184,7 +184,7 @@ class AccountsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> Account:
         """
-        Get an account by its ID.
+        Get an account by its ID or number.
 
         Args:
           account_id: Account ID for the account.
@@ -303,7 +303,7 @@ class AsyncAccountsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> Account:
         """
-        Get an account by its ID.
+        Get an account by its ID or number.
 
         Args:
           account_id: Account ID for the account.

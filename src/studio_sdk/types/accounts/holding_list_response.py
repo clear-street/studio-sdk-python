@@ -32,6 +32,9 @@ class HoldingListResponse(BaseModel):
     account_id: str
     """Account ID for the account."""
 
+    account_number: str
+    """Account number for the account."""
+
     data: List[Data]
 
     date: int

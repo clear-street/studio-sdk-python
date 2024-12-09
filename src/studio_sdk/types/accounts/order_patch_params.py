@@ -9,7 +9,7 @@ __all__ = ["OrderPatchParams"]
 
 class OrderPatchParams(TypedDict, total=False):
     account_id: Required[str]
-    """Account ID for the account."""
+    """The account ID or account number to attempt to update the order for."""
 
     quantity: Required[str]
     """The maximum quantity to be executed."""

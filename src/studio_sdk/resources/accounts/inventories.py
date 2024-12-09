@@ -55,7 +55,7 @@ class InventoriesResource(SyncAPIResource):
         Get located inventory for a symbol.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to get the inventory for.
 
           extra_headers: Send extra headers
 
@@ -114,7 +114,7 @@ class AsyncInventoriesResource(AsyncAPIResource):
         Get located inventory for a symbol.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to get the inventory for.
 
           extra_headers: Send extra headers
 

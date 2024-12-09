@@ -65,7 +65,7 @@ class LocateOrdersResource(SyncAPIResource):
         Create locate order to borrow inventory for short-selling.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to create the locate order for.
 
           mpid: The market participant where the locate will be sent.
 
@@ -119,7 +119,7 @@ class LocateOrdersResource(SyncAPIResource):
         Get locate order by its unique locate order ID.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to get the locate order for.
 
           locate_order_id: Locate order ID to get.
 
@@ -160,7 +160,7 @@ class LocateOrdersResource(SyncAPIResource):
         Accept or decline locate order that has been offered.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to update the locate order for.
 
           locate_order_id: Unique locate ID assigned by us.
 
@@ -203,7 +203,7 @@ class LocateOrdersResource(SyncAPIResource):
         List all locate orders
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to list locate orders for.
 
           extra_headers: Send extra headers
 
@@ -264,7 +264,7 @@ class AsyncLocateOrdersResource(AsyncAPIResource):
         Create locate order to borrow inventory for short-selling.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to create the locate order for.
 
           mpid: The market participant where the locate will be sent.
 
@@ -318,7 +318,7 @@ class AsyncLocateOrdersResource(AsyncAPIResource):
         Get locate order by its unique locate order ID.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to get the locate order for.
 
           locate_order_id: Locate order ID to get.
 
@@ -359,7 +359,7 @@ class AsyncLocateOrdersResource(AsyncAPIResource):
         Accept or decline locate order that has been offered.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to update the locate order for.
 
           locate_order_id: Unique locate ID assigned by us.
 
@@ -402,7 +402,7 @@ class AsyncLocateOrdersResource(AsyncAPIResource):
         List all locate orders
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to list locate orders for.
 
           extra_headers: Send extra headers
 
