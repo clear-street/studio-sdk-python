@@ -54,7 +54,7 @@ class PnlDetailsResource(SyncAPIResource):
         List PNL details for a given account.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to list PNL details for.
 
           extra_headers: Send extra headers
 
@@ -110,7 +110,7 @@ class AsyncPnlDetailsResource(AsyncAPIResource):
         List PNL details for a given account.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to list PNL details for.
 
           extra_headers: Send extra headers
 

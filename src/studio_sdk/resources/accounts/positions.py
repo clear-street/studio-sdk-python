@@ -58,10 +58,10 @@ class PositionsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> Position:
         """
-        Get current positions for a given account for a given symbol.
+        Get current position for a given account for a given symbol.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to get the position for.
 
           symbol: Symbol to get position for.
 
@@ -102,7 +102,7 @@ class PositionsResource(SyncAPIResource):
         List current positions for a given account.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to list positions for.
 
           page_size: Number of positions to return per page.
 
@@ -170,10 +170,10 @@ class AsyncPositionsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> Position:
         """
-        Get current positions for a given account for a given symbol.
+        Get current position for a given account for a given symbol.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to get the position for.
 
           symbol: Symbol to get position for.
 
@@ -214,7 +214,7 @@ class AsyncPositionsResource(AsyncAPIResource):
         List current positions for a given account.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to list positions for.
 
           page_size: Number of positions to return per page.
 

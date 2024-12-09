@@ -64,7 +64,7 @@ class PnlSumsResource(SyncAPIResource):
         filtered on the given query parameters.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to list PNL sums for.
 
           ending_date: The ending date to accumulate PNL data for, inclusive.
 
@@ -146,7 +146,7 @@ class AsyncPnlSumsResource(AsyncAPIResource):
         filtered on the given query parameters.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to list PNL sums for.
 
           ending_date: The ending date to accumulate PNL data for, inclusive.
 

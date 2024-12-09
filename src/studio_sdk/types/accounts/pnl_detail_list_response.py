@@ -12,6 +12,9 @@ class Data(BaseModel):
     account_id: str
     """Account ID for the account."""
 
+    account_number: str
+    """Account number for the account."""
+
     asset_class: Literal["other", "currency", "equity", "option", "debt", "fund"]
     """The asset class of the symbol."""
 

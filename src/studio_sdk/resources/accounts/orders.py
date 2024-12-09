@@ -80,7 +80,7 @@ class OrdersResource(SyncAPIResource):
         utilize our WebSocket APIs to listen for changes in order lifecycle events.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to create the order for.
 
           order_type:
               The type of order, can be one of the following:
@@ -174,7 +174,7 @@ class OrdersResource(SyncAPIResource):
         Get an order that was previously created.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to get the order for.
 
           order_id: Unique order ID assigned by us.
 
@@ -218,7 +218,7 @@ class OrdersResource(SyncAPIResource):
         given query parameters.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to list orders for.
 
           from_: Milliseconds since epoch timestamp. This will constrain the search for orders
               created after this timestamp, inclusively. Timestamps for orders prior the
@@ -281,7 +281,7 @@ class OrdersResource(SyncAPIResource):
         cannot be guaranteed as there might be in-flight executions.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to cancel orders for.
 
           symbol: Cancel orders only for this specific symbol. If this is omitted, all open orders
               will be cancelled.
@@ -334,7 +334,7 @@ class OrdersResource(SyncAPIResource):
         as there might be in-flight executions.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to attempt to cancel the order for.
 
           order_id: Unique order ID assigned by us.
 
@@ -380,7 +380,7 @@ class OrdersResource(SyncAPIResource):
         order's attributes, for example price and quantity.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to attempt to update the order for.
 
           order_id: Unique order ID assigned by us.
 
@@ -470,7 +470,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         utilize our WebSocket APIs to listen for changes in order lifecycle events.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to create the order for.
 
           order_type:
               The type of order, can be one of the following:
@@ -564,7 +564,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         Get an order that was previously created.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to get the order for.
 
           order_id: Unique order ID assigned by us.
 
@@ -608,7 +608,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         given query parameters.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to list orders for.
 
           from_: Milliseconds since epoch timestamp. This will constrain the search for orders
               created after this timestamp, inclusively. Timestamps for orders prior the
@@ -671,7 +671,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         cannot be guaranteed as there might be in-flight executions.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to cancel orders for.
 
           symbol: Cancel orders only for this specific symbol. If this is omitted, all open orders
               will be cancelled.
@@ -724,7 +724,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         as there might be in-flight executions.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to attempt to cancel the order for.
 
           order_id: Unique order ID assigned by us.
 
@@ -770,7 +770,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         order's attributes, for example price and quantity.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to attempt to update the order for.
 
           order_id: Unique order ID assigned by us.
 

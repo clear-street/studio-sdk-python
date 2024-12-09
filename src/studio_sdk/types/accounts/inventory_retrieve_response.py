@@ -11,6 +11,9 @@ class InventoryRetrieveResponse(BaseModel):
     account_id: Optional[str] = None
     """Account ID for the account."""
 
+    account_number: Optional[str] = None
+    """Account number for the account."""
+
     available: Optional[str] = None
     """String representation of quantity."""
 

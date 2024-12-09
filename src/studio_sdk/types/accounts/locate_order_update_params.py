@@ -9,7 +9,7 @@ __all__ = ["LocateOrderUpdateParams"]
 
 class LocateOrderUpdateParams(TypedDict, total=False):
     account_id: Required[str]
-    """Account ID for the account."""
+    """The account ID or account number to update the locate order for."""
 
     accept: Required[bool]
     """Accept or decline the locate order."""

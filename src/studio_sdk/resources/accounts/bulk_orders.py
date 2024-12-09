@@ -75,7 +75,7 @@ class BulkOrdersResource(SyncAPIResource):
         downstream venues.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to create orders for.
 
           orders: An array of orders to create.
 
@@ -148,7 +148,7 @@ class AsyncBulkOrdersResource(AsyncAPIResource):
         downstream venues.
 
         Args:
-          account_id: Account ID for the account.
+          account_id: The account ID or account number to create orders for.
 
           orders: An array of orders to create.
 
