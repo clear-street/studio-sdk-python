@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.16 (2024-12-11)
+
+Full Changelog: [v0.1.0-alpha.15...v0.1.0-alpha.16](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.15...v0.1.0-alpha.16)
+
+### Chores
+
+* **internal:** bump pydantic dependency ([#76](https://github.com/clear-street/studio-sdk-python/issues/76)) ([9f6bfa1](https://github.com/clear-street/studio-sdk-python/commit/9f6bfa14408def30dcc33d4953faf017111b75a8))
+
+
+### Documentation
+
+* **readme:** fix http client proxies example ([#78](https://github.com/clear-street/studio-sdk-python/issues/78)) ([d3e3918](https://github.com/clear-street/studio-sdk-python/commit/d3e3918a7e9e29776a017fc06ee2ed6c762eaec2))
+
 ## 0.1.0-alpha.15 (2024-12-09)
 
 Full Changelog: [v0.1.0-alpha.14...v0.1.0-alpha.15](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.14...v0.1.0-alpha.15)
