@@ -8,7 +8,7 @@ from typing_extensions import Self, Literal, override
 
 import httpx
 
-from . import resources, _exceptions
+from . import _exceptions
 from ._qs import Querystring
 from ._types import (
     NOT_GIVEN,
@@ -24,6 +24,7 @@ from ._utils import (
     get_async_library,
 )
 from ._version import __version__
+from .resources import instruments
 from ._streaming import Stream as Stream, AsyncStream as AsyncStream
 from ._exceptions import APIStatusError, StudioSDKError
 from ._base_client import (
@@ -31,6 +32,8 @@ from ._base_client import (
     SyncAPIClient,
     AsyncAPIClient,
 )
+from .resources.accounts import accounts
+from .resources.entities import entities
 
 __all__ = [
     "ENVIRONMENTS",
@@ -38,7 +41,6 @@ __all__ = [
     "Transport",
     "ProxiesTypes",
     "RequestOptions",
-    "resources",
     "StudioSDK",
     "AsyncStudioSDK",
     "Client",
@@ -52,9 +54,9 @@ ENVIRONMENTS: Dict[str, str] = {
 
 
 class StudioSDK(SyncAPIClient):
-    entities: resources.EntitiesResource
-    accounts: resources.AccountsResource
-    instruments: resources.InstrumentsResource
+    entities: entities.EntitiesResource
+    accounts: accounts.AccountsResource
+    instruments: instruments.InstrumentsResource
     with_raw_response: StudioSDKWithRawResponse
     with_streaming_response: StudioSDKWithStreamedResponse
 
@@ -136,9 +138,9 @@ class StudioSDK(SyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.entities = resources.EntitiesResource(self)
-        self.accounts = resources.AccountsResource(self)
-        self.instruments = resources.InstrumentsResource(self)
+        self.entities = entities.EntitiesResource(self)
+        self.accounts = accounts.AccountsResource(self)
+        self.instruments = instruments.InstrumentsResource(self)
         self.with_raw_response = StudioSDKWithRawResponse(self)
         self.with_streaming_response = StudioSDKWithStreamedResponse(self)
 
@@ -250,9 +252,9 @@ class StudioSDK(SyncAPIClient):
 
 
 class AsyncStudioSDK(AsyncAPIClient):
-    entities: resources.AsyncEntitiesResource
-    accounts: resources.AsyncAccountsResource
-    instruments: resources.AsyncInstrumentsResource
+    entities: entities.AsyncEntitiesResource
+    accounts: accounts.AsyncAccountsResource
+    instruments: instruments.AsyncInstrumentsResource
     with_raw_response: AsyncStudioSDKWithRawResponse
     with_streaming_response: AsyncStudioSDKWithStreamedResponse
 
@@ -334,9 +336,9 @@ class AsyncStudioSDK(AsyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.entities = resources.AsyncEntitiesResource(self)
-        self.accounts = resources.AsyncAccountsResource(self)
-        self.instruments = resources.AsyncInstrumentsResource(self)
+        self.entities = entities.AsyncEntitiesResource(self)
+        self.accounts = accounts.AsyncAccountsResource(self)
+        self.instruments = instruments.AsyncInstrumentsResource(self)
         self.with_raw_response = AsyncStudioSDKWithRawResponse(self)
         self.with_streaming_response = AsyncStudioSDKWithStreamedResponse(self)
 
@@ -449,30 +451,30 @@ class AsyncStudioSDK(AsyncAPIClient):
 
 class StudioSDKWithRawResponse:
     def __init__(self, client: StudioSDK) -> None:
-        self.entities = resources.EntitiesResourceWithRawResponse(client.entities)
-        self.accounts = resources.AccountsResourceWithRawResponse(client.accounts)
-        self.instruments = resources.InstrumentsResourceWithRawResponse(client.instruments)
+        self.entities = entities.EntitiesResourceWithRawResponse(client.entities)
+        self.accounts = accounts.AccountsResourceWithRawResponse(client.accounts)
+        self.instruments = instruments.InstrumentsResourceWithRawResponse(client.instruments)
 
 
 class AsyncStudioSDKWithRawResponse:
     def __init__(self, client: AsyncStudioSDK) -> None:
-        self.entities = resources.AsyncEntitiesResourceWithRawResponse(client.entities)
-        self.accounts = resources.AsyncAccountsResourceWithRawResponse(client.accounts)
-        self.instruments = resources.AsyncInstrumentsResourceWithRawResponse(client.instruments)
+        self.entities = entities.AsyncEntitiesResourceWithRawResponse(client.entities)
+        self.accounts = accounts.AsyncAccountsResourceWithRawResponse(client.accounts)
+        self.instruments = instruments.AsyncInstrumentsResourceWithRawResponse(client.instruments)
 
 
 class StudioSDKWithStreamedResponse:
     def __init__(self, client: StudioSDK) -> None:
-        self.entities = resources.EntitiesResourceWithStreamingResponse(client.entities)
-        self.accounts = resources.AccountsResourceWithStreamingResponse(client.accounts)
-        self.instruments = resources.InstrumentsResourceWithStreamingResponse(client.instruments)
+        self.entities = entities.EntitiesResourceWithStreamingResponse(client.entities)
+        self.accounts = accounts.AccountsResourceWithStreamingResponse(client.accounts)
+        self.instruments = instruments.InstrumentsResourceWithStreamingResponse(client.instruments)
 
 
 class AsyncStudioSDKWithStreamedResponse:
     def __init__(self, client: AsyncStudioSDK) -> None:
-        self.entities = resources.AsyncEntitiesResourceWithStreamingResponse(client.entities)
-        self.accounts = resources.AsyncAccountsResourceWithStreamingResponse(client.accounts)
-        self.instruments = resources.AsyncInstrumentsResourceWithStreamingResponse(client.instruments)
+        self.entities = entities.AsyncEntitiesResourceWithStreamingResponse(client.entities)
+        self.accounts = accounts.AsyncAccountsResourceWithStreamingResponse(client.accounts)
+        self.instruments = instruments.AsyncInstrumentsResourceWithStreamingResponse(client.instruments)
 
 
 Client = StudioSDK
