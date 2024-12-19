@@ -1,6 +1,5 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import Optional
 
 from ..._models import BaseModel
 
@@ -8,13 +7,16 @@ __all__ = ["Position"]
 
 
 class Position(BaseModel):
-    account_id: Optional[str] = None
+    account_id: str
     """Account ID for the account."""
 
-    account_number: Optional[str] = None
+    account_number: str
     """Account number for the account."""
 
-    quantity: Optional[str] = None
+    average_cost: float
+    """The average cost of the position."""
+
+    quantity: str
     """String representation of quantity."""
 
-    symbol: Optional[str] = None
+    symbol: str

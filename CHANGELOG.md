@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.17 (2024-12-19)
+
+Full Changelog: [v0.1.0-alpha.16...v0.1.0-alpha.17](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.16...v0.1.0-alpha.17)
+
+### Features
+
+* **api:** add average cost to positions ([#85](https://github.com/clear-street/studio-sdk-python/issues/85)) ([c27bd79](https://github.com/clear-street/studio-sdk-python/commit/c27bd798d73b28ec32f6dc4b207dd7379a20a24b))
+
 ## 0.1.0-alpha.16 (2024-12-18)
 
 Full Changelog: [v0.1.0-alpha.15...v0.1.0-alpha.16](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.15...v0.1.0-alpha.16)
