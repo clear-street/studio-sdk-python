@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.0-alpha.16 (2024-12-18)
+
+Full Changelog: [v0.1.0-alpha.15...v0.1.0-alpha.16](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.15...v0.1.0-alpha.16)
+
+### Chores
+
+* **internal:** add support for TypeAliasType ([#80](https://github.com/clear-street/studio-sdk-python/issues/80)) ([174dfac](https://github.com/clear-street/studio-sdk-python/commit/174dfac4c311728e5e80dd60828671248078a8d8))
+* **internal:** bump pydantic dependency ([#76](https://github.com/clear-street/studio-sdk-python/issues/76)) ([9f6bfa1](https://github.com/clear-street/studio-sdk-python/commit/9f6bfa14408def30dcc33d4953faf017111b75a8))
+* **internal:** bump pyright ([#79](https://github.com/clear-street/studio-sdk-python/issues/79)) ([78f1099](https://github.com/clear-street/studio-sdk-python/commit/78f10998fab7d9789b01e8c68e9c376cef802189))
+* **internal:** codegen related update ([#81](https://github.com/clear-street/studio-sdk-python/issues/81)) ([5ebf768](https://github.com/clear-street/studio-sdk-python/commit/5ebf7684b4a459b3c070df3758bab4ce4ae4fac7))
+* **internal:** fix some typos ([#83](https://github.com/clear-street/studio-sdk-python/issues/83)) ([2f9c6fa](https://github.com/clear-street/studio-sdk-python/commit/2f9c6faa24900512a7b40c25256fe8dee0d5003b))
+
+
+### Documentation
+
+* **readme:** example snippet for client context manager ([#82](https://github.com/clear-street/studio-sdk-python/issues/82)) ([6d2b4a7](https://github.com/clear-street/studio-sdk-python/commit/6d2b4a7060ca8d6652ea559760657c58e7be0618))
+* **readme:** fix http client proxies example ([#78](https://github.com/clear-street/studio-sdk-python/issues/78)) ([d3e3918](https://github.com/clear-street/studio-sdk-python/commit/d3e3918a7e9e29776a017fc06ee2ed6c762eaec2))
+
 ## 0.1.0-alpha.15 (2024-12-09)
 
 Full Changelog: [v0.1.0-alpha.14...v0.1.0-alpha.15](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.14...v0.1.0-alpha.15)
