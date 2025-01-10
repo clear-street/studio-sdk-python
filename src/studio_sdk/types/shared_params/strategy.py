@@ -7,7 +7,65 @@ from typing_extensions import Literal, Required, TypeAlias, TypedDict
 
 from .base_strategy import BaseStrategy
 
-__all__ = ["Strategy", "DmaStrategy"]
+__all__ = ["Strategy", "VwapStrategy", "TwapStrategy", "ApStrategy", "PovStrategy", "DarkStrategy", "DmaStrategy"]
+
+
+class VwapStrategy(BaseStrategy):
+    max_percent: int
+    """The maximum percentage of market volume.
+
+    Must be an integer between 0 and 50 (inclusive).
+    """
+
+    min_percent: int
+    """The minimum percentage of market volume.
+
+    Must be an integer between 0 and 100 (inclusive).
+    """
+
+
+class TwapStrategy(BaseStrategy):
+    max_percent: int
+    """The maximum percentage of market volume.
+
+    Must be an integer between 0 and 50 (inclusive).
+    """
+
+    min_percent: int
+    """The minimum percentage of market volume.
+
+    Must be an integer between 0 and 100 (inclusive).
+    """
+
+
+class ApStrategy(BaseStrategy):
+    max_percent: int
+    """The maximum percentage of market volume.
+
+    Must be an integer between 0 and 100 (inclusive).
+    """
+
+    min_percent: int
+    """The minimum percentage of market volume.
+
+    Must be an integer between 0 and 100 (inclusive).
+    """
+
+
+class PovStrategy(BaseStrategy):
+    target_percent: Required[int]
+    """The target percentage of market volume.
+
+    Must be an integer between 0 and 100 (inclusive).
+    """
+
+
+class DarkStrategy(BaseStrategy):
+    max_percent: int
+    """The maximum percentage of market volume.
+
+    Must be an integer between 0 and 100 (inclusive).
+    """
 
 
 class DmaStrategy(TypedDict, total=False):
@@ -82,5 +140,5 @@ class DmaStrategy(TypedDict, total=False):
 
 
 Strategy: TypeAlias = Union[
-    BaseStrategy, BaseStrategy, BaseStrategy, BaseStrategy, BaseStrategy, BaseStrategy, DmaStrategy
+    BaseStrategy, VwapStrategy, TwapStrategy, ApStrategy, PovStrategy, DarkStrategy, DmaStrategy
 ]

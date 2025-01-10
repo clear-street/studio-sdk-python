@@ -1,12 +1,70 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import Union
+from typing import Union, Optional
 from typing_extensions import Literal, TypeAlias
 
 from ..._models import BaseModel
 from .base_strategy import BaseStrategy
 
-__all__ = ["Strategy", "DmaStrategy"]
+__all__ = ["Strategy", "VwapStrategy", "TwapStrategy", "ApStrategy", "PovStrategy", "DarkStrategy", "DmaStrategy"]
+
+
+class VwapStrategy(BaseStrategy):
+    max_percent: Optional[int] = None
+    """The maximum percentage of market volume.
+
+    Must be an integer between 0 and 50 (inclusive).
+    """
+
+    min_percent: Optional[int] = None
+    """The minimum percentage of market volume.
+
+    Must be an integer between 0 and 100 (inclusive).
+    """
+
+
+class TwapStrategy(BaseStrategy):
+    max_percent: Optional[int] = None
+    """The maximum percentage of market volume.
+
+    Must be an integer between 0 and 50 (inclusive).
+    """
+
+    min_percent: Optional[int] = None
+    """The minimum percentage of market volume.
+
+    Must be an integer between 0 and 100 (inclusive).
+    """
+
+
+class ApStrategy(BaseStrategy):
+    max_percent: Optional[int] = None
+    """The maximum percentage of market volume.
+
+    Must be an integer between 0 and 100 (inclusive).
+    """
+
+    min_percent: Optional[int] = None
+    """The minimum percentage of market volume.
+
+    Must be an integer between 0 and 100 (inclusive).
+    """
+
+
+class PovStrategy(BaseStrategy):
+    target_percent: int
+    """The target percentage of market volume.
+
+    Must be an integer between 0 and 100 (inclusive).
+    """
+
+
+class DarkStrategy(BaseStrategy):
+    max_percent: Optional[int] = None
+    """The maximum percentage of market volume.
+
+    Must be an integer between 0 and 100 (inclusive).
+    """
 
 
 class DmaStrategy(BaseModel):
@@ -81,5 +139,5 @@ class DmaStrategy(BaseModel):
 
 
 Strategy: TypeAlias = Union[
-    BaseStrategy, BaseStrategy, BaseStrategy, BaseStrategy, BaseStrategy, BaseStrategy, DmaStrategy
+    BaseStrategy, VwapStrategy, TwapStrategy, ApStrategy, PovStrategy, DarkStrategy, DmaStrategy
 ]
