@@ -1,5 +1,45 @@
 # Changelog
 
+## 0.1.0-alpha.18 (2025-02-14)
+
+Full Changelog: [v0.1.0-alpha.17...v0.1.0-alpha.18](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.17...v0.1.0-alpha.18)
+
+### Features
+
+* **client:** send `X-Stainless-Read-Timeout` header ([#106](https://github.com/clear-street/studio-sdk-python/issues/106)) ([8357a68](https://github.com/clear-street/studio-sdk-python/commit/8357a685952e2f52457ee7c518bf7214191cb7b6))
+
+
+### Bug Fixes
+
+* **api:** better support union schemas with common properties ([#95](https://github.com/clear-street/studio-sdk-python/issues/95)) ([7ea9b5e](https://github.com/clear-street/studio-sdk-python/commit/7ea9b5ed2d55c42e6bda4ac896ef73d665cbba53))
+* asyncify on non-asyncio runtimes ([#109](https://github.com/clear-street/studio-sdk-python/issues/109)) ([37e16e8](https://github.com/clear-street/studio-sdk-python/commit/37e16e870b782fc246b8ce8d52d5819cd53614b4))
+* **client:** only call .close() when needed ([#92](https://github.com/clear-street/studio-sdk-python/issues/92)) ([090806b](https://github.com/clear-street/studio-sdk-python/commit/090806b20ea46fac9dd170feb98fe95ad26ebd8b))
+* correctly handle deserialising `cls` fields ([#96](https://github.com/clear-street/studio-sdk-python/issues/96)) ([13bed11](https://github.com/clear-street/studio-sdk-python/commit/13bed116c380e0e3215f61258e5b70dce5d45b4c))
+* deduplicate unknown entries in union ([#103](https://github.com/clear-street/studio-sdk-python/issues/103)) ([25b27e4](https://github.com/clear-street/studio-sdk-python/commit/25b27e43024e634be0a72828cfbe3299e04757b3))
+* **tests:** make test_get_platform less flaky ([#99](https://github.com/clear-street/studio-sdk-python/issues/99)) ([050518d](https://github.com/clear-street/studio-sdk-python/commit/050518d93ff9630513144f97b14b584e1ee7b3cf))
+
+
+### Chores
+
+* **internal:** avoid pytest-asyncio deprecation warning ([#100](https://github.com/clear-street/studio-sdk-python/issues/100)) ([a66fba3](https://github.com/clear-street/studio-sdk-python/commit/a66fba3c87fa8d9aedcd09b1b02760c95ab19b14))
+* **internal:** bummp ruff dependency ([#105](https://github.com/clear-street/studio-sdk-python/issues/105)) ([dbc4dbe](https://github.com/clear-street/studio-sdk-python/commit/dbc4dbe30fdb70b118e9542206f4eb27a618b76d))
+* **internal:** bump httpx dependency ([#91](https://github.com/clear-street/studio-sdk-python/issues/91)) ([a836521](https://github.com/clear-street/studio-sdk-python/commit/a836521e7456b1b88bfcc88939a859219810c7e2))
+* **internal:** change default timeout to an int ([#104](https://github.com/clear-street/studio-sdk-python/issues/104)) ([ca6afef](https://github.com/clear-street/studio-sdk-python/commit/ca6afef849107703318baccefbe95b2ce24d0154))
+* **internal:** codegen related update ([#101](https://github.com/clear-street/studio-sdk-python/issues/101)) ([3b949f4](https://github.com/clear-street/studio-sdk-python/commit/3b949f4a066d84e59e09133174bde5663b1f27c6))
+* **internal:** codegen related update ([#88](https://github.com/clear-street/studio-sdk-python/issues/88)) ([dc24ced](https://github.com/clear-street/studio-sdk-python/commit/dc24ced22ec76d09b3ae9aa33abc91e432733572))
+* **internal:** codegen related update ([#90](https://github.com/clear-street/studio-sdk-python/issues/90)) ([28907db](https://github.com/clear-street/studio-sdk-python/commit/28907db57dd0a72601d01676fef5316620b12144))
+* **internal:** codegen related update ([#94](https://github.com/clear-street/studio-sdk-python/issues/94)) ([f5d8750](https://github.com/clear-street/studio-sdk-python/commit/f5d87505d08ffdacb49f6c71984c9c3a9b4e4585))
+* **internal:** codegen related update ([#97](https://github.com/clear-street/studio-sdk-python/issues/97)) ([4144402](https://github.com/clear-street/studio-sdk-python/commit/4144402d212358d70747707a04e21510569b104c))
+* **internal:** fix type traversing dictionary params ([#107](https://github.com/clear-street/studio-sdk-python/issues/107)) ([fd4d52f](https://github.com/clear-street/studio-sdk-python/commit/fd4d52f99e68933e8e5614acdbf654dfd86e3fbd))
+* **internal:** minor formatting changes ([#102](https://github.com/clear-street/studio-sdk-python/issues/102)) ([fab8f46](https://github.com/clear-street/studio-sdk-python/commit/fab8f46801884580af849f15d0429ff2a95fc17d))
+* **internal:** minor type handling changes ([#108](https://github.com/clear-street/studio-sdk-python/issues/108)) ([9f77dd3](https://github.com/clear-street/studio-sdk-python/commit/9f77dd37a1f892a83103cef46f8fb2d1e0de7450))
+
+
+### Documentation
+
+* fix typos ([#93](https://github.com/clear-street/studio-sdk-python/issues/93)) ([f142e41](https://github.com/clear-street/studio-sdk-python/commit/f142e41861709d140f3cfccf1be2e459f27ba291))
+* **raw responses:** fix duplicate `the` ([#98](https://github.com/clear-street/studio-sdk-python/issues/98)) ([d6f1bdd](https://github.com/clear-street/studio-sdk-python/commit/d6f1bddd4c1b59386f6883c786f5771f63dd314d))
+
 ## 0.1.0-alpha.17 (2024-12-19)
 
 Full Changelog: [v0.1.0-alpha.16...v0.1.0-alpha.17](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.16...v0.1.0-alpha.17)
