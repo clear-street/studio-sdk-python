@@ -20,11 +20,11 @@ class TestBulkOrders:
     @parametrize
     def test_method_create(self, client: StudioSDK) -> None:
         bulk_order = client.accounts.bulk_orders.create(
-            account_id="x",
+            account_id="100000",
             orders=[
                 {
                     "order_type": "limit",
-                    "quantity": "x",
+                    "quantity": "100",
                     "side": "buy",
                     "symbol": "AAPL",
                     "time_in_force": "day",
@@ -36,11 +36,11 @@ class TestBulkOrders:
     @parametrize
     def test_raw_response_create(self, client: StudioSDK) -> None:
         response = client.accounts.bulk_orders.with_raw_response.create(
-            account_id="x",
+            account_id="100000",
             orders=[
                 {
                     "order_type": "limit",
-                    "quantity": "x",
+                    "quantity": "100",
                     "side": "buy",
                     "symbol": "AAPL",
                     "time_in_force": "day",
@@ -56,11 +56,11 @@ class TestBulkOrders:
     @parametrize
     def test_streaming_response_create(self, client: StudioSDK) -> None:
         with client.accounts.bulk_orders.with_streaming_response.create(
-            account_id="x",
+            account_id="100000",
             orders=[
                 {
                     "order_type": "limit",
-                    "quantity": "x",
+                    "quantity": "100",
                     "side": "buy",
                     "symbol": "AAPL",
                     "time_in_force": "day",
@@ -83,7 +83,7 @@ class TestBulkOrders:
                 orders=[
                     {
                         "order_type": "limit",
-                        "quantity": "x",
+                        "quantity": "100",
                         "side": "buy",
                         "symbol": "AAPL",
                         "time_in_force": "day",
@@ -98,11 +98,11 @@ class TestAsyncBulkOrders:
     @parametrize
     async def test_method_create(self, async_client: AsyncStudioSDK) -> None:
         bulk_order = await async_client.accounts.bulk_orders.create(
-            account_id="x",
+            account_id="100000",
             orders=[
                 {
                     "order_type": "limit",
-                    "quantity": "x",
+                    "quantity": "100",
                     "side": "buy",
                     "symbol": "AAPL",
                     "time_in_force": "day",
@@ -114,11 +114,11 @@ class TestAsyncBulkOrders:
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.bulk_orders.with_raw_response.create(
-            account_id="x",
+            account_id="100000",
             orders=[
                 {
                     "order_type": "limit",
-                    "quantity": "x",
+                    "quantity": "100",
                     "side": "buy",
                     "symbol": "AAPL",
                     "time_in_force": "day",
@@ -134,11 +134,11 @@ class TestAsyncBulkOrders:
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.bulk_orders.with_streaming_response.create(
-            account_id="x",
+            account_id="100000",
             orders=[
                 {
                     "order_type": "limit",
-                    "quantity": "x",
+                    "quantity": "100",
                     "side": "buy",
                     "symbol": "AAPL",
                     "time_in_force": "day",
@@ -161,7 +161,7 @@ class TestAsyncBulkOrders:
                 orders=[
                     {
                         "order_type": "limit",
-                        "quantity": "x",
+                        "quantity": "100",
                         "side": "buy",
                         "symbol": "AAPL",
                         "time_in_force": "day",

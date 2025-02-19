@@ -20,14 +20,14 @@ class TestEasyBorrows:
     @parametrize
     def test_method_list(self, client: StudioSDK) -> None:
         easy_borrow = client.accounts.easy_borrows.list(
-            "x",
+            "100000",
         )
         assert_matches_type(EasyBorrowListResponse, easy_borrow, path=["response"])
 
     @parametrize
     def test_raw_response_list(self, client: StudioSDK) -> None:
         response = client.accounts.easy_borrows.with_raw_response.list(
-            "x",
+            "100000",
         )
 
         assert response.is_closed is True
@@ -38,7 +38,7 @@ class TestEasyBorrows:
     @parametrize
     def test_streaming_response_list(self, client: StudioSDK) -> None:
         with client.accounts.easy_borrows.with_streaming_response.list(
-            "x",
+            "100000",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -62,14 +62,14 @@ class TestAsyncEasyBorrows:
     @parametrize
     async def test_method_list(self, async_client: AsyncStudioSDK) -> None:
         easy_borrow = await async_client.accounts.easy_borrows.list(
-            "x",
+            "100000",
         )
         assert_matches_type(EasyBorrowListResponse, easy_borrow, path=["response"])
 
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.easy_borrows.with_raw_response.list(
-            "x",
+            "100000",
         )
 
         assert response.is_closed is True
@@ -80,7 +80,7 @@ class TestAsyncEasyBorrows:
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.easy_borrows.with_streaming_response.list(
-            "x",
+            "100000",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
