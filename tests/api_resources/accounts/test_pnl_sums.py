@@ -27,17 +27,6 @@ class TestPnlSums:
         assert_matches_type(PnlSumListResponse, pnl_sum, path=["response"])
 
     @parametrize
-    def test_method_list_with_all_params(self, client: StudioSDK) -> None:
-        pnl_sum = client.accounts.pnl_sums.list(
-            account_id="x",
-            ending_date=20240101,
-            starting_date=20240101,
-            symbol="AAPL",
-            underlying_symbol="AAPL",
-        )
-        assert_matches_type(PnlSumListResponse, pnl_sum, path=["response"])
-
-    @parametrize
     def test_raw_response_list(self, client: StudioSDK) -> None:
         response = client.accounts.pnl_sums.with_raw_response.list(
             account_id="x",
@@ -84,17 +73,6 @@ class TestAsyncPnlSums:
             account_id="x",
             ending_date=20240101,
             starting_date=20240101,
-        )
-        assert_matches_type(PnlSumListResponse, pnl_sum, path=["response"])
-
-    @parametrize
-    async def test_method_list_with_all_params(self, async_client: AsyncStudioSDK) -> None:
-        pnl_sum = await async_client.accounts.pnl_sums.list(
-            account_id="x",
-            ending_date=20240101,
-            starting_date=20240101,
-            symbol="AAPL",
-            underlying_symbol="AAPL",
         )
         assert_matches_type(PnlSumListResponse, pnl_sum, path=["response"])
 
