@@ -89,14 +89,8 @@ class PnlSumListResponse(BaseModel):
     Start of day equity of the starting date in the date range.
     """
 
-    symbol: Optional[str] = None
-    """Echoed back from the provided query param."""
-
     total_pnl: Optional[float] = None
     """`realized_pnl + unrealized_pnl`"""
-
-    underlying_symbol: Optional[str] = None
-    """Echoed back from the provided query param."""
 
     unrealized_pnl: Optional[float] = None
     """Sum of profit and loss from market changes across all symbols."""
