@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.19 (2025-02-19)
+
+Full Changelog: [v0.1.0-alpha.18...v0.1.0-alpha.19](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.18...v0.1.0-alpha.19)
+
+### Features
+
+* **api:** remove symbol filtering from pnl-sums ([#111](https://github.com/clear-street/studio-sdk-python/issues/111)) ([ed079d9](https://github.com/clear-street/studio-sdk-python/commit/ed079d91b4521e97ffd28184a31cb7da73af67a2))
+
 ## 0.1.0-alpha.18 (2025-02-14)
 
 Full Changelog: [v0.1.0-alpha.17...v0.1.0-alpha.18](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.17...v0.1.0-alpha.18)
