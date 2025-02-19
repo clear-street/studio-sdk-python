@@ -20,14 +20,14 @@ class TestPnlDetails:
     @parametrize
     def test_method_list(self, client: StudioSDK) -> None:
         pnl_detail = client.accounts.pnl_details.list(
-            "100000",
+            "x",
         )
         assert_matches_type(PnlDetailListResponse, pnl_detail, path=["response"])
 
     @parametrize
     def test_raw_response_list(self, client: StudioSDK) -> None:
         response = client.accounts.pnl_details.with_raw_response.list(
-            "100000",
+            "x",
         )
 
         assert response.is_closed is True
@@ -38,7 +38,7 @@ class TestPnlDetails:
     @parametrize
     def test_streaming_response_list(self, client: StudioSDK) -> None:
         with client.accounts.pnl_details.with_streaming_response.list(
-            "100000",
+            "x",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -62,14 +62,14 @@ class TestAsyncPnlDetails:
     @parametrize
     async def test_method_list(self, async_client: AsyncStudioSDK) -> None:
         pnl_detail = await async_client.accounts.pnl_details.list(
-            "100000",
+            "x",
         )
         assert_matches_type(PnlDetailListResponse, pnl_detail, path=["response"])
 
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.pnl_details.with_raw_response.list(
-            "100000",
+            "x",
         )
 
         assert response.is_closed is True
@@ -80,7 +80,7 @@ class TestAsyncPnlDetails:
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.pnl_details.with_streaming_response.list(
-            "100000",
+            "x",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"

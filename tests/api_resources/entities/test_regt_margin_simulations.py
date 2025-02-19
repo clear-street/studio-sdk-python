@@ -23,7 +23,7 @@ class TestRegtMarginSimulations:
     @parametrize
     def test_method_create(self, client: StudioSDK) -> None:
         regt_margin_simulation = client.entities.regt_margin_simulations.create(
-            entity_id="100000",
+            entity_id="x",
             name="name",
         )
         assert_matches_type(RegtMarginSimulationCreateResponse, regt_margin_simulation, path=["response"])
@@ -31,20 +31,20 @@ class TestRegtMarginSimulations:
     @parametrize
     def test_method_create_with_all_params(self, client: StudioSDK) -> None:
         regt_margin_simulation = client.entities.regt_margin_simulations.create(
-            entity_id="100000",
+            entity_id="x",
             name="name",
             ignore_existing=True,
             prices=[
                 {
-                    "price": "123.99",
+                    "price": "x",
                     "symbol": "AAPL",
                     "symbol_format": "cms",
                 }
             ],
             trades=[
                 {
-                    "price": "123.99",
-                    "quantity": "100",
+                    "price": "x",
+                    "quantity": "x",
                     "side": "buy",
                     "symbol": "AAPL",
                     "symbol_format": "cms",
@@ -56,7 +56,7 @@ class TestRegtMarginSimulations:
     @parametrize
     def test_raw_response_create(self, client: StudioSDK) -> None:
         response = client.entities.regt_margin_simulations.with_raw_response.create(
-            entity_id="100000",
+            entity_id="x",
             name="name",
         )
 
@@ -68,7 +68,7 @@ class TestRegtMarginSimulations:
     @parametrize
     def test_streaming_response_create(self, client: StudioSDK) -> None:
         with client.entities.regt_margin_simulations.with_streaming_response.create(
-            entity_id="100000",
+            entity_id="x",
             name="name",
         ) as response:
             assert not response.is_closed
@@ -91,7 +91,7 @@ class TestRegtMarginSimulations:
     def test_method_retrieve(self, client: StudioSDK) -> None:
         regt_margin_simulation = client.entities.regt_margin_simulations.retrieve(
             simulation_id="6460030d-8ed4-19d3-818e-e87b36e90005",
-            entity_id="100000",
+            entity_id="x",
         )
         assert_matches_type(RegtMarginSimulation, regt_margin_simulation, path=["response"])
 
@@ -99,7 +99,7 @@ class TestRegtMarginSimulations:
     def test_raw_response_retrieve(self, client: StudioSDK) -> None:
         response = client.entities.regt_margin_simulations.with_raw_response.retrieve(
             simulation_id="6460030d-8ed4-19d3-818e-e87b36e90005",
-            entity_id="100000",
+            entity_id="x",
         )
 
         assert response.is_closed is True
@@ -111,7 +111,7 @@ class TestRegtMarginSimulations:
     def test_streaming_response_retrieve(self, client: StudioSDK) -> None:
         with client.entities.regt_margin_simulations.with_streaming_response.retrieve(
             simulation_id="6460030d-8ed4-19d3-818e-e87b36e90005",
-            entity_id="100000",
+            entity_id="x",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -132,7 +132,7 @@ class TestRegtMarginSimulations:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `simulation_id` but received ''"):
             client.entities.regt_margin_simulations.with_raw_response.retrieve(
                 simulation_id="",
-                entity_id="100000",
+                entity_id="x",
             )
 
 
@@ -142,7 +142,7 @@ class TestAsyncRegtMarginSimulations:
     @parametrize
     async def test_method_create(self, async_client: AsyncStudioSDK) -> None:
         regt_margin_simulation = await async_client.entities.regt_margin_simulations.create(
-            entity_id="100000",
+            entity_id="x",
             name="name",
         )
         assert_matches_type(RegtMarginSimulationCreateResponse, regt_margin_simulation, path=["response"])
@@ -150,20 +150,20 @@ class TestAsyncRegtMarginSimulations:
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncStudioSDK) -> None:
         regt_margin_simulation = await async_client.entities.regt_margin_simulations.create(
-            entity_id="100000",
+            entity_id="x",
             name="name",
             ignore_existing=True,
             prices=[
                 {
-                    "price": "123.99",
+                    "price": "x",
                     "symbol": "AAPL",
                     "symbol_format": "cms",
                 }
             ],
             trades=[
                 {
-                    "price": "123.99",
-                    "quantity": "100",
+                    "price": "x",
+                    "quantity": "x",
                     "side": "buy",
                     "symbol": "AAPL",
                     "symbol_format": "cms",
@@ -175,7 +175,7 @@ class TestAsyncRegtMarginSimulations:
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.entities.regt_margin_simulations.with_raw_response.create(
-            entity_id="100000",
+            entity_id="x",
             name="name",
         )
 
@@ -187,7 +187,7 @@ class TestAsyncRegtMarginSimulations:
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.entities.regt_margin_simulations.with_streaming_response.create(
-            entity_id="100000",
+            entity_id="x",
             name="name",
         ) as response:
             assert not response.is_closed
@@ -210,7 +210,7 @@ class TestAsyncRegtMarginSimulations:
     async def test_method_retrieve(self, async_client: AsyncStudioSDK) -> None:
         regt_margin_simulation = await async_client.entities.regt_margin_simulations.retrieve(
             simulation_id="6460030d-8ed4-19d3-818e-e87b36e90005",
-            entity_id="100000",
+            entity_id="x",
         )
         assert_matches_type(RegtMarginSimulation, regt_margin_simulation, path=["response"])
 
@@ -218,7 +218,7 @@ class TestAsyncRegtMarginSimulations:
     async def test_raw_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.entities.regt_margin_simulations.with_raw_response.retrieve(
             simulation_id="6460030d-8ed4-19d3-818e-e87b36e90005",
-            entity_id="100000",
+            entity_id="x",
         )
 
         assert response.is_closed is True
@@ -230,7 +230,7 @@ class TestAsyncRegtMarginSimulations:
     async def test_streaming_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.entities.regt_margin_simulations.with_streaming_response.retrieve(
             simulation_id="6460030d-8ed4-19d3-818e-e87b36e90005",
-            entity_id="100000",
+            entity_id="x",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -251,5 +251,5 @@ class TestAsyncRegtMarginSimulations:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `simulation_id` but received ''"):
             await async_client.entities.regt_margin_simulations.with_raw_response.retrieve(
                 simulation_id="",
-                entity_id="100000",
+                entity_id="x",
             )

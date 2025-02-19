@@ -20,14 +20,14 @@ class TestPnlSummary:
     @parametrize
     def test_method_retrieve(self, client: StudioSDK) -> None:
         pnl_summary = client.accounts.pnl_summary.retrieve(
-            "100000",
+            "x",
         )
         assert_matches_type(PnlSummaryRetrieveResponse, pnl_summary, path=["response"])
 
     @parametrize
     def test_raw_response_retrieve(self, client: StudioSDK) -> None:
         response = client.accounts.pnl_summary.with_raw_response.retrieve(
-            "100000",
+            "x",
         )
 
         assert response.is_closed is True
@@ -38,7 +38,7 @@ class TestPnlSummary:
     @parametrize
     def test_streaming_response_retrieve(self, client: StudioSDK) -> None:
         with client.accounts.pnl_summary.with_streaming_response.retrieve(
-            "100000",
+            "x",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -62,14 +62,14 @@ class TestAsyncPnlSummary:
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncStudioSDK) -> None:
         pnl_summary = await async_client.accounts.pnl_summary.retrieve(
-            "100000",
+            "x",
         )
         assert_matches_type(PnlSummaryRetrieveResponse, pnl_summary, path=["response"])
 
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.pnl_summary.with_raw_response.retrieve(
-            "100000",
+            "x",
         )
 
         assert response.is_closed is True
@@ -80,7 +80,7 @@ class TestAsyncPnlSummary:
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.pnl_summary.with_streaming_response.retrieve(
-            "100000",
+            "x",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"

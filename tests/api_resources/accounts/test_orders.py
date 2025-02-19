@@ -25,9 +25,9 @@ class TestOrders:
     @parametrize
     def test_method_create(self, client: StudioSDK) -> None:
         order = client.accounts.orders.create(
-            account_id="100000",
+            account_id="x",
             order_type="limit",
-            quantity="100",
+            quantity="x",
             side="buy",
             symbol="AAPL",
             time_in_force="day",
@@ -37,16 +37,16 @@ class TestOrders:
     @parametrize
     def test_method_create_with_all_params(self, client: StudioSDK) -> None:
         order = client.accounts.orders.create(
-            account_id="100000",
+            account_id="x",
             order_type="limit",
-            quantity="100",
+            quantity="x",
             side="buy",
             symbol="AAPL",
             time_in_force="day",
             locate_broker="x",
-            price="123.99",
+            price="x",
             reference_id="my-order-id-123",
-            stop_price="123.99",
+            stop_price="x",
             strategy={
                 "type": "sor",
                 "end_at": 1710613560668,
@@ -60,9 +60,9 @@ class TestOrders:
     @parametrize
     def test_raw_response_create(self, client: StudioSDK) -> None:
         response = client.accounts.orders.with_raw_response.create(
-            account_id="100000",
+            account_id="x",
             order_type="limit",
-            quantity="100",
+            quantity="x",
             side="buy",
             symbol="AAPL",
             time_in_force="day",
@@ -76,9 +76,9 @@ class TestOrders:
     @parametrize
     def test_streaming_response_create(self, client: StudioSDK) -> None:
         with client.accounts.orders.with_streaming_response.create(
-            account_id="100000",
+            account_id="x",
             order_type="limit",
-            quantity="100",
+            quantity="x",
             side="buy",
             symbol="AAPL",
             time_in_force="day",
@@ -97,7 +97,7 @@ class TestOrders:
             client.accounts.orders.with_raw_response.create(
                 account_id="",
                 order_type="limit",
-                quantity="100",
+                quantity="x",
                 side="buy",
                 symbol="AAPL",
                 time_in_force="day",
@@ -106,16 +106,16 @@ class TestOrders:
     @parametrize
     def test_method_retrieve(self, client: StudioSDK) -> None:
         order = client.accounts.orders.retrieve(
-            order_id="12390213",
-            account_id="100000",
+            order_id="x",
+            account_id="x",
         )
         assert_matches_type(OrderRetrieveResponse, order, path=["response"])
 
     @parametrize
     def test_raw_response_retrieve(self, client: StudioSDK) -> None:
         response = client.accounts.orders.with_raw_response.retrieve(
-            order_id="12390213",
-            account_id="100000",
+            order_id="x",
+            account_id="x",
         )
 
         assert response.is_closed is True
@@ -126,8 +126,8 @@ class TestOrders:
     @parametrize
     def test_streaming_response_retrieve(self, client: StudioSDK) -> None:
         with client.accounts.orders.with_streaming_response.retrieve(
-            order_id="12390213",
-            account_id="100000",
+            order_id="x",
+            account_id="x",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -141,27 +141,27 @@ class TestOrders:
     def test_path_params_retrieve(self, client: StudioSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `account_id` but received ''"):
             client.accounts.orders.with_raw_response.retrieve(
-                order_id="12390213",
+                order_id="x",
                 account_id="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
             client.accounts.orders.with_raw_response.retrieve(
                 order_id="",
-                account_id="100000",
+                account_id="x",
             )
 
     @parametrize
     def test_method_list(self, client: StudioSDK) -> None:
         order = client.accounts.orders.list(
-            account_id="100000",
+            account_id="x",
         )
         assert_matches_type(OrderListResponse, order, path=["response"])
 
     @parametrize
     def test_method_list_with_all_params(self, client: StudioSDK) -> None:
         order = client.accounts.orders.list(
-            account_id="100000",
+            account_id="x",
             from_=1710613560668,
             page_size=1,
             page_token="page_token",
@@ -172,7 +172,7 @@ class TestOrders:
     @parametrize
     def test_raw_response_list(self, client: StudioSDK) -> None:
         response = client.accounts.orders.with_raw_response.list(
-            account_id="100000",
+            account_id="x",
         )
 
         assert response.is_closed is True
@@ -183,7 +183,7 @@ class TestOrders:
     @parametrize
     def test_streaming_response_list(self, client: StudioSDK) -> None:
         with client.accounts.orders.with_streaming_response.list(
-            account_id="100000",
+            account_id="x",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -203,14 +203,14 @@ class TestOrders:
     @parametrize
     def test_method_delete(self, client: StudioSDK) -> None:
         order = client.accounts.orders.delete(
-            account_id="100000",
+            account_id="x",
         )
         assert_matches_type(OrderDeleteResponse, order, path=["response"])
 
     @parametrize
     def test_method_delete_with_all_params(self, client: StudioSDK) -> None:
         order = client.accounts.orders.delete(
-            account_id="100000",
+            account_id="x",
             symbol="AAPL",
             symbol_format="cms",
         )
@@ -219,7 +219,7 @@ class TestOrders:
     @parametrize
     def test_raw_response_delete(self, client: StudioSDK) -> None:
         response = client.accounts.orders.with_raw_response.delete(
-            account_id="100000",
+            account_id="x",
         )
 
         assert response.is_closed is True
@@ -230,7 +230,7 @@ class TestOrders:
     @parametrize
     def test_streaming_response_delete(self, client: StudioSDK) -> None:
         with client.accounts.orders.with_streaming_response.delete(
-            account_id="100000",
+            account_id="x",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -250,16 +250,16 @@ class TestOrders:
     @parametrize
     def test_method_cancel(self, client: StudioSDK) -> None:
         order = client.accounts.orders.cancel(
-            order_id="12390213",
-            account_id="100000",
+            order_id="x",
+            account_id="x",
         )
         assert order is None
 
     @parametrize
     def test_raw_response_cancel(self, client: StudioSDK) -> None:
         response = client.accounts.orders.with_raw_response.cancel(
-            order_id="12390213",
-            account_id="100000",
+            order_id="x",
+            account_id="x",
         )
 
         assert response.is_closed is True
@@ -270,8 +270,8 @@ class TestOrders:
     @parametrize
     def test_streaming_response_cancel(self, client: StudioSDK) -> None:
         with client.accounts.orders.with_streaming_response.cancel(
-            order_id="12390213",
-            account_id="100000",
+            order_id="x",
+            account_id="x",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -285,42 +285,42 @@ class TestOrders:
     def test_path_params_cancel(self, client: StudioSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `account_id` but received ''"):
             client.accounts.orders.with_raw_response.cancel(
-                order_id="12390213",
+                order_id="x",
                 account_id="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
             client.accounts.orders.with_raw_response.cancel(
                 order_id="",
-                account_id="100000",
+                account_id="x",
             )
 
     @parametrize
     def test_method_patch(self, client: StudioSDK) -> None:
         order = client.accounts.orders.patch(
-            order_id="12390213",
-            account_id="100000",
-            quantity="100",
+            order_id="x",
+            account_id="x",
+            quantity="x",
         )
         assert order is None
 
     @parametrize
     def test_method_patch_with_all_params(self, client: StudioSDK) -> None:
         order = client.accounts.orders.patch(
-            order_id="12390213",
-            account_id="100000",
-            quantity="100",
-            price="123.99",
-            stop_price="123.99",
+            order_id="x",
+            account_id="x",
+            quantity="x",
+            price="x",
+            stop_price="x",
         )
         assert order is None
 
     @parametrize
     def test_raw_response_patch(self, client: StudioSDK) -> None:
         response = client.accounts.orders.with_raw_response.patch(
-            order_id="12390213",
-            account_id="100000",
-            quantity="100",
+            order_id="x",
+            account_id="x",
+            quantity="x",
         )
 
         assert response.is_closed is True
@@ -331,9 +331,9 @@ class TestOrders:
     @parametrize
     def test_streaming_response_patch(self, client: StudioSDK) -> None:
         with client.accounts.orders.with_streaming_response.patch(
-            order_id="12390213",
-            account_id="100000",
-            quantity="100",
+            order_id="x",
+            account_id="x",
+            quantity="x",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -347,16 +347,16 @@ class TestOrders:
     def test_path_params_patch(self, client: StudioSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `account_id` but received ''"):
             client.accounts.orders.with_raw_response.patch(
-                order_id="12390213",
+                order_id="x",
                 account_id="",
-                quantity="100",
+                quantity="x",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
             client.accounts.orders.with_raw_response.patch(
                 order_id="",
-                account_id="100000",
-                quantity="100",
+                account_id="x",
+                quantity="x",
             )
 
 
@@ -366,9 +366,9 @@ class TestAsyncOrders:
     @parametrize
     async def test_method_create(self, async_client: AsyncStudioSDK) -> None:
         order = await async_client.accounts.orders.create(
-            account_id="100000",
+            account_id="x",
             order_type="limit",
-            quantity="100",
+            quantity="x",
             side="buy",
             symbol="AAPL",
             time_in_force="day",
@@ -378,16 +378,16 @@ class TestAsyncOrders:
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncStudioSDK) -> None:
         order = await async_client.accounts.orders.create(
-            account_id="100000",
+            account_id="x",
             order_type="limit",
-            quantity="100",
+            quantity="x",
             side="buy",
             symbol="AAPL",
             time_in_force="day",
             locate_broker="x",
-            price="123.99",
+            price="x",
             reference_id="my-order-id-123",
-            stop_price="123.99",
+            stop_price="x",
             strategy={
                 "type": "sor",
                 "end_at": 1710613560668,
@@ -401,9 +401,9 @@ class TestAsyncOrders:
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.orders.with_raw_response.create(
-            account_id="100000",
+            account_id="x",
             order_type="limit",
-            quantity="100",
+            quantity="x",
             side="buy",
             symbol="AAPL",
             time_in_force="day",
@@ -417,9 +417,9 @@ class TestAsyncOrders:
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.orders.with_streaming_response.create(
-            account_id="100000",
+            account_id="x",
             order_type="limit",
-            quantity="100",
+            quantity="x",
             side="buy",
             symbol="AAPL",
             time_in_force="day",
@@ -438,7 +438,7 @@ class TestAsyncOrders:
             await async_client.accounts.orders.with_raw_response.create(
                 account_id="",
                 order_type="limit",
-                quantity="100",
+                quantity="x",
                 side="buy",
                 symbol="AAPL",
                 time_in_force="day",
@@ -447,16 +447,16 @@ class TestAsyncOrders:
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncStudioSDK) -> None:
         order = await async_client.accounts.orders.retrieve(
-            order_id="12390213",
-            account_id="100000",
+            order_id="x",
+            account_id="x",
         )
         assert_matches_type(OrderRetrieveResponse, order, path=["response"])
 
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.orders.with_raw_response.retrieve(
-            order_id="12390213",
-            account_id="100000",
+            order_id="x",
+            account_id="x",
         )
 
         assert response.is_closed is True
@@ -467,8 +467,8 @@ class TestAsyncOrders:
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.orders.with_streaming_response.retrieve(
-            order_id="12390213",
-            account_id="100000",
+            order_id="x",
+            account_id="x",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -482,27 +482,27 @@ class TestAsyncOrders:
     async def test_path_params_retrieve(self, async_client: AsyncStudioSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `account_id` but received ''"):
             await async_client.accounts.orders.with_raw_response.retrieve(
-                order_id="12390213",
+                order_id="x",
                 account_id="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
             await async_client.accounts.orders.with_raw_response.retrieve(
                 order_id="",
-                account_id="100000",
+                account_id="x",
             )
 
     @parametrize
     async def test_method_list(self, async_client: AsyncStudioSDK) -> None:
         order = await async_client.accounts.orders.list(
-            account_id="100000",
+            account_id="x",
         )
         assert_matches_type(OrderListResponse, order, path=["response"])
 
     @parametrize
     async def test_method_list_with_all_params(self, async_client: AsyncStudioSDK) -> None:
         order = await async_client.accounts.orders.list(
-            account_id="100000",
+            account_id="x",
             from_=1710613560668,
             page_size=1,
             page_token="page_token",
@@ -513,7 +513,7 @@ class TestAsyncOrders:
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.orders.with_raw_response.list(
-            account_id="100000",
+            account_id="x",
         )
 
         assert response.is_closed is True
@@ -524,7 +524,7 @@ class TestAsyncOrders:
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.orders.with_streaming_response.list(
-            account_id="100000",
+            account_id="x",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -544,14 +544,14 @@ class TestAsyncOrders:
     @parametrize
     async def test_method_delete(self, async_client: AsyncStudioSDK) -> None:
         order = await async_client.accounts.orders.delete(
-            account_id="100000",
+            account_id="x",
         )
         assert_matches_type(OrderDeleteResponse, order, path=["response"])
 
     @parametrize
     async def test_method_delete_with_all_params(self, async_client: AsyncStudioSDK) -> None:
         order = await async_client.accounts.orders.delete(
-            account_id="100000",
+            account_id="x",
             symbol="AAPL",
             symbol_format="cms",
         )
@@ -560,7 +560,7 @@ class TestAsyncOrders:
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.orders.with_raw_response.delete(
-            account_id="100000",
+            account_id="x",
         )
 
         assert response.is_closed is True
@@ -571,7 +571,7 @@ class TestAsyncOrders:
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.orders.with_streaming_response.delete(
-            account_id="100000",
+            account_id="x",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -591,16 +591,16 @@ class TestAsyncOrders:
     @parametrize
     async def test_method_cancel(self, async_client: AsyncStudioSDK) -> None:
         order = await async_client.accounts.orders.cancel(
-            order_id="12390213",
-            account_id="100000",
+            order_id="x",
+            account_id="x",
         )
         assert order is None
 
     @parametrize
     async def test_raw_response_cancel(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.orders.with_raw_response.cancel(
-            order_id="12390213",
-            account_id="100000",
+            order_id="x",
+            account_id="x",
         )
 
         assert response.is_closed is True
@@ -611,8 +611,8 @@ class TestAsyncOrders:
     @parametrize
     async def test_streaming_response_cancel(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.orders.with_streaming_response.cancel(
-            order_id="12390213",
-            account_id="100000",
+            order_id="x",
+            account_id="x",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -626,42 +626,42 @@ class TestAsyncOrders:
     async def test_path_params_cancel(self, async_client: AsyncStudioSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `account_id` but received ''"):
             await async_client.accounts.orders.with_raw_response.cancel(
-                order_id="12390213",
+                order_id="x",
                 account_id="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
             await async_client.accounts.orders.with_raw_response.cancel(
                 order_id="",
-                account_id="100000",
+                account_id="x",
             )
 
     @parametrize
     async def test_method_patch(self, async_client: AsyncStudioSDK) -> None:
         order = await async_client.accounts.orders.patch(
-            order_id="12390213",
-            account_id="100000",
-            quantity="100",
+            order_id="x",
+            account_id="x",
+            quantity="x",
         )
         assert order is None
 
     @parametrize
     async def test_method_patch_with_all_params(self, async_client: AsyncStudioSDK) -> None:
         order = await async_client.accounts.orders.patch(
-            order_id="12390213",
-            account_id="100000",
-            quantity="100",
-            price="123.99",
-            stop_price="123.99",
+            order_id="x",
+            account_id="x",
+            quantity="x",
+            price="x",
+            stop_price="x",
         )
         assert order is None
 
     @parametrize
     async def test_raw_response_patch(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.orders.with_raw_response.patch(
-            order_id="12390213",
-            account_id="100000",
-            quantity="100",
+            order_id="x",
+            account_id="x",
+            quantity="x",
         )
 
         assert response.is_closed is True
@@ -672,9 +672,9 @@ class TestAsyncOrders:
     @parametrize
     async def test_streaming_response_patch(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.orders.with_streaming_response.patch(
-            order_id="12390213",
-            account_id="100000",
-            quantity="100",
+            order_id="x",
+            account_id="x",
+            quantity="x",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -688,14 +688,14 @@ class TestAsyncOrders:
     async def test_path_params_patch(self, async_client: AsyncStudioSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `account_id` but received ''"):
             await async_client.accounts.orders.with_raw_response.patch(
-                order_id="12390213",
+                order_id="x",
                 account_id="",
-                quantity="100",
+                quantity="x",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `order_id` but received ''"):
             await async_client.accounts.orders.with_raw_response.patch(
                 order_id="",
-                account_id="100000",
-                quantity="100",
+                account_id="x",
+                quantity="x",
             )
