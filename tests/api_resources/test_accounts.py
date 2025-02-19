@@ -20,14 +20,14 @@ class TestAccounts:
     @parametrize
     def test_method_retrieve(self, client: StudioSDK) -> None:
         account = client.accounts.retrieve(
-            "100000",
+            "x",
         )
         assert_matches_type(Account, account, path=["response"])
 
     @parametrize
     def test_raw_response_retrieve(self, client: StudioSDK) -> None:
         response = client.accounts.with_raw_response.retrieve(
-            "100000",
+            "x",
         )
 
         assert response.is_closed is True
@@ -38,7 +38,7 @@ class TestAccounts:
     @parametrize
     def test_streaming_response_retrieve(self, client: StudioSDK) -> None:
         with client.accounts.with_streaming_response.retrieve(
-            "100000",
+            "x",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -87,14 +87,14 @@ class TestAsyncAccounts:
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncStudioSDK) -> None:
         account = await async_client.accounts.retrieve(
-            "100000",
+            "x",
         )
         assert_matches_type(Account, account, path=["response"])
 
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.with_raw_response.retrieve(
-            "100000",
+            "x",
         )
 
         assert response.is_closed is True
@@ -105,7 +105,7 @@ class TestAsyncAccounts:
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.with_streaming_response.retrieve(
-            "100000",
+            "x",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"

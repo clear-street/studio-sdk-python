@@ -20,7 +20,7 @@ class TestPnlSums:
     @parametrize
     def test_method_list(self, client: StudioSDK) -> None:
         pnl_sum = client.accounts.pnl_sums.list(
-            account_id="100000",
+            account_id="x",
             ending_date=20240101,
             starting_date=20240101,
         )
@@ -29,7 +29,7 @@ class TestPnlSums:
     @parametrize
     def test_raw_response_list(self, client: StudioSDK) -> None:
         response = client.accounts.pnl_sums.with_raw_response.list(
-            account_id="100000",
+            account_id="x",
             ending_date=20240101,
             starting_date=20240101,
         )
@@ -42,7 +42,7 @@ class TestPnlSums:
     @parametrize
     def test_streaming_response_list(self, client: StudioSDK) -> None:
         with client.accounts.pnl_sums.with_streaming_response.list(
-            account_id="100000",
+            account_id="x",
             ending_date=20240101,
             starting_date=20240101,
         ) as response:
@@ -70,7 +70,7 @@ class TestAsyncPnlSums:
     @parametrize
     async def test_method_list(self, async_client: AsyncStudioSDK) -> None:
         pnl_sum = await async_client.accounts.pnl_sums.list(
-            account_id="100000",
+            account_id="x",
             ending_date=20240101,
             starting_date=20240101,
         )
@@ -79,7 +79,7 @@ class TestAsyncPnlSums:
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.pnl_sums.with_raw_response.list(
-            account_id="100000",
+            account_id="x",
             ending_date=20240101,
             starting_date=20240101,
         )
@@ -92,7 +92,7 @@ class TestAsyncPnlSums:
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.pnl_sums.with_streaming_response.list(
-            account_id="100000",
+            account_id="x",
             ending_date=20240101,
             starting_date=20240101,
         ) as response:
