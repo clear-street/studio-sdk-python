@@ -50,8 +50,6 @@ class PnlSumsResource(SyncAPIResource):
         *,
         ending_date: int,
         starting_date: int,
-        symbol: str | NotGiven = NOT_GIVEN,
-        underlying_symbol: str | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -69,11 +67,6 @@ class PnlSumsResource(SyncAPIResource):
           ending_date: The ending date to accumulate PNL data for, inclusive.
 
           starting_date: The starting date to accumulate PNL data for.
-
-          symbol: Filters for a specific symbol.
-
-          underlying_symbol: Filters for a specific underlying symbol, e.g. all options for a particular
-              underlying.
 
           extra_headers: Send extra headers
 
@@ -96,8 +89,6 @@ class PnlSumsResource(SyncAPIResource):
                     {
                         "ending_date": ending_date,
                         "starting_date": starting_date,
-                        "symbol": symbol,
-                        "underlying_symbol": underlying_symbol,
                     },
                     pnl_sum_list_params.PnlSumListParams,
                 ),
@@ -132,8 +123,6 @@ class AsyncPnlSumsResource(AsyncAPIResource):
         *,
         ending_date: int,
         starting_date: int,
-        symbol: str | NotGiven = NOT_GIVEN,
-        underlying_symbol: str | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -151,11 +140,6 @@ class AsyncPnlSumsResource(AsyncAPIResource):
           ending_date: The ending date to accumulate PNL data for, inclusive.
 
           starting_date: The starting date to accumulate PNL data for.
-
-          symbol: Filters for a specific symbol.
-
-          underlying_symbol: Filters for a specific underlying symbol, e.g. all options for a particular
-              underlying.
 
           extra_headers: Send extra headers
 
@@ -178,8 +162,6 @@ class AsyncPnlSumsResource(AsyncAPIResource):
                     {
                         "ending_date": ending_date,
                         "starting_date": starting_date,
-                        "symbol": symbol,
-                        "underlying_symbol": underlying_symbol,
                     },
                     pnl_sum_list_params.PnlSumListParams,
                 ),
