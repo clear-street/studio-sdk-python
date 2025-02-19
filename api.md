@@ -158,9 +158,15 @@ Methods:
 
 ## PnlSummary
 
+Types:
+
+```python
+from studio_sdk.types.accounts import PnlSummaryRetrieveResponse
+```
+
 Methods:
 
-- <code title="get /accounts/{account_id}/pnl-summary">client.accounts.pnl_summary.<a href="./src/studio_sdk/resources/accounts/pnl_summary.py">retrieve</a>(account_id) -> <a href="./src/studio_sdk/types/pnl_summary.py">PnlSummary</a></code>
+- <code title="get /accounts/{account_id}/pnl-summary">client.accounts.pnl_summary.<a href="./src/studio_sdk/resources/accounts/pnl_summary.py">retrieve</a>(account_id) -> <a href="./src/studio_sdk/types/accounts/pnl_summary_retrieve_response.py">PnlSummaryRetrieveResponse</a></code>
 
 ## PnlDetails
 

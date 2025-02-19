@@ -14,7 +14,7 @@ from ..._response import (
     async_to_streamed_response_wrapper,
 )
 from ..._base_client import make_request_options
-from ...types.pnl_summary import PnlSummary
+from ...types.accounts.pnl_summary_retrieve_response import PnlSummaryRetrieveResponse
 
 __all__ = ["PnlSummaryResource", "AsyncPnlSummaryResource"]
 
@@ -23,7 +23,7 @@ class PnlSummaryResource(SyncAPIResource):
     @cached_property
     def with_raw_response(self) -> PnlSummaryResourceWithRawResponse:
         """
-        This property can be used as a prefix for any HTTP method call to return the
+        This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
         For more information, see https://www.github.com/clear-street/studio-sdk-python#accessing-raw-response-data-eg-headers
@@ -49,7 +49,7 @@ class PnlSummaryResource(SyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> PnlSummary:
+    ) -> PnlSummaryRetrieveResponse:
         """
         Get PNL summary for a given account.
 
@@ -71,7 +71,7 @@ class PnlSummaryResource(SyncAPIResource):
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=PnlSummary,
+            cast_to=PnlSummaryRetrieveResponse,
         )
 
 
@@ -79,7 +79,7 @@ class AsyncPnlSummaryResource(AsyncAPIResource):
     @cached_property
     def with_raw_response(self) -> AsyncPnlSummaryResourceWithRawResponse:
         """
-        This property can be used as a prefix for any HTTP method call to return the
+        This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
         For more information, see https://www.github.com/clear-street/studio-sdk-python#accessing-raw-response-data-eg-headers
@@ -105,7 +105,7 @@ class AsyncPnlSummaryResource(AsyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> PnlSummary:
+    ) -> PnlSummaryRetrieveResponse:
         """
         Get PNL summary for a given account.
 
@@ -127,7 +127,7 @@ class AsyncPnlSummaryResource(AsyncAPIResource):
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=PnlSummary,
+            cast_to=PnlSummaryRetrieveResponse,
         )
 
 
