@@ -20,14 +20,14 @@ class TestRegtMargins:
     @parametrize
     def test_method_retrieve(self, client: StudioSDK) -> None:
         regt_margin = client.entities.regt_margins.retrieve(
-            "x",
+            "100000",
         )
         assert_matches_type(RegtMargin, regt_margin, path=["response"])
 
     @parametrize
     def test_raw_response_retrieve(self, client: StudioSDK) -> None:
         response = client.entities.regt_margins.with_raw_response.retrieve(
-            "x",
+            "100000",
         )
 
         assert response.is_closed is True
@@ -38,7 +38,7 @@ class TestRegtMargins:
     @parametrize
     def test_streaming_response_retrieve(self, client: StudioSDK) -> None:
         with client.entities.regt_margins.with_streaming_response.retrieve(
-            "x",
+            "100000",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -62,14 +62,14 @@ class TestAsyncRegtMargins:
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncStudioSDK) -> None:
         regt_margin = await async_client.entities.regt_margins.retrieve(
-            "x",
+            "100000",
         )
         assert_matches_type(RegtMargin, regt_margin, path=["response"])
 
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.entities.regt_margins.with_raw_response.retrieve(
-            "x",
+            "100000",
         )
 
         assert response.is_closed is True
@@ -80,7 +80,7 @@ class TestAsyncRegtMargins:
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.entities.regt_margins.with_streaming_response.retrieve(
-            "x",
+            "100000",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
