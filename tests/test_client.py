@@ -750,20 +750,24 @@ class TestStudioSDK:
     @mock.patch("studio_sdk._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
     def test_retrying_timeout_errors_doesnt_leak(self, respx_mock: MockRouter) -> None:
-        respx_mock.get("/entities/x").mock(side_effect=httpx.TimeoutException("Test timeout error"))
+        respx_mock.get("/entities/100000").mock(side_effect=httpx.TimeoutException("Test timeout error"))
 
         with pytest.raises(APITimeoutError):
-            self.client.get("/entities/x", cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}})
+            self.client.get(
+                "/entities/100000", cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}}
+            )
 
         assert _get_open_connections(self.client) == 0
 
     @mock.patch("studio_sdk._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
     def test_retrying_status_errors_doesnt_leak(self, respx_mock: MockRouter) -> None:
-        respx_mock.get("/entities/x").mock(return_value=httpx.Response(500))
+        respx_mock.get("/entities/100000").mock(return_value=httpx.Response(500))
 
         with pytest.raises(APIStatusError):
-            self.client.get("/entities/x", cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}})
+            self.client.get(
+                "/entities/100000", cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}}
+            )
 
         assert _get_open_connections(self.client) == 0
 
@@ -791,9 +795,9 @@ class TestStudioSDK:
                 return httpx.Response(500)
             return httpx.Response(200)
 
-        respx_mock.get("/entities/x").mock(side_effect=retry_handler)
+        respx_mock.get("/entities/100000").mock(side_effect=retry_handler)
 
-        response = client.entities.with_raw_response.retrieve("x")
+        response = client.entities.with_raw_response.retrieve("100000")
 
         assert response.retries_taken == failures_before_success
         assert int(response.http_request.headers.get("x-stainless-retry-count")) == failures_before_success
@@ -815,9 +819,11 @@ class TestStudioSDK:
                 return httpx.Response(500)
             return httpx.Response(200)
 
-        respx_mock.get("/entities/x").mock(side_effect=retry_handler)
+        respx_mock.get("/entities/100000").mock(side_effect=retry_handler)
 
-        response = client.entities.with_raw_response.retrieve("x", extra_headers={"x-stainless-retry-count": Omit()})
+        response = client.entities.with_raw_response.retrieve(
+            "100000", extra_headers={"x-stainless-retry-count": Omit()}
+        )
 
         assert len(response.http_request.headers.get_list("x-stainless-retry-count")) == 0
 
@@ -838,9 +844,9 @@ class TestStudioSDK:
                 return httpx.Response(500)
             return httpx.Response(200)
 
-        respx_mock.get("/entities/x").mock(side_effect=retry_handler)
+        respx_mock.get("/entities/100000").mock(side_effect=retry_handler)
 
-        response = client.entities.with_raw_response.retrieve("x", extra_headers={"x-stainless-retry-count": "42"})
+        response = client.entities.with_raw_response.retrieve("100000", extra_headers={"x-stainless-retry-count": "42"})
 
         assert response.http_request.headers.get("x-stainless-retry-count") == "42"
 
@@ -1544,11 +1550,11 @@ class TestAsyncStudioSDK:
     @mock.patch("studio_sdk._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
     async def test_retrying_timeout_errors_doesnt_leak(self, respx_mock: MockRouter) -> None:
-        respx_mock.get("/entities/x").mock(side_effect=httpx.TimeoutException("Test timeout error"))
+        respx_mock.get("/entities/100000").mock(side_effect=httpx.TimeoutException("Test timeout error"))
 
         with pytest.raises(APITimeoutError):
             await self.client.get(
-                "/entities/x", cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}}
+                "/entities/100000", cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}}
             )
 
         assert _get_open_connections(self.client) == 0
@@ -1556,11 +1562,11 @@ class TestAsyncStudioSDK:
     @mock.patch("studio_sdk._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
     async def test_retrying_status_errors_doesnt_leak(self, respx_mock: MockRouter) -> None:
-        respx_mock.get("/entities/x").mock(return_value=httpx.Response(500))
+        respx_mock.get("/entities/100000").mock(return_value=httpx.Response(500))
 
         with pytest.raises(APIStatusError):
             await self.client.get(
-                "/entities/x", cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}}
+                "/entities/100000", cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}}
             )
 
         assert _get_open_connections(self.client) == 0
@@ -1590,9 +1596,9 @@ class TestAsyncStudioSDK:
                 return httpx.Response(500)
             return httpx.Response(200)
 
-        respx_mock.get("/entities/x").mock(side_effect=retry_handler)
+        respx_mock.get("/entities/100000").mock(side_effect=retry_handler)
 
-        response = await client.entities.with_raw_response.retrieve("x")
+        response = await client.entities.with_raw_response.retrieve("100000")
 
         assert response.retries_taken == failures_before_success
         assert int(response.http_request.headers.get("x-stainless-retry-count")) == failures_before_success
@@ -1615,10 +1621,10 @@ class TestAsyncStudioSDK:
                 return httpx.Response(500)
             return httpx.Response(200)
 
-        respx_mock.get("/entities/x").mock(side_effect=retry_handler)
+        respx_mock.get("/entities/100000").mock(side_effect=retry_handler)
 
         response = await client.entities.with_raw_response.retrieve(
-            "x", extra_headers={"x-stainless-retry-count": Omit()}
+            "100000", extra_headers={"x-stainless-retry-count": Omit()}
         )
 
         assert len(response.http_request.headers.get_list("x-stainless-retry-count")) == 0
@@ -1641,10 +1647,10 @@ class TestAsyncStudioSDK:
                 return httpx.Response(500)
             return httpx.Response(200)
 
-        respx_mock.get("/entities/x").mock(side_effect=retry_handler)
+        respx_mock.get("/entities/100000").mock(side_effect=retry_handler)
 
         response = await client.entities.with_raw_response.retrieve(
-            "x", extra_headers={"x-stainless-retry-count": "42"}
+            "100000", extra_headers={"x-stainless-retry-count": "42"}
         )
 
         assert response.http_request.headers.get("x-stainless-retry-count") == "42"

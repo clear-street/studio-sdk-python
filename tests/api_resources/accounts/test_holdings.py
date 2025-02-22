@@ -20,14 +20,14 @@ class TestHoldings:
     @parametrize
     def test_method_list(self, client: StudioSDK) -> None:
         holding = client.accounts.holdings.list(
-            account_id="x",
+            account_id="100000",
         )
         assert_matches_type(HoldingListResponse, holding, path=["response"])
 
     @parametrize
     def test_method_list_with_all_params(self, client: StudioSDK) -> None:
         holding = client.accounts.holdings.list(
-            account_id="x",
+            account_id="100000",
             date=20240101,
         )
         assert_matches_type(HoldingListResponse, holding, path=["response"])
@@ -35,7 +35,7 @@ class TestHoldings:
     @parametrize
     def test_raw_response_list(self, client: StudioSDK) -> None:
         response = client.accounts.holdings.with_raw_response.list(
-            account_id="x",
+            account_id="100000",
         )
 
         assert response.is_closed is True
@@ -46,7 +46,7 @@ class TestHoldings:
     @parametrize
     def test_streaming_response_list(self, client: StudioSDK) -> None:
         with client.accounts.holdings.with_streaming_response.list(
-            account_id="x",
+            account_id="100000",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -70,14 +70,14 @@ class TestAsyncHoldings:
     @parametrize
     async def test_method_list(self, async_client: AsyncStudioSDK) -> None:
         holding = await async_client.accounts.holdings.list(
-            account_id="x",
+            account_id="100000",
         )
         assert_matches_type(HoldingListResponse, holding, path=["response"])
 
     @parametrize
     async def test_method_list_with_all_params(self, async_client: AsyncStudioSDK) -> None:
         holding = await async_client.accounts.holdings.list(
-            account_id="x",
+            account_id="100000",
             date=20240101,
         )
         assert_matches_type(HoldingListResponse, holding, path=["response"])
@@ -85,7 +85,7 @@ class TestAsyncHoldings:
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.holdings.with_raw_response.list(
-            account_id="x",
+            account_id="100000",
         )
 
         assert response.is_closed is True
@@ -96,7 +96,7 @@ class TestAsyncHoldings:
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.holdings.with_streaming_response.list(
-            account_id="x",
+            account_id="100000",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"

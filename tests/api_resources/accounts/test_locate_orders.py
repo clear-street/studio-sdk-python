@@ -21,9 +21,9 @@ class TestLocateOrders:
     @parametrize
     def test_method_create(self, client: StudioSDK) -> None:
         locate_order = client.accounts.locate_orders.create(
-            account_id="x",
+            account_id="100000",
             mpid="x",
-            quantity="x",
+            quantity="100",
             reference_id="my-order-id-123",
             symbol="AAPL",
         )
@@ -32,9 +32,9 @@ class TestLocateOrders:
     @parametrize
     def test_method_create_with_all_params(self, client: StudioSDK) -> None:
         locate_order = client.accounts.locate_orders.create(
-            account_id="x",
+            account_id="100000",
             mpid="x",
-            quantity="x",
+            quantity="100",
             reference_id="my-order-id-123",
             symbol="AAPL",
             comments="comments",
@@ -44,9 +44,9 @@ class TestLocateOrders:
     @parametrize
     def test_raw_response_create(self, client: StudioSDK) -> None:
         response = client.accounts.locate_orders.with_raw_response.create(
-            account_id="x",
+            account_id="100000",
             mpid="x",
-            quantity="x",
+            quantity="100",
             reference_id="my-order-id-123",
             symbol="AAPL",
         )
@@ -59,9 +59,9 @@ class TestLocateOrders:
     @parametrize
     def test_streaming_response_create(self, client: StudioSDK) -> None:
         with client.accounts.locate_orders.with_streaming_response.create(
-            account_id="x",
+            account_id="100000",
             mpid="x",
-            quantity="x",
+            quantity="100",
             reference_id="my-order-id-123",
             symbol="AAPL",
         ) as response:
@@ -79,7 +79,7 @@ class TestLocateOrders:
             client.accounts.locate_orders.with_raw_response.create(
                 account_id="",
                 mpid="x",
-                quantity="x",
+                quantity="100",
                 reference_id="my-order-id-123",
                 symbol="AAPL",
             )
@@ -87,16 +87,16 @@ class TestLocateOrders:
     @parametrize
     def test_method_retrieve(self, client: StudioSDK) -> None:
         locate_order = client.accounts.locate_orders.retrieve(
-            locate_order_id="x",
-            account_id="x",
+            locate_order_id="12390213",
+            account_id="100000",
         )
         assert_matches_type(LocateOrder, locate_order, path=["response"])
 
     @parametrize
     def test_raw_response_retrieve(self, client: StudioSDK) -> None:
         response = client.accounts.locate_orders.with_raw_response.retrieve(
-            locate_order_id="x",
-            account_id="x",
+            locate_order_id="12390213",
+            account_id="100000",
         )
 
         assert response.is_closed is True
@@ -107,8 +107,8 @@ class TestLocateOrders:
     @parametrize
     def test_streaming_response_retrieve(self, client: StudioSDK) -> None:
         with client.accounts.locate_orders.with_streaming_response.retrieve(
-            locate_order_id="x",
-            account_id="x",
+            locate_order_id="12390213",
+            account_id="100000",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -122,21 +122,21 @@ class TestLocateOrders:
     def test_path_params_retrieve(self, client: StudioSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `account_id` but received ''"):
             client.accounts.locate_orders.with_raw_response.retrieve(
-                locate_order_id="x",
+                locate_order_id="12390213",
                 account_id="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `locate_order_id` but received ''"):
             client.accounts.locate_orders.with_raw_response.retrieve(
                 locate_order_id="",
-                account_id="x",
+                account_id="100000",
             )
 
     @parametrize
     def test_method_update(self, client: StudioSDK) -> None:
         locate_order = client.accounts.locate_orders.update(
-            locate_order_id="x",
-            account_id="x",
+            locate_order_id="12390213",
+            account_id="100000",
             accept=True,
         )
         assert locate_order is None
@@ -144,8 +144,8 @@ class TestLocateOrders:
     @parametrize
     def test_raw_response_update(self, client: StudioSDK) -> None:
         response = client.accounts.locate_orders.with_raw_response.update(
-            locate_order_id="x",
-            account_id="x",
+            locate_order_id="12390213",
+            account_id="100000",
             accept=True,
         )
 
@@ -157,8 +157,8 @@ class TestLocateOrders:
     @parametrize
     def test_streaming_response_update(self, client: StudioSDK) -> None:
         with client.accounts.locate_orders.with_streaming_response.update(
-            locate_order_id="x",
-            account_id="x",
+            locate_order_id="12390213",
+            account_id="100000",
             accept=True,
         ) as response:
             assert not response.is_closed
@@ -173,7 +173,7 @@ class TestLocateOrders:
     def test_path_params_update(self, client: StudioSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `account_id` but received ''"):
             client.accounts.locate_orders.with_raw_response.update(
-                locate_order_id="x",
+                locate_order_id="12390213",
                 account_id="",
                 accept=True,
             )
@@ -181,21 +181,21 @@ class TestLocateOrders:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `locate_order_id` but received ''"):
             client.accounts.locate_orders.with_raw_response.update(
                 locate_order_id="",
-                account_id="x",
+                account_id="100000",
                 accept=True,
             )
 
     @parametrize
     def test_method_list(self, client: StudioSDK) -> None:
         locate_order = client.accounts.locate_orders.list(
-            "x",
+            "100000",
         )
         assert_matches_type(LocateOrderListResponse, locate_order, path=["response"])
 
     @parametrize
     def test_raw_response_list(self, client: StudioSDK) -> None:
         response = client.accounts.locate_orders.with_raw_response.list(
-            "x",
+            "100000",
         )
 
         assert response.is_closed is True
@@ -206,7 +206,7 @@ class TestLocateOrders:
     @parametrize
     def test_streaming_response_list(self, client: StudioSDK) -> None:
         with client.accounts.locate_orders.with_streaming_response.list(
-            "x",
+            "100000",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -230,9 +230,9 @@ class TestAsyncLocateOrders:
     @parametrize
     async def test_method_create(self, async_client: AsyncStudioSDK) -> None:
         locate_order = await async_client.accounts.locate_orders.create(
-            account_id="x",
+            account_id="100000",
             mpid="x",
-            quantity="x",
+            quantity="100",
             reference_id="my-order-id-123",
             symbol="AAPL",
         )
@@ -241,9 +241,9 @@ class TestAsyncLocateOrders:
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncStudioSDK) -> None:
         locate_order = await async_client.accounts.locate_orders.create(
-            account_id="x",
+            account_id="100000",
             mpid="x",
-            quantity="x",
+            quantity="100",
             reference_id="my-order-id-123",
             symbol="AAPL",
             comments="comments",
@@ -253,9 +253,9 @@ class TestAsyncLocateOrders:
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.locate_orders.with_raw_response.create(
-            account_id="x",
+            account_id="100000",
             mpid="x",
-            quantity="x",
+            quantity="100",
             reference_id="my-order-id-123",
             symbol="AAPL",
         )
@@ -268,9 +268,9 @@ class TestAsyncLocateOrders:
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.locate_orders.with_streaming_response.create(
-            account_id="x",
+            account_id="100000",
             mpid="x",
-            quantity="x",
+            quantity="100",
             reference_id="my-order-id-123",
             symbol="AAPL",
         ) as response:
@@ -288,7 +288,7 @@ class TestAsyncLocateOrders:
             await async_client.accounts.locate_orders.with_raw_response.create(
                 account_id="",
                 mpid="x",
-                quantity="x",
+                quantity="100",
                 reference_id="my-order-id-123",
                 symbol="AAPL",
             )
@@ -296,16 +296,16 @@ class TestAsyncLocateOrders:
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncStudioSDK) -> None:
         locate_order = await async_client.accounts.locate_orders.retrieve(
-            locate_order_id="x",
-            account_id="x",
+            locate_order_id="12390213",
+            account_id="100000",
         )
         assert_matches_type(LocateOrder, locate_order, path=["response"])
 
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.locate_orders.with_raw_response.retrieve(
-            locate_order_id="x",
-            account_id="x",
+            locate_order_id="12390213",
+            account_id="100000",
         )
 
         assert response.is_closed is True
@@ -316,8 +316,8 @@ class TestAsyncLocateOrders:
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.locate_orders.with_streaming_response.retrieve(
-            locate_order_id="x",
-            account_id="x",
+            locate_order_id="12390213",
+            account_id="100000",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -331,21 +331,21 @@ class TestAsyncLocateOrders:
     async def test_path_params_retrieve(self, async_client: AsyncStudioSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `account_id` but received ''"):
             await async_client.accounts.locate_orders.with_raw_response.retrieve(
-                locate_order_id="x",
+                locate_order_id="12390213",
                 account_id="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `locate_order_id` but received ''"):
             await async_client.accounts.locate_orders.with_raw_response.retrieve(
                 locate_order_id="",
-                account_id="x",
+                account_id="100000",
             )
 
     @parametrize
     async def test_method_update(self, async_client: AsyncStudioSDK) -> None:
         locate_order = await async_client.accounts.locate_orders.update(
-            locate_order_id="x",
-            account_id="x",
+            locate_order_id="12390213",
+            account_id="100000",
             accept=True,
         )
         assert locate_order is None
@@ -353,8 +353,8 @@ class TestAsyncLocateOrders:
     @parametrize
     async def test_raw_response_update(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.locate_orders.with_raw_response.update(
-            locate_order_id="x",
-            account_id="x",
+            locate_order_id="12390213",
+            account_id="100000",
             accept=True,
         )
 
@@ -366,8 +366,8 @@ class TestAsyncLocateOrders:
     @parametrize
     async def test_streaming_response_update(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.locate_orders.with_streaming_response.update(
-            locate_order_id="x",
-            account_id="x",
+            locate_order_id="12390213",
+            account_id="100000",
             accept=True,
         ) as response:
             assert not response.is_closed
@@ -382,7 +382,7 @@ class TestAsyncLocateOrders:
     async def test_path_params_update(self, async_client: AsyncStudioSDK) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `account_id` but received ''"):
             await async_client.accounts.locate_orders.with_raw_response.update(
-                locate_order_id="x",
+                locate_order_id="12390213",
                 account_id="",
                 accept=True,
             )
@@ -390,21 +390,21 @@ class TestAsyncLocateOrders:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `locate_order_id` but received ''"):
             await async_client.accounts.locate_orders.with_raw_response.update(
                 locate_order_id="",
-                account_id="x",
+                account_id="100000",
                 accept=True,
             )
 
     @parametrize
     async def test_method_list(self, async_client: AsyncStudioSDK) -> None:
         locate_order = await async_client.accounts.locate_orders.list(
-            "x",
+            "100000",
         )
         assert_matches_type(LocateOrderListResponse, locate_order, path=["response"])
 
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.locate_orders.with_raw_response.list(
-            "x",
+            "100000",
         )
 
         assert response.is_closed is True
@@ -415,7 +415,7 @@ class TestAsyncLocateOrders:
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.locate_orders.with_streaming_response.list(
-            "x",
+            "100000",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
