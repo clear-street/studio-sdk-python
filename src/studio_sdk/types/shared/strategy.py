@@ -134,7 +134,7 @@ class DmaStrategy(BaseModel):
     </tbody></table>
     """
 
-    type: Literal["dma"]
+    type: Literal["sor", "dark", "ap", "pov", "twap", "vwap", "dma"]
     """Strategy type used for execution, can be one of below.
 
     - `sor`: Smart order router (default)
