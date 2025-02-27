@@ -20,14 +20,14 @@ class TestPnlSummaries:
     @parametrize
     def test_method_retrieve(self, client: StudioSDK) -> None:
         pnl_summary = client.entities.pnl_summaries.retrieve(
-            "x",
+            "100000",
         )
         assert_matches_type(PnlSummary, pnl_summary, path=["response"])
 
     @parametrize
     def test_raw_response_retrieve(self, client: StudioSDK) -> None:
         response = client.entities.pnl_summaries.with_raw_response.retrieve(
-            "x",
+            "100000",
         )
 
         assert response.is_closed is True
@@ -38,7 +38,7 @@ class TestPnlSummaries:
     @parametrize
     def test_streaming_response_retrieve(self, client: StudioSDK) -> None:
         with client.entities.pnl_summaries.with_streaming_response.retrieve(
-            "x",
+            "100000",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -62,14 +62,14 @@ class TestAsyncPnlSummaries:
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncStudioSDK) -> None:
         pnl_summary = await async_client.entities.pnl_summaries.retrieve(
-            "x",
+            "100000",
         )
         assert_matches_type(PnlSummary, pnl_summary, path=["response"])
 
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.entities.pnl_summaries.with_raw_response.retrieve(
-            "x",
+            "100000",
         )
 
         assert response.is_closed is True
@@ -80,7 +80,7 @@ class TestAsyncPnlSummaries:
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.entities.pnl_summaries.with_streaming_response.retrieve(
-            "x",
+            "100000",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"

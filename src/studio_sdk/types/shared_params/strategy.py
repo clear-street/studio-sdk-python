@@ -136,7 +136,19 @@ class DmaStrategy(TypedDict, total=False):
     """
 
     type: Required[Literal["sor", "dark", "ap", "pov", "twap", "vwap", "dma"]]
-    """The type of strategy. This must be set to the respective strategy type."""
+    """Strategy type used for execution, can be one of below.
+
+    - `sor`: Smart order router (default)
+    - `dark`: Dark pool
+    - `ap`: Arrival price
+    - `pov`: Percentage of volume
+    - `twap`: Time weighted average price
+    - `vwap`: Volume weighted average price
+    - `dma`: Direct market access
+
+    For more information on these strategies, please refer to our
+    [documentation](https://docs.clearstreet.io/studio/docs/execution-strategies).
+    """
 
 
 Strategy: TypeAlias = Union[

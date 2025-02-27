@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.1.0-alpha.20 (2025-02-26)
+
+Full Changelog: [v0.1.0-alpha.19...v0.1.0-alpha.20](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.19...v0.1.0-alpha.20)
+
+### Features
+
+* **api:** fix tests ([#117](https://github.com/clear-street/studio-sdk-python/issues/117)) ([722d6f5](https://github.com/clear-street/studio-sdk-python/commit/722d6f54a5ee9c6683c52660a55ce907084cc436))
+* **api:** manual updates ([#114](https://github.com/clear-street/studio-sdk-python/issues/114)) ([666eef4](https://github.com/clear-street/studio-sdk-python/commit/666eef45717ccab2e25aec47e4d15ef8ce3ccac2))
+* **api:** manual updates ([#116](https://github.com/clear-street/studio-sdk-python/issues/116)) ([40e369e](https://github.com/clear-street/studio-sdk-python/commit/40e369e2d70ac9c59c74db1f5f17ec6c247bd739))
+* **api:** manual updates ([#121](https://github.com/clear-street/studio-sdk-python/issues/121)) ([2089f2b](https://github.com/clear-street/studio-sdk-python/commit/2089f2b59a96a8a29b1b83b866eb963aebd70f53))
+* **client:** allow passing `NotGiven` for body ([#118](https://github.com/clear-street/studio-sdk-python/issues/118)) ([6682a49](https://github.com/clear-street/studio-sdk-python/commit/6682a492f6137a31f5cd57e9e1c2ec94539ec325))
+
+
+### Bug Fixes
+
+* **client:** mark some request bodies as optional ([6682a49](https://github.com/clear-street/studio-sdk-python/commit/6682a492f6137a31f5cd57e9e1c2ec94539ec325))
+
+
+### Chores
+
+* **internal:** fix devcontainers setup ([#119](https://github.com/clear-street/studio-sdk-python/issues/119)) ([6e43e2a](https://github.com/clear-street/studio-sdk-python/commit/6e43e2af7bb5a031146b7c50bf8849a4c87c18fa))
+* **internal:** properly set __pydantic_private__ ([#120](https://github.com/clear-street/studio-sdk-python/issues/120)) ([df9ac8c](https://github.com/clear-street/studio-sdk-python/commit/df9ac8c737f8a240b62fe10fdbc5e49df102780a))
+
 ## 0.1.0-alpha.19 (2025-02-19)
 
 Full Changelog: [v0.1.0-alpha.18...v0.1.0-alpha.19](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.18...v0.1.0-alpha.19)

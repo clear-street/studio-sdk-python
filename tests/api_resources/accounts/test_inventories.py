@@ -21,7 +21,7 @@ class TestInventories:
     def test_method_retrieve(self, client: StudioSDK) -> None:
         inventory = client.accounts.inventories.retrieve(
             symbol="AAPL",
-            account_id="x",
+            account_id="100000",
         )
         assert_matches_type(InventoryRetrieveResponse, inventory, path=["response"])
 
@@ -29,7 +29,7 @@ class TestInventories:
     def test_raw_response_retrieve(self, client: StudioSDK) -> None:
         response = client.accounts.inventories.with_raw_response.retrieve(
             symbol="AAPL",
-            account_id="x",
+            account_id="100000",
         )
 
         assert response.is_closed is True
@@ -41,7 +41,7 @@ class TestInventories:
     def test_streaming_response_retrieve(self, client: StudioSDK) -> None:
         with client.accounts.inventories.with_streaming_response.retrieve(
             symbol="AAPL",
-            account_id="x",
+            account_id="100000",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -62,7 +62,7 @@ class TestInventories:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `symbol` but received ''"):
             client.accounts.inventories.with_raw_response.retrieve(
                 symbol="",
-                account_id="x",
+                account_id="100000",
             )
 
 
@@ -73,7 +73,7 @@ class TestAsyncInventories:
     async def test_method_retrieve(self, async_client: AsyncStudioSDK) -> None:
         inventory = await async_client.accounts.inventories.retrieve(
             symbol="AAPL",
-            account_id="x",
+            account_id="100000",
         )
         assert_matches_type(InventoryRetrieveResponse, inventory, path=["response"])
 
@@ -81,7 +81,7 @@ class TestAsyncInventories:
     async def test_raw_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
         response = await async_client.accounts.inventories.with_raw_response.retrieve(
             symbol="AAPL",
-            account_id="x",
+            account_id="100000",
         )
 
         assert response.is_closed is True
@@ -93,7 +93,7 @@ class TestAsyncInventories:
     async def test_streaming_response_retrieve(self, async_client: AsyncStudioSDK) -> None:
         async with async_client.accounts.inventories.with_streaming_response.retrieve(
             symbol="AAPL",
-            account_id="x",
+            account_id="100000",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -114,5 +114,5 @@ class TestAsyncInventories:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `symbol` but received ''"):
             await async_client.accounts.inventories.with_raw_response.retrieve(
                 symbol="",
-                account_id="x",
+                account_id="100000",
             )
