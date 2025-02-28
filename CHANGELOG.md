@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.21 (2025-02-28)
+
+Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
+
+### Chores
+
+* **docs:** update client docstring ([#124](https://github.com/clear-street/studio-sdk-python/issues/124)) ([3a6ead4](https://github.com/clear-street/studio-sdk-python/commit/3a6ead4321066ff89f100414d5a0fe915690f9eb))
+
+
+### Documentation
+
+* update URLs from stainlessapi.com to stainless.com ([#123](https://github.com/clear-street/studio-sdk-python/issues/123)) ([6298367](https://github.com/clear-street/studio-sdk-python/commit/62983675f0719e3cf4892d4baaf88df3f9671459))
+
 ## 0.1.0-alpha.20 (2025-02-26)
 
 Full Changelog: [v0.1.0-alpha.19...v0.1.0-alpha.20](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.19...v0.1.0-alpha.20)
