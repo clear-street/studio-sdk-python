@@ -23,6 +23,11 @@ class Data(BaseModel):
     Sum of profit and loss from intraday trading activities for the given date range
     """
 
+    net_pnl: Optional[float] = None
+    """
+    `P&L after netting all realized and unrealized P&L, adjustments, dividends, change in accruals, income and expenses`
+    """
+
     position_pnl: Optional[float] = None
     """Sum of profit and loss from previous trading date."""
 
@@ -70,6 +75,11 @@ class PnlSumListResponse(BaseModel):
 
     entity_id: Optional[str] = None
     """Entity ID for the legal entity."""
+
+    net_pnl: Optional[float] = None
+    """
+    `P&L after netting all realized and unrealized P&L, adjustments, dividends, change in accruals, income and expenses`
+    """
 
     position_pnl: Optional[float] = None
     """Sum of profit and loss from previous trading date across all symbols."""
