@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.1.0-alpha.21 (2025-03-14)
+
+Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
+
+### Features
+
+* **api:** add net pnl to pnl-sums ([#128](https://github.com/clear-street/studio-sdk-python/issues/128)) ([fe6d7a8](https://github.com/clear-street/studio-sdk-python/commit/fe6d7a87d10c770d4d29cd98f66524dbf284a2ee))
+
+
+### Chores
+
+* **docs:** update client docstring ([#124](https://github.com/clear-street/studio-sdk-python/issues/124)) ([3a6ead4](https://github.com/clear-street/studio-sdk-python/commit/3a6ead4321066ff89f100414d5a0fe915690f9eb))
+* **internal:** remove extra empty newlines ([#129](https://github.com/clear-street/studio-sdk-python/issues/129)) ([65ae44d](https://github.com/clear-street/studio-sdk-python/commit/65ae44d2b97b84efefed20933d4c64b978c12ebd))
+* **internal:** remove unused http client options forwarding ([#126](https://github.com/clear-street/studio-sdk-python/issues/126)) ([f846263](https://github.com/clear-street/studio-sdk-python/commit/f8462631f122309e75838e93f39d7db0271de5ce))
+
+
+### Documentation
+
+* update URLs from stainlessapi.com to stainless.com ([#123](https://github.com/clear-street/studio-sdk-python/issues/123)) ([6298367](https://github.com/clear-street/studio-sdk-python/commit/62983675f0719e3cf4892d4baaf88df3f9671459))
+
 ## 0.1.0-alpha.20 (2025-02-26)
 
 Full Changelog: [v0.1.0-alpha.19...v0.1.0-alpha.20](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.19...v0.1.0-alpha.20)
