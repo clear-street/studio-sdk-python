@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.22 (2025-03-15)
+
+Full Changelog: [v0.1.0-alpha.21...v0.1.0-alpha.22](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.21...v0.1.0-alpha.22)
+
+### Bug Fixes
+
+* **types:** handle more discriminated union shapes ([#134](https://github.com/clear-street/studio-sdk-python/issues/134)) ([864b588](https://github.com/clear-street/studio-sdk-python/commit/864b588e036e783d6ddc32264261e9c667cb0a1d))
+
+
+### Chores
+
+* **internal:** bump rye to 0.44.0 ([#133](https://github.com/clear-street/studio-sdk-python/issues/133)) ([347d6e0](https://github.com/clear-street/studio-sdk-python/commit/347d6e01bdd850b7e686e9bbff8f2c02a8341c09))
+* **internal:** codegen related update ([#131](https://github.com/clear-street/studio-sdk-python/issues/131)) ([80bef38](https://github.com/clear-street/studio-sdk-python/commit/80bef38db7e8baf2b105a24394b90de960a0f449))
+
 ## 0.1.0-alpha.21 (2025-03-14)
 
 Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
