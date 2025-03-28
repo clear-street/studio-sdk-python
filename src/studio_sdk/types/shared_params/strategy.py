@@ -10,7 +10,7 @@ from .base_strategy import BaseStrategy
 __all__ = ["Strategy", "VwapStrategy", "TwapStrategy", "ApStrategy", "PovStrategy", "DarkStrategy", "DmaStrategy"]
 
 
-class VwapStrategy(BaseStrategy):
+class VwapStrategy(BaseStrategy, total=False):
     max_percent: int
     """The maximum percentage of market volume.
 
@@ -24,7 +24,7 @@ class VwapStrategy(BaseStrategy):
     """
 
 
-class TwapStrategy(BaseStrategy):
+class TwapStrategy(BaseStrategy, total=False):
     max_percent: int
     """The maximum percentage of market volume.
 
@@ -38,7 +38,7 @@ class TwapStrategy(BaseStrategy):
     """
 
 
-class ApStrategy(BaseStrategy):
+class ApStrategy(BaseStrategy, total=False):
     max_percent: int
     """The maximum percentage of market volume.
 
@@ -52,7 +52,7 @@ class ApStrategy(BaseStrategy):
     """
 
 
-class PovStrategy(BaseStrategy):
+class PovStrategy(BaseStrategy, total=False):
     target_percent: Required[int]
     """The target percentage of market volume.
 
@@ -60,7 +60,7 @@ class PovStrategy(BaseStrategy):
     """
 
 
-class DarkStrategy(BaseStrategy):
+class DarkStrategy(BaseStrategy, total=False):
     max_percent: int
     """The maximum percentage of market volume.
 
