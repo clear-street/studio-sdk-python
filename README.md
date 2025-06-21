@@ -76,6 +76,42 @@ asyncio.run(main())
 
 Functionality between the synchronous and asynchronous clients is otherwise identical.
 
+### With aiohttp
+
+By default, the async client uses `httpx` for HTTP requests. However, for improved concurrency performance you may also use `aiohttp` as the HTTP backend.
+
+You can enable this by installing `aiohttp`:
+
+```sh
+# install from PyPI
+pip install --pre clear-street-studio-sdk[aiohttp]
+```
+
+Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
+
+```python
+import os
+import asyncio
+from studio_sdk import DefaultAioHttpClient
+from studio_sdk import AsyncStudioSDK
+
+
+async def main() -> None:
+    async with AsyncStudioSDK(
+        bearer_token=os.environ.get(
+            "STUDIO_SDK_BEARER_TOKEN"
+        ),  # This is the default and can be omitted
+        http_client=DefaultAioHttpClient(),
+    ) as client:
+        entity = await client.entities.retrieve(
+            "<your_entity_id>",
+        )
+        print(entity.entity_id)
+
+
+asyncio.run(main())
+```
+
 ## Using types
 
 Nested request parameters are [TypedDicts](https://docs.python.org/3/library/typing.html#typing.TypedDict). Responses are [Pydantic models](https://docs.pydantic.dev) which also provide helper methods for things like:
