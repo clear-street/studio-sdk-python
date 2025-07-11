@@ -1,6 +1,7 @@
 # Studio SDK Python API library
 
-[![PyPI version](<https://img.shields.io/pypi/v/clear-street-studio-sdk.svg?label=pypi%20(stable)>)](https://pypi.org/project/clear-street-studio-sdk/)
+<!-- prettier-ignore -->
+[![PyPI version](https://img.shields.io/pypi/v/clear-street-studio-sdk.svg?label=pypi%20(stable))](https://pypi.org/project/clear-street-studio-sdk/)
 
 The Studio SDK Python library provides convenient access to the Studio SDK REST API from any Python 3.8+
 application. The library includes type definitions for all request params and response fields,
