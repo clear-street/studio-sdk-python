@@ -91,7 +91,6 @@ pip install --pre clear-street-studio-sdk[aiohttp]
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
 
 ```python
-import os
 import asyncio
 from studio_sdk import DefaultAioHttpClient
 from studio_sdk import AsyncStudioSDK
@@ -99,9 +98,7 @@ from studio_sdk import AsyncStudioSDK
 
 async def main() -> None:
     async with AsyncStudioSDK(
-        bearer_token=os.environ.get(
-            "STUDIO_SDK_BEARER_TOKEN"
-        ),  # This is the default and can be omitted
+        bearer_token="My Bearer Token",
         http_client=DefaultAioHttpClient(),
     ) as client:
         entity = await client.entities.retrieve(
