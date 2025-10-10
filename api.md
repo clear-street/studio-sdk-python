@@ -221,9 +221,10 @@ Methods:
 Types:
 
 ```python
-from studio_sdk.types import Instrument
+from studio_sdk.types import Instrument, InstrumentListResponse
 ```
 
 Methods:
 
 - <code title="get /instruments/{symbol}">client.instruments.<a href="./src/studio_sdk/resources/instruments.py">retrieve</a>(symbol, \*\*<a href="src/studio_sdk/types/instrument_retrieve_params.py">params</a>) -> <a href="./src/studio_sdk/types/instrument.py">Instrument</a></code>
+- <code title="get /instruments">client.instruments.<a href="./src/studio_sdk/resources/instruments.py">list</a>() -> <a href="./src/studio_sdk/types/instrument_list_response.py">InstrumentListResponse</a></code>
