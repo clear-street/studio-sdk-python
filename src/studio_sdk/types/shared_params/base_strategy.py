@@ -15,7 +15,7 @@ class BaseStrategy(TypedDict, total=False):
     """The timestamp to stop routing, defaults to market close."""
 
     start_at: int
-    """The timestamp to start routing, defaults to now."""
+    """The timestamp to start routing."""
 
     urgency: Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]
     """The urgency associated with the execution strategy."""

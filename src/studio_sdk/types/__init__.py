@@ -19,4 +19,5 @@ from .regt_margin import RegtMargin as RegtMargin
 from .portfolio_margin import PortfolioMargin as PortfolioMargin
 from .entity_list_response import EntityListResponse as EntityListResponse
 from .account_list_response import AccountListResponse as AccountListResponse
+from .instrument_list_response import InstrumentListResponse as InstrumentListResponse
 from .instrument_retrieve_params import InstrumentRetrieveParams as InstrumentRetrieveParams

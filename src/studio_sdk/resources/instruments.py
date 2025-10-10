@@ -19,6 +19,7 @@ from .._response import (
 )
 from .._base_client import make_request_options
 from ..types.instrument import Instrument
+from ..types.instrument_list_response import InstrumentListResponse
 
 __all__ = ["InstrumentsResource", "AsyncInstrumentsResource"]
 
@@ -85,6 +86,25 @@ class InstrumentsResource(SyncAPIResource):
             cast_to=Instrument,
         )
 
+    def list(
+        self,
+        *,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
+    ) -> InstrumentListResponse:
+        """List all available instruments."""
+        return self._get(
+            "/instruments",
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=InstrumentListResponse,
+        )
+
 
 class AsyncInstrumentsResource(AsyncAPIResource):
     @cached_property
@@ -148,6 +168,25 @@ class AsyncInstrumentsResource(AsyncAPIResource):
             cast_to=Instrument,
         )
 
+    async def list(
+        self,
+        *,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
+    ) -> InstrumentListResponse:
+        """List all available instruments."""
+        return await self._get(
+            "/instruments",
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=InstrumentListResponse,
+        )
+
 
 class InstrumentsResourceWithRawResponse:
     def __init__(self, instruments: InstrumentsResource) -> None:
@@ -155,6 +194,9 @@ class InstrumentsResourceWithRawResponse:
 
         self.retrieve = to_raw_response_wrapper(
             instruments.retrieve,
+        )
+        self.list = to_raw_response_wrapper(
+            instruments.list,
         )
 
 
@@ -165,6 +207,9 @@ class AsyncInstrumentsResourceWithRawResponse:
         self.retrieve = async_to_raw_response_wrapper(
             instruments.retrieve,
         )
+        self.list = async_to_raw_response_wrapper(
+            instruments.list,
+        )
 
 
 class InstrumentsResourceWithStreamingResponse:
@@ -174,6 +219,9 @@ class InstrumentsResourceWithStreamingResponse:
         self.retrieve = to_streamed_response_wrapper(
             instruments.retrieve,
         )
+        self.list = to_streamed_response_wrapper(
+            instruments.list,
+        )
 
 
 class AsyncInstrumentsResourceWithStreamingResponse:
@@ -182,4 +230,7 @@ class AsyncInstrumentsResourceWithStreamingResponse:
 
         self.retrieve = async_to_streamed_response_wrapper(
             instruments.retrieve,
+        )
+        self.list = async_to_streamed_response_wrapper(
+            instruments.list,
         )
