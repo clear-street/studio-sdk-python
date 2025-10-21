@@ -9,7 +9,7 @@ import pytest
 
 from studio_sdk import StudioSDK, AsyncStudioSDK
 from tests.utils import assert_matches_type
-from studio_sdk.types import Instrument
+from studio_sdk.types import Instrument, InstrumentListResponse
 
 base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 
@@ -63,9 +63,36 @@ class TestInstruments:
                 symbol="",
             )
 
+    @parametrize
+    def test_method_list(self, client: StudioSDK) -> None:
+        instrument = client.instruments.list()
+        assert_matches_type(InstrumentListResponse, instrument, path=["response"])
+
+    @parametrize
+    def test_raw_response_list(self, client: StudioSDK) -> None:
+        response = client.instruments.with_raw_response.list()
+
+        assert response.is_closed is True
+        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+        instrument = response.parse()
+        assert_matches_type(InstrumentListResponse, instrument, path=["response"])
+
+    @parametrize
+    def test_streaming_response_list(self, client: StudioSDK) -> None:
+        with client.instruments.with_streaming_response.list() as response:
+            assert not response.is_closed
+            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+
+            instrument = response.parse()
+            assert_matches_type(InstrumentListResponse, instrument, path=["response"])
+
+        assert cast(Any, response.is_closed) is True
+
 
 class TestAsyncInstruments:
-    parametrize = pytest.mark.parametrize("async_client", [False, True], indirect=True, ids=["loose", "strict"])
+    parametrize = pytest.mark.parametrize(
+        "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
+    )
 
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncStudioSDK) -> None:
@@ -112,3 +139,28 @@ class TestAsyncInstruments:
             await async_client.instruments.with_raw_response.retrieve(
                 symbol="",
             )
+
+    @parametrize
+    async def test_method_list(self, async_client: AsyncStudioSDK) -> None:
+        instrument = await async_client.instruments.list()
+        assert_matches_type(InstrumentListResponse, instrument, path=["response"])
+
+    @parametrize
+    async def test_raw_response_list(self, async_client: AsyncStudioSDK) -> None:
+        response = await async_client.instruments.with_raw_response.list()
+
+        assert response.is_closed is True
+        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+        instrument = await response.parse()
+        assert_matches_type(InstrumentListResponse, instrument, path=["response"])
+
+    @parametrize
+    async def test_streaming_response_list(self, async_client: AsyncStudioSDK) -> None:
+        async with async_client.instruments.with_streaming_response.list() as response:
+            assert not response.is_closed
+            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+
+            instrument = await response.parse()
+            assert_matches_type(InstrumentListResponse, instrument, path=["response"])
+
+        assert cast(Any, response.is_closed) is True

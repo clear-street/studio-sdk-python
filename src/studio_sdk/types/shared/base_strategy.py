@@ -16,7 +16,7 @@ class BaseStrategy(BaseModel):
     """The timestamp to stop routing, defaults to market close."""
 
     start_at: Optional[int] = None
-    """The timestamp to start routing, defaults to now."""
+    """The timestamp to start routing."""
 
     urgency: Optional[Literal["super-passive", "passive", "moderate", "aggressive", "super-aggressive"]] = None
     """The urgency associated with the execution strategy."""

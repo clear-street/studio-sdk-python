@@ -1,6 +1,7 @@
 # Studio SDK Python API library
 
-[![PyPI version](https://img.shields.io/pypi/v/clear-street-studio-sdk.svg)](https://pypi.org/project/clear-street-studio-sdk/)
+<!-- prettier-ignore -->
+[![PyPI version](https://img.shields.io/pypi/v/clear-street-studio-sdk.svg?label=pypi%20(stable))](https://pypi.org/project/clear-street-studio-sdk/)
 
 The Studio SDK Python library provides convenient access to the Studio SDK REST API from any Python 3.8+
 application. The library includes type definitions for all request params and response fields,
@@ -75,6 +76,39 @@ asyncio.run(main())
 ```
 
 Functionality between the synchronous and asynchronous clients is otherwise identical.
+
+### With aiohttp
+
+By default, the async client uses `httpx` for HTTP requests. However, for improved concurrency performance you may also use `aiohttp` as the HTTP backend.
+
+You can enable this by installing `aiohttp`:
+
+```sh
+# install from PyPI
+pip install --pre clear-street-studio-sdk[aiohttp]
+```
+
+Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
+
+```python
+import asyncio
+from studio_sdk import DefaultAioHttpClient
+from studio_sdk import AsyncStudioSDK
+
+
+async def main() -> None:
+    async with AsyncStudioSDK(
+        bearer_token="My Bearer Token",
+        http_client=DefaultAioHttpClient(),
+    ) as client:
+        entity = await client.entities.retrieve(
+            "<your_entity_id>",
+        )
+        print(entity.entity_id)
+
+
+asyncio.run(main())
+```
 
 ## Using types
 
@@ -154,7 +188,7 @@ client.with_options(max_retries=5).entities.retrieve(
 ### Timeouts
 
 By default requests time out after 1 minute. You can configure this with a `timeout` option,
-which accepts a float or an [`httpx.Timeout`](https://www.python-httpx.org/advanced/#fine-tuning-the-configuration) object:
+which accepts a float or an [`httpx.Timeout`](https://www.python-httpx.org/advanced/timeouts/#fine-tuning-the-configuration) object:
 
 ```python
 from studio_sdk import StudioSDK
