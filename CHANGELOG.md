@@ -1,5 +1,103 @@
 # Changelog
 
+## 0.1.0-alpha.22 (2025-10-21)
+
+Full Changelog: [v0.1.0-alpha.21...v0.1.0-alpha.22](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.21...v0.1.0-alpha.22)
+
+### Features
+
+* **api:** add list instruments endpoint ([f62d7ee](https://github.com/clear-street/studio-sdk-python/commit/f62d7eee1f8fb611f473c2807451b7c159abfaa1))
+* clean up environment call outs ([a0053a6](https://github.com/clear-street/studio-sdk-python/commit/a0053a68a99920749ac5eb75b04c54ffa07694c2))
+* **client:** add follow_redirects request option ([781721d](https://github.com/clear-street/studio-sdk-python/commit/781721d5a4fc2a5b590a997730f571e6bb0d9f4f))
+* **client:** add support for aiohttp ([4f1113c](https://github.com/clear-street/studio-sdk-python/commit/4f1113ca9d846ece26496d91b912388f8f71fa8c))
+* **client:** support file upload requests ([a8d303b](https://github.com/clear-street/studio-sdk-python/commit/a8d303bd061891963a68f046a21c4939df382e0c))
+* improve future compat with pydantic v3 ([e2af84d](https://github.com/clear-street/studio-sdk-python/commit/e2af84d572723b358a7b7fc0b7ee0dd6ba63a67c))
+* **types:** replace List[str] with SequenceNotStr in params ([5b6e5ad](https://github.com/clear-street/studio-sdk-python/commit/5b6e5ad4e6abe6535666c72a28101ee6743e6c2d))
+
+
+### Bug Fixes
+
+* avoid newer type syntax ([c0de93f](https://github.com/clear-street/studio-sdk-python/commit/c0de93f45134004dbce924351b8c924bf9c86544))
+* **ci:** correct conditional ([31a9438](https://github.com/clear-street/studio-sdk-python/commit/31a9438da3e3073d52e7f45bd6a9d1c14232ffce))
+* **ci:** ensure pip is always available ([#135](https://github.com/clear-street/studio-sdk-python/issues/135)) ([bfff71d](https://github.com/clear-street/studio-sdk-python/commit/bfff71dfdddb6b569f19a05f91c47a6336a6105d))
+* **ci:** release-doctor — report correct token name ([deab530](https://github.com/clear-street/studio-sdk-python/commit/deab5301af9a0b58981a644f146141266e2b3d3a))
+* **ci:** remove publishing patch ([#136](https://github.com/clear-street/studio-sdk-python/issues/136)) ([ca15e7b](https://github.com/clear-street/studio-sdk-python/commit/ca15e7b514989c6ca7971f8ffa24458dd655d19d))
+* **client:** correctly parse binary response | stream ([a44ac81](https://github.com/clear-street/studio-sdk-python/commit/a44ac812f07b26e5f820b6a0b44e5f2a9554cb61))
+* **client:** don't send Content-Type header on GET requests ([5fa11c7](https://github.com/clear-street/studio-sdk-python/commit/5fa11c7eae645258523bb0d4947ba0035cda1a31))
+* **package:** support direct resource imports ([83cd5a7](https://github.com/clear-street/studio-sdk-python/commit/83cd5a77816062476ba0db2fdc06c1d9ed39f91b))
+* **parsing:** correctly handle nested discriminated unions ([d0890f7](https://github.com/clear-street/studio-sdk-python/commit/d0890f748cc43984cfed11deb0e02b2168125ca9))
+* **parsing:** ignore empty metadata ([9b5be54](https://github.com/clear-street/studio-sdk-python/commit/9b5be54a78444b8e4ddd0d5150aadcc084499a70))
+* **parsing:** parse extra field types ([d790e2d](https://github.com/clear-street/studio-sdk-python/commit/d790e2d127a8dd4ce7e8b5629d6deaaa8522ccae))
+* **perf:** optimize some hot paths ([85d888b](https://github.com/clear-street/studio-sdk-python/commit/85d888b4bee6dfb69cfb4e016ccd04215fe6eb62))
+* **perf:** skip traversing types for NotGiven values ([160ab43](https://github.com/clear-street/studio-sdk-python/commit/160ab43ca290b9414093596ff231def468d10e5e))
+* **pydantic v1:** more robust ModelField.annotation check ([e147324](https://github.com/clear-street/studio-sdk-python/commit/e147324cc67361614685ee22f835599ec29249bf))
+* **tests:** fix: tests which call HTTP endpoints directly with the example parameters ([8f42cbc](https://github.com/clear-street/studio-sdk-python/commit/8f42cbceac5790fbec0100354aa91d0d012c37fb))
+* **types:** add missing total=False ([#138](https://github.com/clear-street/studio-sdk-python/issues/138)) ([3609f94](https://github.com/clear-street/studio-sdk-python/commit/3609f94ca64fd5198e84f89743c468c6a5e01479))
+* **types:** handle more discriminated union shapes ([#134](https://github.com/clear-street/studio-sdk-python/issues/134)) ([864b588](https://github.com/clear-street/studio-sdk-python/commit/864b588e036e783d6ddc32264261e9c667cb0a1d))
+
+
+### Chores
+
+* broadly detect json family of content-type headers ([aa80860](https://github.com/clear-street/studio-sdk-python/commit/aa80860ae42d9d60d0d5a14a50f381015bb47d72))
+* bump `httpx-aiohttp` version to 0.1.9 ([6c3d665](https://github.com/clear-street/studio-sdk-python/commit/6c3d665c1d5f9f0fc8fee99b2188a32ece7bb045))
+* **ci:** add timeout thresholds for CI jobs ([b0f236f](https://github.com/clear-street/studio-sdk-python/commit/b0f236f661b422431de0908af74fca5f56181b37))
+* **ci:** change upload type ([78397f8](https://github.com/clear-street/studio-sdk-python/commit/78397f84c3863b466c262bf2cee74fc10478cd26))
+* **ci:** enable for pull requests ([f7c965c](https://github.com/clear-street/studio-sdk-python/commit/f7c965cfdf087572264ca3a301ac8a0ab4273e57))
+* **ci:** fix installation instructions ([694d402](https://github.com/clear-street/studio-sdk-python/commit/694d402fd97838c4ed42e2334f67ac013bc633a9))
+* **ci:** only run for pushes and fork pull requests ([1aed7cc](https://github.com/clear-street/studio-sdk-python/commit/1aed7cc01fc224a2372bc201545f1a3bd45bb031))
+* **ci:** only use depot for staging repos ([118d058](https://github.com/clear-street/studio-sdk-python/commit/118d0584875cba5eb9057063c5d16438e25bba41))
+* **ci:** upload sdks to package manager ([6b2a344](https://github.com/clear-street/studio-sdk-python/commit/6b2a3442a0430d078b5cffd91d8c67cbb48c6a66))
+* **client:** minor internal fixes ([aa059c9](https://github.com/clear-street/studio-sdk-python/commit/aa059c956e7b8bf1a1e4b829ca5fd3ade64b37e2))
+* do not install brew dependencies in ./scripts/bootstrap by default ([46a8f37](https://github.com/clear-street/studio-sdk-python/commit/46a8f37d8abb4a9c0b967bd0d2f5ce01d03924c5))
+* **docs:** grammar improvements ([ab673f6](https://github.com/clear-street/studio-sdk-python/commit/ab673f6a8327cce47a705a32d897ce667516e504))
+* **docs:** remove reference to rye shell ([fd9a40f](https://github.com/clear-street/studio-sdk-python/commit/fd9a40fb753334f9d8283e4654d010c874e5443e))
+* fix typos ([#137](https://github.com/clear-street/studio-sdk-python/issues/137)) ([f4a8559](https://github.com/clear-street/studio-sdk-python/commit/f4a855954a075b32bc14d5181680f3a406192e44))
+* **internal:** add Sequence related utils ([ee52a17](https://github.com/clear-street/studio-sdk-python/commit/ee52a17f2c38c8ff32662aa1c7e78dbcaf91106b))
+* **internal:** avoid errors for isinstance checks on proxies ([31fdcdd](https://github.com/clear-street/studio-sdk-python/commit/31fdcddf6b0eb7265b13f817b0c82bb9f285cc21))
+* **internal:** base client updates ([1ccca74](https://github.com/clear-street/studio-sdk-python/commit/1ccca74827a54efcc262ed0838e3b7a18a6f6b75))
+* **internal:** bump pinned h11 dep ([4bc740f](https://github.com/clear-street/studio-sdk-python/commit/4bc740f6bbc03b3c0186a3630a9c23b4fd19b97d))
+* **internal:** bump pyright version ([f0eee36](https://github.com/clear-street/studio-sdk-python/commit/f0eee361fa8714157a5340c613ceb9af73b66079))
+* **internal:** bump rye to 0.44.0 ([#133](https://github.com/clear-street/studio-sdk-python/issues/133)) ([347d6e0](https://github.com/clear-street/studio-sdk-python/commit/347d6e01bdd850b7e686e9bbff8f2c02a8341c09))
+* **internal:** change ci workflow machines ([8044832](https://github.com/clear-street/studio-sdk-python/commit/8044832a0ca52a8f8fe929dcac0e34cc85b95c2a))
+* **internal:** codegen related update ([37a161e](https://github.com/clear-street/studio-sdk-python/commit/37a161e75e4e24d5f27512b37c7b851914175707))
+* **internal:** codegen related update ([0cf152f](https://github.com/clear-street/studio-sdk-python/commit/0cf152f3577bc5ee7801589979a031c4ace1bb06))
+* **internal:** codegen related update ([7d6e43c](https://github.com/clear-street/studio-sdk-python/commit/7d6e43c322fbb7a39f2ed87daf6c2d7cd4ba7902))
+* **internal:** codegen related update ([#131](https://github.com/clear-street/studio-sdk-python/issues/131)) ([80bef38](https://github.com/clear-street/studio-sdk-python/commit/80bef38db7e8baf2b105a24394b90de960a0f449))
+* **internal:** detect missing future annotations with ruff ([a0f36aa](https://github.com/clear-street/studio-sdk-python/commit/a0f36aa2d14b71e96f386764e7f91d6f984b68c7))
+* **internal:** expand CI branch coverage ([c79b138](https://github.com/clear-street/studio-sdk-python/commit/c79b1384ae179489e4159aeae150ad423bfc20a0))
+* **internal:** fix list file params ([0b089cb](https://github.com/clear-street/studio-sdk-python/commit/0b089cb6cc341ec41d6922e1e79f368b025fc902))
+* **internal:** fix ruff target version ([ce9d6b1](https://github.com/clear-street/studio-sdk-python/commit/ce9d6b155e22b9a95174ec91a6e07edff8139cae))
+* **internal:** import reformatting ([70c9537](https://github.com/clear-street/studio-sdk-python/commit/70c9537693c5af41963201b4aa33107d68d82279))
+* **internal:** minor formatting changes ([43db1d7](https://github.com/clear-street/studio-sdk-python/commit/43db1d7a892df88bea83b285a2f3bf103e7535bc))
+* **internal:** move mypy configurations to `pyproject.toml` file ([15684b7](https://github.com/clear-street/studio-sdk-python/commit/15684b71ec1f546b64f6a9d8a6b40344f8dcd13c))
+* **internal:** reduce CI branch coverage ([146cf5c](https://github.com/clear-street/studio-sdk-python/commit/146cf5cea92aaba88b75b95452dc6f5b82d14ee7))
+* **internal:** refactor retries to not use recursion ([baf5229](https://github.com/clear-street/studio-sdk-python/commit/baf52293c64fa372d94f08a87c874ecb0649fcd8))
+* **internal:** remove trailing character ([#139](https://github.com/clear-street/studio-sdk-python/issues/139)) ([0c0845d](https://github.com/clear-street/studio-sdk-python/commit/0c0845d2098cd54296a126b630919bc6688df648))
+* **internal:** slight transform perf improvement ([#140](https://github.com/clear-street/studio-sdk-python/issues/140)) ([5f982a5](https://github.com/clear-street/studio-sdk-python/commit/5f982a5d2a30e967adc694b812971b20a1e3b30a))
+* **internal:** update comment in script ([24e7788](https://github.com/clear-street/studio-sdk-python/commit/24e778807fdd153f868404f830ff9d7e9865a4b4))
+* **internal:** update conftest.py ([0590cdb](https://github.com/clear-street/studio-sdk-python/commit/0590cdba8e11d28bf4c5a1fefbfdfde3a7e06d99))
+* **internal:** update models test ([37a09eb](https://github.com/clear-street/studio-sdk-python/commit/37a09eb9b10916bec4bd8c733f30b5d92c5a24fd))
+* **internal:** update pydantic dependency ([0f25bf8](https://github.com/clear-street/studio-sdk-python/commit/0f25bf87caa38ce440da66a518a4d44ab608cab4))
+* **internal:** update pyright exclude list ([8df761c](https://github.com/clear-street/studio-sdk-python/commit/8df761c340e8ec3f17c24a36fdeebe7926429ffc))
+* **internal:** update pyright settings ([ae77241](https://github.com/clear-street/studio-sdk-python/commit/ae77241fbf6a2cb8f752dbe3570f0f711b279d09))
+* make the `Omit` type public ([#73](https://github.com/clear-street/studio-sdk-python/issues/73)) ([3d14c2d](https://github.com/clear-street/studio-sdk-python/commit/3d14c2d1667b114c96309ddb8c5362153ef3bda3))
+* **package:** mark python 3.13 as supported ([7eec3c8](https://github.com/clear-street/studio-sdk-python/commit/7eec3c88dd498b620541308cf49c7ea77d87b99c))
+* **project:** add settings file for vscode ([f332880](https://github.com/clear-street/studio-sdk-python/commit/f3328801b55cbd63d2b9f0f2216de5ef4d53c36c))
+* **readme:** fix version rendering on pypi ([ec75791](https://github.com/clear-street/studio-sdk-python/commit/ec75791cf158410085b0c81a40cbf34ba09a997c))
+* **readme:** update badges ([c6d0d7a](https://github.com/clear-street/studio-sdk-python/commit/c6d0d7a022b0408aa523ba8bb71474667d0b1274))
+* **tests:** add tests for httpx client instantiation & proxies ([347c0de](https://github.com/clear-street/studio-sdk-python/commit/347c0deda8eb447ec10cafe9c7e0a22a04eef3bd))
+* **tests:** run tests in parallel ([c68ca44](https://github.com/clear-street/studio-sdk-python/commit/c68ca4425b313be6684112d47d39b9d460931430))
+* **tests:** simplify `get_platform` test ([851ff5e](https://github.com/clear-street/studio-sdk-python/commit/851ff5e02767d7651838e5e45c0bee696a46e4bb))
+* **tests:** skip some failing tests on the latest python versions ([695deda](https://github.com/clear-street/studio-sdk-python/commit/695dedac14ef7f6f780a0fbd7ce5910f71b419bc))
+* **types:** change optional parameter type from NotGiven to Omit ([5b6af8a](https://github.com/clear-street/studio-sdk-python/commit/5b6af8a87dfd4b18806328736f79f597a95d9e2c))
+* update @stainless-api/prism-cli to v5.15.0 ([32828b1](https://github.com/clear-street/studio-sdk-python/commit/32828b1e568772f43eb4c9c326af8ae8af3f88c9))
+* update github action ([c31087a](https://github.com/clear-street/studio-sdk-python/commit/c31087af11d1a04b06711fab0d396ddbfb044de6))
+
+
+### Documentation
+
+* **client:** fix httpx.Timeout documentation reference ([a213809](https://github.com/clear-street/studio-sdk-python/commit/a2138099a2c9632c07ec3058d7d36b42b076a568))
+
 ## 0.1.0-alpha.21 (2025-03-14)
 
 Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
