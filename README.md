@@ -17,7 +17,7 @@ The REST API documentation can be found on [docs.clearstreet.io](https://docs.cl
 
 ```sh
 # install from PyPI
-pip install --pre clear-street-studio-sdk
+pip install '--pre clear-street-studio-sdk'
 ```
 
 ## Usage
@@ -85,7 +85,7 @@ You can enable this by installing `aiohttp`:
 
 ```sh
 # install from PyPI
-pip install --pre clear-street-studio-sdk[aiohttp]
+pip install '--pre clear-street-studio-sdk[aiohttp]'
 ```
 
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
