@@ -1,5 +1,40 @@
 # Changelog
 
+## 0.1.0-alpha.23 (2026-01-17)
+
+Full Changelog: [v0.1.0-alpha.22...v0.1.0-alpha.23](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.22...v0.1.0-alpha.23)
+
+### Features
+
+* **client:** add support for binary request streaming ([509ce0a](https://github.com/clear-street/studio-sdk-python/commit/509ce0ae6defed0537b9d0c09147b461f4f96008))
+
+
+### Bug Fixes
+
+* **client:** close streams without requiring full consumption ([bbe5744](https://github.com/clear-street/studio-sdk-python/commit/bbe57445e704a44a7a6fa7c22cd6ec11f90e1317))
+* compat with Python 3.14 ([b07a9e2](https://github.com/clear-street/studio-sdk-python/commit/b07a9e285fa3553931a5608ca182d096d4b9956a))
+* **compat:** update signatures of `model_dump` and `model_dump_json` for Pydantic v1 ([adce836](https://github.com/clear-street/studio-sdk-python/commit/adce836626cbbc8570f5fe0cb00e28886cba77ca))
+* ensure streams are always closed ([7194eee](https://github.com/clear-street/studio-sdk-python/commit/7194eeed830c7865e44dbbbfc1ff51fd3f021c2f))
+* **types:** allow pyright to infer TypedDict types within SequenceNotStr ([2323b86](https://github.com/clear-street/studio-sdk-python/commit/2323b864ade42f5882cd46c48d6264b3316cc85e))
+* use async_to_httpx_files in patch method ([b19854b](https://github.com/clear-street/studio-sdk-python/commit/b19854b30d09129ba516194a4439da4d90c06e61))
+
+
+### Chores
+
+* add Python 3.14 classifier and testing ([4ee447f](https://github.com/clear-street/studio-sdk-python/commit/4ee447fe13ac08d78e2bf2f0b415705efc2f4438))
+* **deps:** mypy 1.18.1 has a regression, pin to 1.17 ([73360c3](https://github.com/clear-street/studio-sdk-python/commit/73360c3951ca19da0b87d61a2ab9f13b179f2807))
+* **docs:** use environment variables for authentication in code snippets ([1543c34](https://github.com/clear-street/studio-sdk-python/commit/1543c34c93c2b12b377377656e54561bdd6df9f2))
+* **internal/tests:** avoid race condition with implicit client cleanup ([5e5a05d](https://github.com/clear-street/studio-sdk-python/commit/5e5a05d5dea61fcdac915b7d827285c3071b3649))
+* **internal:** add `--fix` argument to lint script ([20f6a31](https://github.com/clear-street/studio-sdk-python/commit/20f6a3142f68d6b03f017d06ca7d3d3925f3b4e1))
+* **internal:** add missing files argument to base client ([916851b](https://github.com/clear-street/studio-sdk-python/commit/916851b03b86f8df662311d6bf6b9c3f179ddef5))
+* **internal:** codegen related update ([72bf447](https://github.com/clear-street/studio-sdk-python/commit/72bf4470bc1dd56f90b3c1764989fc8c82918258))
+* **internal:** codegen related update ([5446a02](https://github.com/clear-street/studio-sdk-python/commit/5446a02a5cc668d4ee97c78783fe029a10b81d97))
+* **internal:** grammar fix (it's -&gt; its) ([c8e4be7](https://github.com/clear-street/studio-sdk-python/commit/c8e4be7ea3142bd293f4eff3165e4ae065492f34))
+* **internal:** update `actions/checkout` version ([4dc0a07](https://github.com/clear-street/studio-sdk-python/commit/4dc0a0732433592ead2b785af1f0f05d25e8fbd2))
+* **package:** drop Python 3.8 support ([eca0847](https://github.com/clear-street/studio-sdk-python/commit/eca084798e629b2f14f800f39a2bc73c4cdeb5ac))
+* speedup initial import ([5d15f15](https://github.com/clear-street/studio-sdk-python/commit/5d15f153b64ed7af8da343a5ac189ce7e6a938da))
+* update lockfile ([7f09f45](https://github.com/clear-street/studio-sdk-python/commit/7f09f451e2898e82ae9610350751b69c00841803))
+
 ## 0.1.0-alpha.22 (2025-10-21)
 
 Full Changelog: [v0.1.0-alpha.21...v0.1.0-alpha.22](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.21...v0.1.0-alpha.22)
