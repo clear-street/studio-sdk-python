@@ -1,5 +1,50 @@
 # Changelog
 
+## 0.1.0-alpha.23 (2026-03-03)
+
+Full Changelog: [v0.1.0-alpha.22...v0.1.0-alpha.23](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.22...v0.1.0-alpha.23)
+
+### Features
+
+* **api:** option fields ([1da1764](https://github.com/clear-street/studio-sdk-python/commit/1da17647e66adf4425ddab7230ad150a56de6abb))
+* **client:** add custom JSON encoder for extended type support ([422c744](https://github.com/clear-street/studio-sdk-python/commit/422c74428eddd19301b6de88ef50b141a7c84781))
+* **client:** add support for binary request streaming ([509ce0a](https://github.com/clear-street/studio-sdk-python/commit/509ce0ae6defed0537b9d0c09147b461f4f96008))
+
+
+### Bug Fixes
+
+* **client:** close streams without requiring full consumption ([bbe5744](https://github.com/clear-street/studio-sdk-python/commit/bbe57445e704a44a7a6fa7c22cd6ec11f90e1317))
+* compat with Python 3.14 ([b07a9e2](https://github.com/clear-street/studio-sdk-python/commit/b07a9e285fa3553931a5608ca182d096d4b9956a))
+* **compat:** update signatures of `model_dump` and `model_dump_json` for Pydantic v1 ([adce836](https://github.com/clear-street/studio-sdk-python/commit/adce836626cbbc8570f5fe0cb00e28886cba77ca))
+* ensure streams are always closed ([7194eee](https://github.com/clear-street/studio-sdk-python/commit/7194eeed830c7865e44dbbbfc1ff51fd3f021c2f))
+* **types:** allow pyright to infer TypedDict types within SequenceNotStr ([2323b86](https://github.com/clear-street/studio-sdk-python/commit/2323b864ade42f5882cd46c48d6264b3316cc85e))
+* use async_to_httpx_files in patch method ([b19854b](https://github.com/clear-street/studio-sdk-python/commit/b19854b30d09129ba516194a4439da4d90c06e61))
+
+
+### Chores
+
+* add Python 3.14 classifier and testing ([4ee447f](https://github.com/clear-street/studio-sdk-python/commit/4ee447fe13ac08d78e2bf2f0b415705efc2f4438))
+* **ci:** upgrade `actions/github-script` ([110a94e](https://github.com/clear-street/studio-sdk-python/commit/110a94e0d42271bf82480f6248b8aef51dcdd21f))
+* **deps:** mypy 1.18.1 has a regression, pin to 1.17 ([73360c3](https://github.com/clear-street/studio-sdk-python/commit/73360c3951ca19da0b87d61a2ab9f13b179f2807))
+* **docs:** use environment variables for authentication in code snippets ([1543c34](https://github.com/clear-street/studio-sdk-python/commit/1543c34c93c2b12b377377656e54561bdd6df9f2))
+* format all `api.md` files ([83a93da](https://github.com/clear-street/studio-sdk-python/commit/83a93da6faf1acaca4e65bd0fd35707a62050784))
+* **internal/tests:** avoid race condition with implicit client cleanup ([5e5a05d](https://github.com/clear-street/studio-sdk-python/commit/5e5a05d5dea61fcdac915b7d827285c3071b3649))
+* **internal:** add `--fix` argument to lint script ([20f6a31](https://github.com/clear-street/studio-sdk-python/commit/20f6a3142f68d6b03f017d06ca7d3d3925f3b4e1))
+* **internal:** add missing files argument to base client ([916851b](https://github.com/clear-street/studio-sdk-python/commit/916851b03b86f8df662311d6bf6b9c3f179ddef5))
+* **internal:** add request options to SSE classes ([753f5a8](https://github.com/clear-street/studio-sdk-python/commit/753f5a850aeae7a859eb1e95f74ee6b616348cf5))
+* **internal:** bump dependencies ([cf2b653](https://github.com/clear-street/studio-sdk-python/commit/cf2b65308018840d05c5e36dcbfb6d5144e7a878))
+* **internal:** codegen related update ([72bf447](https://github.com/clear-street/studio-sdk-python/commit/72bf4470bc1dd56f90b3c1764989fc8c82918258))
+* **internal:** codegen related update ([5446a02](https://github.com/clear-street/studio-sdk-python/commit/5446a02a5cc668d4ee97c78783fe029a10b81d97))
+* **internal:** fix lint error on Python 3.14 ([c514a29](https://github.com/clear-street/studio-sdk-python/commit/c514a290714f0af6e4fe6ec1b5f1156cb28c9766))
+* **internal:** grammar fix (it's -&gt; its) ([c8e4be7](https://github.com/clear-street/studio-sdk-python/commit/c8e4be7ea3142bd293f4eff3165e4ae065492f34))
+* **internal:** make `test_proxy_environment_variables` more resilient ([2a2ba8f](https://github.com/clear-street/studio-sdk-python/commit/2a2ba8ff886ae3cda80393202753363ae539bbe5))
+* **internal:** make `test_proxy_environment_variables` more resilient to env ([8673314](https://github.com/clear-street/studio-sdk-python/commit/8673314cd095d0caffc8ee00cfb614cd108ad25b))
+* **internal:** update `actions/checkout` version ([4dc0a07](https://github.com/clear-street/studio-sdk-python/commit/4dc0a0732433592ead2b785af1f0f05d25e8fbd2))
+* **package:** drop Python 3.8 support ([eca0847](https://github.com/clear-street/studio-sdk-python/commit/eca084798e629b2f14f800f39a2bc73c4cdeb5ac))
+* speedup initial import ([5d15f15](https://github.com/clear-street/studio-sdk-python/commit/5d15f153b64ed7af8da343a5ac189ce7e6a938da))
+* update lockfile ([7f09f45](https://github.com/clear-street/studio-sdk-python/commit/7f09f451e2898e82ae9610350751b69c00841803))
+* update mock server docs ([e7ad145](https://github.com/clear-street/studio-sdk-python/commit/e7ad145271384e2c7b6501a287020c6f92e14fa4))
+
 ## 0.1.0-alpha.22 (2025-10-21)
 
 Full Changelog: [v0.1.0-alpha.21...v0.1.0-alpha.22](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.21...v0.1.0-alpha.22)
