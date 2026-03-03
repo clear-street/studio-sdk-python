@@ -106,7 +106,12 @@ class Order(BaseModel):
     average_price: Optional[float] = None
     """Calculated average price of all fills on this order."""
 
-    order_update_reason: Optional[Literal["place", "modify", "cancel", "execution-report", "cancel-reject"]] = None
+    open_close_indicator: Optional[Literal["open", "close"]] = None
+    """Open/Close indicator for option orders."""
+
+    order_update_reason: Optional[
+        Literal["place", "modify", "cancel", "execution-report", "cancel-reject", "reject"]
+    ] = None
     """The last reason why this order was updated"""
 
     price: Optional[str] = None

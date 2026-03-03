@@ -50,6 +50,9 @@ class OrderCreateParams(TypedDict, total=False):
     broker name here.
     """
 
+    open_close_indicator: Literal["open", "close"]
+    """Open/Close indicator for option orders."""
+
     price: str
     """The price to execute at-or-better for limit orders."""
 

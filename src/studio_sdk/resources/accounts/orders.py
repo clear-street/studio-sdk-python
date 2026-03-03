@@ -57,6 +57,7 @@ class OrdersResource(SyncAPIResource):
         symbol: str,
         time_in_force: Literal["day", "ioc", "day-plus", "at-open", "at-close"],
         locate_broker: str | Omit = omit,
+        open_close_indicator: Literal["open", "close"] | Omit = omit,
         price: str | Omit = omit,
         reference_id: str | Omit = omit,
         stop_price: str | Omit = omit,
@@ -110,6 +111,8 @@ class OrdersResource(SyncAPIResource):
           locate_broker: If you're short-selling and using an away broker for a locate, provide the
               broker name here.
 
+          open_close_indicator: Open/Close indicator for option orders.
+
           price: The price to execute at-or-better for limit orders.
 
           reference_id: An ID that you provide.
@@ -141,6 +144,7 @@ class OrdersResource(SyncAPIResource):
                     "symbol": symbol,
                     "time_in_force": time_in_force,
                     "locate_broker": locate_broker,
+                    "open_close_indicator": open_close_indicator,
                     "price": price,
                     "reference_id": reference_id,
                     "stop_price": stop_price,
@@ -447,6 +451,7 @@ class AsyncOrdersResource(AsyncAPIResource):
         symbol: str,
         time_in_force: Literal["day", "ioc", "day-plus", "at-open", "at-close"],
         locate_broker: str | Omit = omit,
+        open_close_indicator: Literal["open", "close"] | Omit = omit,
         price: str | Omit = omit,
         reference_id: str | Omit = omit,
         stop_price: str | Omit = omit,
@@ -500,6 +505,8 @@ class AsyncOrdersResource(AsyncAPIResource):
           locate_broker: If you're short-selling and using an away broker for a locate, provide the
               broker name here.
 
+          open_close_indicator: Open/Close indicator for option orders.
+
           price: The price to execute at-or-better for limit orders.
 
           reference_id: An ID that you provide.
@@ -531,6 +538,7 @@ class AsyncOrdersResource(AsyncAPIResource):
                     "symbol": symbol,
                     "time_in_force": time_in_force,
                     "locate_broker": locate_broker,
+                    "open_close_indicator": open_close_indicator,
                     "price": price,
                     "reference_id": reference_id,
                     "stop_price": stop_price,
