@@ -56,7 +56,7 @@ class Order(TypedDict, total=False):
     broker name here.
     """
 
-    open_close_indicator: Literal["open", "close"]
+    open_close_indicator: object
     """Open/Close indicator for option orders."""
 
     price: str
