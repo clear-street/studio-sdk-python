@@ -106,7 +106,7 @@ class Order(BaseModel):
     average_price: Optional[float] = None
     """Calculated average price of all fills on this order."""
 
-    open_close_indicator: Optional[object] = None
+    open_close_indicator: Optional[Literal["open", "close"]] = None
     """Open/Close indicator for option orders."""
 
     order_update_reason: Optional[
