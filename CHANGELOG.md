@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.24 (2026-03-07)
+
+Full Changelog: [v0.1.0-alpha.23...v0.1.0-alpha.24](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.23...v0.1.0-alpha.24)
+
+### Features
+
+* **api:** manual updates ([0ff5d93](https://github.com/clear-street/studio-sdk-python/commit/0ff5d93264bdf408725dc4c174991046982d3733))
+* **api:** version update ([ac1593a](https://github.com/clear-street/studio-sdk-python/commit/ac1593ab78e31f08986294a5d51953d7b24705e6))
+
+
+### Chores
+
+* **ci:** skip uploading artifacts on stainless-internal branches ([f90e7cb](https://github.com/clear-street/studio-sdk-python/commit/f90e7cb5d4d1cdadbfd73ea61f1157c14c764760))
+* **test:** do not count install time for mock server timeout ([ef4ae2d](https://github.com/clear-street/studio-sdk-python/commit/ef4ae2d9745db30395b90f8f2c577b2264b58840))
+
 ## 0.1.0-alpha.23 (2026-03-03)
 
 Full Changelog: [v0.1.0-alpha.22...v0.1.0-alpha.23](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.22...v0.1.0-alpha.23)
