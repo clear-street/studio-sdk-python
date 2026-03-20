@@ -8,7 +8,7 @@ import httpx
 
 from ..types import instrument_retrieve_params
 from .._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
-from .._utils import maybe_transform, async_maybe_transform
+from .._utils import path_template, maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
 from .._response import (
@@ -73,7 +73,7 @@ class InstrumentsResource(SyncAPIResource):
         if not symbol:
             raise ValueError(f"Expected a non-empty value for `symbol` but received {symbol!r}")
         return self._get(
-            f"/instruments/{symbol}",
+            path_template("/instruments/{symbol}", symbol=symbol),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -155,7 +155,7 @@ class AsyncInstrumentsResource(AsyncAPIResource):
         if not symbol:
             raise ValueError(f"Expected a non-empty value for `symbol` but received {symbol!r}")
         return await self._get(
-            f"/instruments/{symbol}",
+            path_template("/instruments/{symbol}", symbol=symbol),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
