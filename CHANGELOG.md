@@ -1,5 +1,56 @@
 # Changelog
 
+## 0.1.0-alpha.24 (2026-05-13)
+
+Full Changelog: [v0.1.0-alpha.23...v0.1.0-alpha.24](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.23...v0.1.0-alpha.24)
+
+### Features
+
+* **api:** manual updates ([0ff5d93](https://github.com/clear-street/studio-sdk-python/commit/0ff5d93264bdf408725dc4c174991046982d3733))
+* **api:** version update ([ac1593a](https://github.com/clear-street/studio-sdk-python/commit/ac1593ab78e31f08986294a5d51953d7b24705e6))
+* **internal/types:** support eagerly validating pydantic iterators ([a102388](https://github.com/clear-street/studio-sdk-python/commit/a1023887b7036eb0872646068fade4535a7d61a6))
+* **internal:** implement indices array format for query and form serialization ([aa7e838](https://github.com/clear-street/studio-sdk-python/commit/aa7e838b08fe5e70f8a1cb9139aad3473406b20c))
+* support setting headers via env ([deda3e6](https://github.com/clear-street/studio-sdk-python/commit/deda3e6e20fac104f4ded24cb118370417bef1ff))
+
+
+### Bug Fixes
+
+* **client:** add missing f-string prefix in file type error message ([249afaf](https://github.com/clear-street/studio-sdk-python/commit/249afaf5ebf311c997b039e25e867841ef38bbe5))
+* **client:** preserve hardcoded query params when merging with user params ([472a4ca](https://github.com/clear-street/studio-sdk-python/commit/472a4ca45f5235e1aa40a8d8aa8537a3588c581a))
+* **deps:** bump minimum typing-extensions version ([08df80c](https://github.com/clear-street/studio-sdk-python/commit/08df80c440b51681ff01817f20d857edf7f7a811))
+* ensure file data are only sent as 1 parameter ([249a78c](https://github.com/clear-street/studio-sdk-python/commit/249a78cb8589bd9d8d5a19f5799b03cf9b1dd23e))
+* **pydantic:** do not pass `by_alias` unless set ([ca3d83c](https://github.com/clear-street/studio-sdk-python/commit/ca3d83c16b15b6f762e778280df1c2432d0385b8))
+* sanitize endpoint path params ([2c2ca70](https://github.com/clear-street/studio-sdk-python/commit/2c2ca70c11152a83b9d78d516f68873d59881037))
+* use correct field name format for multipart file arrays ([b02dee5](https://github.com/clear-street/studio-sdk-python/commit/b02dee5dc38013f24582f6a002d9f5435217ae46))
+
+
+### Performance Improvements
+
+* **client:** optimize file structure copying in multipart requests ([f68ed15](https://github.com/clear-street/studio-sdk-python/commit/f68ed155eec441bd04e66ab0e2e7f321471dfc8a))
+
+
+### Chores
+
+* **ci:** skip lint on metadata-only changes ([de10095](https://github.com/clear-street/studio-sdk-python/commit/de10095bb4e2eac15cdfe7a594e405d450dfa496))
+* **ci:** skip uploading artifacts on stainless-internal branches ([f90e7cb](https://github.com/clear-street/studio-sdk-python/commit/f90e7cb5d4d1cdadbfd73ea61f1157c14c764760))
+* **internal:** more robust bootstrap script ([dc26e96](https://github.com/clear-street/studio-sdk-python/commit/dc26e9690903a308d94ee295786e7b50c7ca1686))
+* **internal:** reformat pyproject.toml ([53a6b26](https://github.com/clear-street/studio-sdk-python/commit/53a6b26ae9f00ef05990494b90875cf913143a63))
+* **internal:** tweak CI branches ([128205c](https://github.com/clear-street/studio-sdk-python/commit/128205c80683fc486322e0c16bdfdd52002fb30d))
+* **internal:** update gitignore ([a276fae](https://github.com/clear-street/studio-sdk-python/commit/a276faec6555cea23c4ced41f43a5be1fe961a1a))
+* **test:** do not count install time for mock server timeout ([ef4ae2d](https://github.com/clear-street/studio-sdk-python/commit/ef4ae2d9745db30395b90f8f2c577b2264b58840))
+* **tests:** bump steady to v0.19.4 ([04177d0](https://github.com/clear-street/studio-sdk-python/commit/04177d07eeb21c94992648a115283425618ba835))
+* **tests:** bump steady to v0.19.5 ([107e5c8](https://github.com/clear-street/studio-sdk-python/commit/107e5c81db3ca095bd2c714863eb268e5b536ceb))
+* **tests:** bump steady to v0.19.6 ([f276106](https://github.com/clear-street/studio-sdk-python/commit/f276106029214b08211a1b9d2e22ffad2c65c719))
+* **tests:** bump steady to v0.19.7 ([2c78d48](https://github.com/clear-street/studio-sdk-python/commit/2c78d48b4b0b819e1e174a57f562e4c7b42ffa7e))
+* **tests:** bump steady to v0.20.1 ([67c8821](https://github.com/clear-street/studio-sdk-python/commit/67c88213b864d79f956a369cb91258fe96aaedee))
+* **tests:** bump steady to v0.20.2 ([fc0600a](https://github.com/clear-street/studio-sdk-python/commit/fc0600a131bed3c9845de0fdeafbbb93dfb9d39d))
+* **tests:** bump steady to v0.22.1 ([1300916](https://github.com/clear-street/studio-sdk-python/commit/1300916d7eeaf02dcacd7ccef3f7a6439adf9eee))
+
+
+### Refactors
+
+* **tests:** switch from prism to steady ([4578e7c](https://github.com/clear-street/studio-sdk-python/commit/4578e7c91674b5bb9993b34ddcb54e8c592bc495))
+
 ## 0.1.0-alpha.23 (2026-03-03)
 
 Full Changelog: [v0.1.0-alpha.22...v0.1.0-alpha.23](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.22...v0.1.0-alpha.23)
