@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.25 (2026-08-19)
+
+Full Changelog: [v0.1.0-alpha.24...v0.1.0-alpha.25](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.24...v0.1.0-alpha.25)
+
+### Features
+
+* **stlc:** configurable CI runner and private-production-repo support in workflow templates ([b591a77](https://github.com/clear-street/studio-sdk-python/commit/b591a774a6a1e83fa552abadd53d129571815e0d))
+
 ## 0.1.0-alpha.24 (2026-05-13)
 
 Full Changelog: [v0.1.0-alpha.23...v0.1.0-alpha.24](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.23...v0.1.0-alpha.24)
