@@ -121,6 +121,7 @@ jobs:
           client-id: ${{ secrets.STLC_CLIENT_ID }}
           private-key: ${{ secrets.STLC_PRIVATE_KEY }}
           owner: clear-street-internal
+          repositories: studio-sdk-python-staging
 
       - name: Dispatch back-sync to staging
         env:
