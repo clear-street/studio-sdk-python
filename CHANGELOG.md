@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.1.0-alpha.26](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.25...v0.1.0-alpha.26) (2026-08-31)
+
+
+### Features
+
+* initial stlc build ([bc61e0f](https://github.com/clear-street/studio-sdk-python/commit/bc61e0fdb3221b0c8171ccec686ec35bcd7d30f0))
+
+
+### Chores
+
+* add stlc workflows ([f398879](https://github.com/clear-street/studio-sdk-python/commit/f39887972533600addcbe43edf5543b8510fd06a))
+* add sync workflow ([295c950](https://github.com/clear-street/studio-sdk-python/commit/295c950f384969ea1c7093b83a8312f87e1e1e4c))
+* Use correct token for release ([453643d](https://github.com/clear-street/studio-sdk-python/commit/453643d354b45145568ae6fbd6e73f0428a90e09))
+* use internal stlc mirrors repos ([aab17d1](https://github.com/clear-street/studio-sdk-python/commit/aab17d1da4d5178bacd67c2cd768f82892448144))
+* **WALLE-2824:** Update action version and token ([3eccdcb](https://github.com/clear-street/studio-sdk-python/commit/3eccdcb7ea72e2b5e65c0b677e86734eedb01b67))
+* **WALLE-2824:** Update demo environment URL ([44aace8](https://github.com/clear-street/studio-sdk-python/commit/44aace84400c2b81e6eacbddd542db0cffa77b26))
+
 ## 0.1.0-alpha.25 (2026-08-19)
 
 Full Changelog: [v0.1.0-alpha.24...v0.1.0-alpha.25](https://github.com/clear-street/studio-sdk-python/compare/v0.1.0-alpha.24...v0.1.0-alpha.25)
